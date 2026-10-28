@@ -1,0 +1,327 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <table width="808" height="165" border="1">#}
+{#    <tr>#}
+{#      <th scope="col">SI/NO</th>#}
+{#      <th scope="col">Name</th>#}
+{#      <th scope="col">Email</th>#}
+{#      <th scope="col">Phone number</th>#}
+{#      <th scope="col">Post</th>#}
+{#      <th scope="col">Pin Code</th>#}
+{#      <th scope="col">Latitude</th>#}
+{#      <th scope="col">Longitude</th>#}
+{#      <th scope="col">Actions</th>#}
+{#    </tr>#}
+{#      {% for i in data %}#}
+{#    <tr>#}
+{#      <td>&nbsp;{{ forloop.counter }}</td>#}
+{#      <td>&nbsp;{{ i.name }}</td>#}
+{#      <td>{{ i.email }}</td>#}
+{#      <td>{{ i.phone}}</td>#}
+{#      <td>&nbsp;{{ i.post }}</td>#}
+{#      <td>{{ i.pin }}</td>#}
+{#      <td>&nbsp;{{ i.latitude }}</td>#}
+{#      <td>&nbsp;{{ i.longitude }}</td>#}
+{#      <td><div align="center">#}
+{#        <p><a href="/adm_edit_expert/{{ i.id }}">Edit</a></p>#}
+{#        <p><a href="/adm_dlt_expert/{{ i.id }}">Delete</a></p>#}
+{#      </div></td>#}
+{#    </tr>#}
+{#      {% endfor %}#}
+{##}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{% extends 'Admin/Adminhome.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+{#    * {#}
+{#        margin: 0;#}
+{#        padding: 0;#}
+{#        box-sizing: border-box;#}
+{#    }#}
+
+    body {
+        font-family: 'Inter', Arial, sans-serif;
+{#        min-height: 100vh;#}
+{#        padding: 40px 20px;#}
+{#        background-color: #E8F5E9;#}
+    }
+
+    #form1 {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    table {
+        width: 100% !important;
+        height: auto !important;
+        border: none !important;
+        border-collapse: collapse;
+    }
+
+    /* Header Row */
+    tr:first-child {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%) !important;
+    }
+
+    th {
+        color: #ffffff !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        padding: 20px 15px !important;
+        text-align: center !important;
+        border: none !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    th:last-child {
+        border-right: none !important;
+    }
+
+    /* Data Rows */
+    tr:not(:first-child) {
+        border-bottom: 1px solid #E8F5E9 !important;
+        transition: all 0.3s ease !important;
+    }
+
+    tr:not(:first-child):hover {
+        background: #F1F8E9 !important;
+        transform: scale(1.01) !important;
+        box-shadow: 0 2px 8px rgba(46, 125, 50, 0.1) !important;
+    }
+
+    td {
+        padding: 18px 15px !important;
+        font-size: 14px !important;
+        color: #2E7D32 !important;
+        font-weight: 500 !important;
+        text-align: center !important;
+        border: none !important;
+        vertical-align: middle !important;
+    }
+
+    /* First column (SI/NO) */
+    td:first-child {
+        font-weight: 700 !important;
+        color: #1B5E20 !important;
+    }
+
+    /* Actions Column */
+    td:last-child {
+        padding: 12px 15px !important;
+    }
+
+    td:last-child div {
+        display: flex !important;
+        gap: 10px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+    }
+
+    td:last-child p {
+        margin: 0 !important;
+    }
+
+    /* Action Links */
+    td a {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px 20px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        text-decoration: none !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        min-width: 90px !important;
+    }
+
+    /* Edit Link */
+    td a[href*="edit"] {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%) !important;
+        color: #ffffff !important;
+        box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3) !important;
+    }
+
+    td a[href*="edit"]:hover {
+        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(46, 125, 50, 0.4) !important;
+    }
+
+    /* Delete Link */
+    td a[href*="dlt"] {
+        background: linear-gradient(135deg, #EF5350 0%, #C62828 100%) !important;
+        color: #ffffff !important;
+        box-shadow: 0 2px 8px rgba(198, 40, 40, 0.3) !important;
+    }
+
+    td a[href*="dlt"]:hover {
+        background: linear-gradient(135deg, #E53935 0%, #B71C1C 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(198, 40, 40, 0.4) !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+        body {
+            padding: 20px 10px;
+        }
+
+        #form1 {
+            border-radius: 15px;
+            overflow-x: auto;
+        }
+
+        table {
+            min-width: 1000px;
+        }
+
+        th, td {
+            font-size: 12px !important;
+            padding: 15px 10px !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        th, td {
+            font-size: 11px !important;
+            padding: 12px 8px !important;
+        }
+
+        td a {
+            padding: 8px 15px !important;
+            font-size: 11px !important;
+            min-width: 80px !important;
+        }
+    }
+
+    /* Empty State */
+    tr:only-child td {
+        padding: 60px 20px !important;
+        text-align: center !important;
+        color: #81C784 !important;
+        font-size: 16px !important;
+    }
+
+    /* Scrollbar Styling */
+    #form1::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    #form1::-webkit-scrollbar-track {
+        background: #F1F8E9;
+        border-radius: 10px;
+    }
+
+    #form1::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+        border-radius: 10px;
+    }
+
+    #form1::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%);
+    }
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="808" height="165" border="1">
+    <tr>
+      <th scope="col">SI/NO</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone number</th>
+      <th scope="col">Post</th>
+      <th scope="col">Pin Code</th>
+      <th scope="col">Latitude</th>
+      <th scope="col">Longitude</th>
+      <th scope="col">Actions</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.name }}</td>
+      <td>{{ i.email }}</td>
+      <td>{{ i.phone}}</td>
+      <td>&nbsp;{{ i.post }}</td>
+      <td>{{ i.pin }}</td>
+      <td>&nbsp;{{ i.latitude }}</td>
+      <td>&nbsp;{{ i.longitude }}</td>
+      <td><div align="center">
+        <p><a href="/adm_edit_expert/{{ i.id }}#home">Edit</a></p>
+        <p><a href="/adm_dlt_expert/{{ i.id }}">Delete</a></p>
+      </div></td>
+    </tr>
+      {% endfor %}
+
+  </table>
+</form>
+
+<script>
+(function() {
+    // Add icons to action links
+    var editLinks = document.querySelectorAll('a[href*="edit"]');
+    editLinks.forEach(function(link) {
+        link.innerHTML = '<i class="fas fa-edit" style="margin-right: 6px;"></i>' + link.innerHTML;
+    });
+
+    var deleteLinks = document.querySelectorAll('a[href*="dlt"]');
+    deleteLinks.forEach(function(link) {
+        link.innerHTML = '<i class="fas fa-trash-alt" style="margin-right: 6px;"></i>' + link.innerHTML;
+    });
+
+    // Add icons to table headers
+    var headers = {
+        'SI/NO': 'fa-hashtag',
+        'Name': 'fa-user',
+        'Email': 'fa-envelope',
+        'Phone number': 'fa-phone',
+        'Post': 'fa-briefcase',
+        'Pin Code': 'fa-map-pin',
+        'Latitude': 'fa-location-dot',
+        'Longitude': 'fa-location-dot',
+        'Actions': 'fa-cog'
+    };
+
+    var ths = document.querySelectorAll('th');
+    ths.forEach(function(th) {
+        var text = th.textContent.trim();
+        if (headers[text]) {
+            th.innerHTML = '<i class="fas ' + headers[text] + '" style="margin-right: 8px;"></i>' + text;
+        }
+    });
+})();
+</script>
+
+</body>
+</html>
+{% endblock %}

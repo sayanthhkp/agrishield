@@ -1,0 +1,1134 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <table width="845" height="156" border="1">#}
+{#    <tr>#}
+{#      <th scope="col">SI/NO</th>#}
+{#      <th scope="col">News</th>#}
+{#      <th scope="col">News_date</th>#}
+{#      <th scope="col">Actions</th>#}
+{#    </tr>#}
+{#      {% for i in data %}#}
+{#    <tr>#}
+{#      <td>{{ forloop.counter }}</td>#}
+{#      <td>&nbsp;{{i.news}}</td>#}
+{#      <td>&nbsp;{{ i.news_date }}</td>#}
+{#      <td><div align="center">#}
+{#        <p><a href="/exp_edit_news/{{ i.id }}">Edit</a></p>#}
+{#        <p><a href="/exp_delete_news/{{ i.id }}">Delete</a></p>#}
+{#      </div></td>#}
+{#    </tr>#}
+{#      {% endfor %}#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>View News</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', Arial, sans-serif;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 50%, #A5D6A7 100%);
+        padding: 40px 20px;
+    }
+
+    /* Page Container */
+    .page-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* Page Header */
+    .page-header {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+        padding: 45px 40px;
+        text-align: center;
+        color: #ffffff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .page-header::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+    }
+
+    .page-header::after {
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        width: 200px;
+        height: 200px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 50%;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 10px;
+    }
+
+    .page-header p {
+        opacity: 0.9;
+        font-size: 15px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 30px 40px;
+        background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%);
+        border-bottom: 2px solid #C8E6C9;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 30px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        transition: all 0.3s ease;
+    }
+
+    .stat-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .stat-icon {
+        width: 55px;
+        height: 55px;
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 22px;
+        box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+    }
+
+    .stat-info h3 {
+        font-size: 28px;
+        color: #1B5E20;
+        font-weight: 800;
+    }
+
+    .stat-info p {
+        font-size: 13px;
+        color: #81C784;
+        font-weight: 600;
+        margin-top: 2px;
+    }
+
+    /* Toolbar */
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 40px;
+        background: white;
+        border-bottom: 1px solid #E8F5E9;
+        gap: 20px;
+    }
+
+    .search-wrapper {
+        flex: 1;
+        max-width: 450px;
+        position: relative;
+    }
+
+    .search-wrapper i {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #81C784;
+        font-size: 18px;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 16px 20px 16px 55px;
+        border: 2px solid #E8F5E9;
+        border-radius: 14px;
+        font-size: 15px;
+        font-family: 'Inter', sans-serif;
+        background: #FAFAFA;
+        transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: #4CAF50;
+        background: white;
+        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+    }
+
+    .search-input::placeholder {
+        color: #A5D6A7;
+    }
+
+    .btn-add {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 32px;
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+        color: white;
+        border: none;
+        border-radius: 14px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(46, 125, 50, 0.3);
+    }
+
+    .btn-add:hover {
+        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(46, 125, 50, 0.4);
+    }
+
+    /* Form Container */
+    #form1 {
+        background: #ffffff;
+    }
+
+    /* Table Styles */
+    table {
+        width: 100% !important;
+        height: auto !important;
+        border: none !important;
+        border-collapse: collapse;
+    }
+
+    tr, th, td {
+        border: none !important;
+    }
+
+    /* Table Header Row */
+    tr:first-child {
+        background: linear-gradient(135deg, #43A047 0%, #388E3C 100%) !important;
+    }
+
+    tr:first-child th {
+        color: #ffffff !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        padding: 22px 30px !important;
+        text-align: left !important;
+    }
+
+    tr:first-child th:first-child {
+        text-align: center !important;
+        width: 100px !important;
+    }
+
+    tr:first-child th:nth-child(3) {
+        width: 180px !important;
+        text-align: center !important;
+    }
+
+    tr:first-child th:last-child {
+        text-align: center !important;
+        width: 200px !important;
+    }
+
+    /* Table Body Rows */
+    tr:not(:first-child) {
+        background: #ffffff !important;
+        border-bottom: 1px solid #E8F5E9 !important;
+        transition: all 0.3s ease;
+    }
+
+    tr:not(:first-child):hover {
+        background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%) !important;
+    }
+
+    tr:not(:first-child):nth-child(even) {
+        background: #FAFAFA !important;
+    }
+
+    tr:not(:first-child):nth-child(even):hover {
+        background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%) !important;
+    }
+
+    /* Table Cells */
+    td {
+        padding: 25px 30px !important;
+        vertical-align: middle !important;
+        font-size: 14px;
+        color: #333;
+    }
+
+    /* SI/NO Column */
+    td:first-child {
+        text-align: center !important;
+        font-weight: 800;
+        color: #2E7D32;
+    }
+
+    /* News Column */
+    td:nth-child(2) {
+        color: #1B5E20;
+        line-height: 1.7;
+        font-weight: 500;
+    }
+
+    /* Date Column */
+    td:nth-child(3) {
+        text-align: center !important;
+        white-space: nowrap;
+    }
+
+    /* Actions Column */
+    td:last-child {
+        text-align: center !important;
+    }
+
+    td div[align="center"] {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 12px !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    td div[align="center"] p {
+        margin: 0 !important;
+    }
+
+    /* Action Links */
+    td a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 22px;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    /* Edit Button */
+    td a[href*="edit"] {
+        background: linear-gradient(135deg, #42A5F5 0%, #1E88E5 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+    }
+
+    td a[href*="edit"]:hover {
+        background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+    }
+
+    /* Delete Button */
+    td a[href*="delete"] {
+        background: linear-gradient(135deg, #EF5350 0%, #E53935 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+    }
+
+    td a[href*="delete"]:hover {
+        background: linear-gradient(135deg, #E53935 0%, #C62828 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+    }
+
+    /* Enhanced Elements - Applied via JS */
+    .serial-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        border-radius: 50%;
+        font-size: 16px;
+        font-weight: 800;
+        color: #2E7D32;
+        box-shadow: 0 3px 10px rgba(46, 125, 50, 0.15);
+    }
+
+    .news-card {
+        padding: 15px 20px;
+        background: linear-gradient(135deg, #FAFFFE 0%, #F1F8E9 100%);
+        border-left: 4px solid #4CAF50;
+        border-radius: 0 12px 12px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .news-card:hover {
+        background: linear-gradient(135deg, #E8F5E9 0%, #DCEDC8 100%);
+        border-left-color: #2E7D32;
+        transform: translateX(5px);
+    }
+
+    .date-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+        border-radius: 30px;
+        font-size: 13px;
+        color: #F57C00;
+        font-weight: 700;
+        box-shadow: 0 3px 12px rgba(255, 152, 0, 0.2);
+    }
+
+    .date-badge i {
+        font-size: 14px;
+    }
+
+    /* Table Footer */
+    .table-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 40px;
+        background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+        border-top: 2px solid #E8F5E9;
+    }
+
+    .footer-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #666;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .footer-info i {
+        color: #4CAF50;
+    }
+
+    .footer-info strong {
+        color: #2E7D32;
+    }
+
+    /* Modal Overlay */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        backdrop-filter: blur(8px);
+    }
+
+    .modal.show {
+        display: flex;
+    }
+
+    /* News Modal */
+    .modal-box {
+        background: white;
+        border-radius: 24px;
+        width: 100%;
+        max-width: 650px;
+        max-height: 85vh;
+        overflow: hidden;
+        box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
+        animation: modalIn 0.4s ease;
+    }
+
+    @keyframes modalIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px) scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .modal-header {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+        color: white;
+        padding: 28px 35px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-header h3 {
+        font-size: 22px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .modal-close {
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .modal-close:hover {
+        background: rgba(255,255,255,0.3);
+        transform: rotate(90deg);
+    }
+
+    .modal-body {
+        padding: 35px;
+        max-height: 400px;
+        overflow-y: auto;
+        line-height: 2;
+        color: #333;
+        font-size: 16px;
+    }
+
+    .modal-footer {
+        padding: 22px 35px;
+        background: linear-gradient(135deg, #F5F5F5 0%, #EEEEEE 100%);
+        border-top: 1px solid #E0E0E0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #555;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .modal-footer i {
+        color: #43A047;
+        font-size: 18px;
+    }
+
+    /* Delete Confirmation Modal */
+    .delete-box {
+        background: white;
+        border-radius: 24px;
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+        padding: 50px 40px;
+        box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
+        animation: modalIn 0.4s ease;
+    }
+
+    .delete-icon {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        font-size: 45px;
+        color: #E53935;
+    }
+
+    .delete-box h3 {
+        color: #333;
+        font-size: 26px;
+        margin-bottom: 15px;
+        font-weight: 800;
+    }
+
+    .delete-box p {
+        color: #666;
+        font-size: 15px;
+        margin-bottom: 35px;
+        line-height: 1.7;
+    }
+
+    .delete-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .btn-cancel {
+        padding: 16px 40px;
+        background: linear-gradient(135deg, #E0E0E0 0%, #BDBDBD 100%);
+        color: #555;
+        border: none;
+        border-radius: 14px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .btn-cancel:hover {
+        background: linear-gradient(135deg, #BDBDBD 0%, #9E9E9E 100%);
+        transform: translateY(-2px);
+    }
+
+    .btn-delete {
+        padding: 16px 40px;
+        background: linear-gradient(135deg, #EF5350 0%, #E53935 100%);
+        color: white;
+        border: none;
+        border-radius: 14px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(244, 67, 54, 0.3);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .btn-delete:hover {
+        background: linear-gradient(135deg, #E53935 0%, #C62828 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(244, 67, 54, 0.4);
+    }
+
+    /* Toast Notification */
+    .toast {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        padding: 22px 30px;
+        border-radius: 16px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        transform: translateX(150%);
+        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 10002;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+    }
+
+    .toast.show {
+        transform: translateX(0);
+    }
+
+    .toast.success {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+    }
+
+    .toast.error {
+        background: linear-gradient(135deg, #EF5350 0%, #E53935 100%);
+    }
+
+    .toast-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .toast-text h4 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .toast-text p {
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    /* Empty State */
+    .empty-state {
+        text-align: center;
+        padding: 80px 40px;
+    }
+
+    .empty-icon {
+        width: 130px;
+        height: 130px;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        font-size: 55px;
+        color: #81C784;
+    }
+
+    .empty-state h3 {
+        color: #1B5E20;
+        font-size: 26px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .empty-state p {
+        color: #81C784;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        body {
+            padding: 20px 15px;
+        }
+
+        .page-header {
+            padding: 35px 25px;
+        }
+
+        .page-header h1 {
+            font-size: 24px;
+        }
+
+        .stats-bar {
+            flex-direction: column;
+            padding: 20px;
+            gap: 15px;
+        }
+
+        .stat-item {
+            justify-content: center;
+        }
+
+        .toolbar {
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .search-wrapper {
+            max-width: 100%;
+        }
+
+        .btn-add {
+            width: 100%;
+            justify-content: center;
+        }
+
+        table {
+            display: block;
+            overflow-x: auto;
+        }
+
+        tr:first-child th {
+            padding: 18px 15px !important;
+            font-size: 11px !important;
+        }
+
+        td {
+            padding: 18px 15px !important;
+        }
+
+        td div[align="center"] {
+            flex-direction: column !important;
+            gap: 8px !important;
+        }
+
+        td a {
+            width: 100%;
+            padding: 10px 15px;
+        }
+
+        .table-footer {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .toast {
+            left: 15px;
+            right: 15px;
+        }
+
+        .delete-buttons {
+            flex-direction: column;
+        }
+
+        .btn-cancel, .btn-delete {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Toast -->
+<div class="toast success" id="toast">
+    <div class="toast-icon">
+        <i class="fas fa-check"></i>
+    </div>
+    <div class="toast-text">
+        <h4>Success!</h4>
+        <p>Action completed successfully</p>
+    </div>
+</div>
+
+<!-- News Modal -->
+<div class="modal" id="newsModal">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h3><i class="fas fa-newspaper"></i> News Details</h3>
+            <button class="modal-close" id="closeNewsModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body" id="newsModalBody"></div>
+        <div class="modal-footer">
+            <i class="fas fa-calendar-alt"></i>
+            <span id="newsModalDate"></span>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal" id="deleteModal">
+    <div class="delete-box">
+        <div class="delete-icon">
+            <i class="fas fa-trash-alt"></i>
+        </div>
+        <h3>Delete This News?</h3>
+        <p>Are you sure you want to delete this article? This action cannot be undone.</p>
+        <div class="delete-buttons">
+            <button class="btn-cancel" id="cancelDelete">Cancel</button>
+            <a href="#" class="btn-delete" id="confirmDelete">
+                <i class="fas fa-trash-alt"></i> Delete
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Page Container -->
+<div class="page-container">
+    <!-- Header -->
+    <div class="page-header">
+        <h1><i class="fas fa-newspaper"></i> News Management</h1>
+        <p>View, edit, and manage all your news articles</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="stat-info">
+                <h3 id="totalNews">0</h3>
+                <p>Total Articles</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+            <div class="stat-info">
+                <h3 id="recentNews">0</h3>
+                <p>Recent</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="stat-info">
+                <h3>Active</h3>
+                <p>Status</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search news articles...">
+        </div>
+        <a href="/exp_add_news" class="btn-add">
+            <i class="fas fa-plus-circle"></i> Add New Article
+        </a>
+    </div>
+
+<!-- ORIGINAL CODE STARTS HERE - UNCHANGED -->
+<form id="form1" name="form1" method="post" action="">
+  <table width="845" height="156" border="1">
+    <tr>
+      <th scope="col">SI/NO</th>
+      <th scope="col">News</th>
+      <th scope="col">News_date</th>
+      <th scope="col">Actions</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>&nbsp;{{i.news}}</td>
+      <td>&nbsp;{{ i.news_date }}</td>
+      <td><div align="center">
+        <p><a href="/exp_edit_news/{{ i.id }}">Edit</a></p>
+        <p><a href="/exp_delete_news/{{ i.id }}">Delete</a></p>
+      </div></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+<!-- ORIGINAL CODE ENDS HERE -->
+
+    <!-- Footer -->
+    <div class="table-footer">
+        <div class="footer-info">
+            <i class="fas fa-list"></i>
+            Showing <strong id="showingCount">0</strong> articles
+        </div>
+        <div class="footer-info">
+            <i class="fas fa-clock"></i>
+            Last updated: <strong>Just now</strong>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    // DOM Elements
+    var newsModal = document.getElementById('newsModal');
+    var newsModalBody = document.getElementById('newsModalBody');
+    var newsModalDate = document.getElementById('newsModalDate');
+    var closeNewsModal = document.getElementById('closeNewsModal');
+    var deleteModal = document.getElementById('deleteModal');
+    var cancelDelete = document.getElementById('cancelDelete');
+    var confirmDelete = document.getElementById('confirmDelete');
+    var toast = document.getElementById('toast');
+    var searchInput = document.getElementById('searchInput');
+
+    // Initialize
+    function init() {
+        enhanceTableRows();
+        updateStats();
+        bindEvents();
+    }
+
+    // Enhance Table Rows
+    function enhanceTableRows() {
+        var rows = document.querySelectorAll('#form1 table tr:not(:first-child)');
+
+        rows.forEach(function(row) {
+            row.classList.add('data-row');
+            var cells = row.querySelectorAll('td');
+
+            // Serial Number
+            if (cells[0]) {
+                var num = cells[0].textContent.trim();
+                cells[0].innerHTML = '<span class="serial-badge">' + num + '</span>';
+            }
+
+            // News Content
+            if (cells[1]) {
+                var news = cells[1].textContent.trim();
+                cells[1].innerHTML = '<div class="news-card">' + news + '</div>';
+                cells[1].dataset.news = news;
+
+                cells[1].querySelector('.news-card').addEventListener('click', function() {
+                    openNewsModal(news, cells[2] ? cells[2].dataset.date : '');
+                });
+            }
+
+            // Date
+            if (cells[2]) {
+                var date = cells[2].textContent.trim();
+                cells[2].innerHTML = '<span class="date-badge"><i class="fas fa-calendar"></i>' + date + '</span>';
+                cells[2].dataset.date = date;
+            }
+
+            // Actions
+            if (cells[3]) {
+                var editLink = cells[3].querySelector('a[href*="edit"]');
+                var deleteLink = cells[3].querySelector('a[href*="delete"]');
+
+                if (editLink) {
+                    editLink.innerHTML = '<i class="fas fa-edit"></i> Edit';
+                }
+
+                if (deleteLink) {
+                    deleteLink.innerHTML = '<i class="fas fa-trash-alt"></i> Delete';
+                    deleteLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        openDeleteModal(this.href);
+                    });
+                }
+            }
+        });
+    }
+
+    // Update Stats
+    function updateStats() {
+        var rows = document.querySelectorAll('.data-row');
+        var count = rows.length;
+
+        document.getElementById('totalNews').textContent = count;
+        document.getElementById('recentNews').textContent = Math.min(count, 5);
+        document.getElementById('showingCount').textContent = count;
+    }
+
+    // Open News Modal
+    function openNewsModal(news, date) {
+        newsModalBody.textContent = news;
+        newsModalDate.textContent = date || 'N/A';
+        newsModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close News Modal
+    function closeNewsModalFn() {
+        newsModal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    // Open Delete Modal
+    function openDeleteModal(url) {
+        confirmDelete.href = url;
+        deleteModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close Delete Modal
+    function closeDeleteModalFn() {
+        deleteModal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    // Search
+    function searchNews() {
+        var query = searchInput.value.toLowerCase().trim();
+        var rows = document.querySelectorAll('.data-row');
+        var visible = 0;
+
+        rows.forEach(function(row) {
+            var newsCell = row.querySelector('td:nth-child(2)');
+            var dateCell = row.querySelector('td:nth-child(3)');
+            var newsText = newsCell ? (newsCell.dataset.news || '').toLowerCase() : '';
+            var dateText = dateCell ? (dateCell.dataset.date || '').toLowerCase() : '';
+
+            if (newsText.includes(query) || dateText.includes(query)) {
+                row.style.display = '';
+                visible++;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        document.getElementById('showingCount').textContent = visible;
+    }
+
+    // Show Toast
+    function showToast(type, title, message) {
+        toast.className = 'toast ' + type;
+        toast.querySelector('.toast-icon i').className = type === 'success' ? 'fas fa-check' : 'fas fa-times';
+        toast.querySelector('.toast-text h4').textContent = title;
+        toast.querySelector('.toast-text p').textContent = message;
+        toast.classList.add('show');
+
+        setTimeout(function() {
+            toast.classList.remove('show');
+        }, 4000);
+    }
+
+    // Bind Events
+    function bindEvents() {
+        closeNewsModal.addEventListener('click', closeNewsModalFn);
+        newsModal.addEventListener('click', function(e) {
+            if (e.target === newsModal) closeNewsModalFn();
+        });
+
+        cancelDelete.addEventListener('click', closeDeleteModalFn);
+        deleteModal.addEventListener('click', function(e) {
+            if (e.target === deleteModal) closeDeleteModalFn();
+        });
+
+        searchInput.addEventListener('input', searchNews);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeNewsModalFn();
+                closeDeleteModalFn();
+            }
+        });
+    }
+
+    // Global
+    window.showNewsToast = showToast;
+
+    // Run
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+
+</body>
+</html>

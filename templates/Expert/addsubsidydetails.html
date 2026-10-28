@@ -1,0 +1,1016 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/exp_add_subsidy_post">#}
+{#  <table width="816" height="329" border="1">#}
+{#    <tr>#}
+{#      <th height="51" colspan="2" scope="row"> Subsidy Details</th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th height="98" scope="row">Subsidy Name</th>#}
+{#      <td><label for="textarea"></label>#}
+{#        <label for="textfield3"></label>#}
+{#        <input type="text" name="textfield" id="textfield3" />#}
+{#<label for="textarea2"></label>#}
+{#      <label for="textfield"></label></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Subsidy Details</th>#}
+{#      <td><label for="textfield2"></label>#}
+{#        <label for="textarea3"></label>#}
+{#      <textarea name="textarea" id="textarea3" cols="45" rows="5"></textarea></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">From Date</th>#}
+{#      <td><label for="textfield4"></label>#}
+{#      <input type="text" name="textfield2" id="textfield4" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">To Date</th>#}
+{#      <td><label for="textfield5"></label>#}
+{#      <input type="text" name="textfield3" id="textfield5" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th height="66" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Add" /></th>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{##}
+{#</body>#}
+{#</html>#}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Add Subsidy Details</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 50%, #A5D6A7 100%);
+        padding: 40px 20px;
+    }
+
+    /* Form Container */
+    #form1 {
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        width: 100%;
+        max-width: 700px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    #form1:hover {
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+    }
+
+    /* Decorative Elements */
+    #form1::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, transparent 60%);
+        border-radius: 0 24px 0 100%;
+        pointer-events: none;
+    }
+
+    /* Table Styles */
+    table {
+        width: 100% !important;
+        height: auto !important;
+        border: none !important;
+        border-collapse: collapse;
+    }
+
+    tr, th, td {
+        border: none !important;
+    }
+
+    /* Header Row */
+    tr:first-child th {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%) !important;
+        padding: 45px 35px !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        font-size: 28px !important;
+        font-weight: 800 !important;
+        position: relative;
+        overflow: hidden;
+        height: auto !important;
+    }
+
+    tr:first-child th::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+    }
+
+    tr:first-child th::after {
+        content: '';
+        position: absolute;
+        bottom: -60px;
+        left: -60px;
+        width: 180px;
+        height: 180px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+    }
+
+    /* Content Rows */
+    tr:not(:first-child):not(:last-child) {
+        background: #ffffff;
+        transition: all 0.3s ease;
+    }
+
+    tr:not(:first-child):not(:last-child):hover {
+        background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%);
+    }
+
+    /* Label Cells */
+    th[scope="row"] {
+        background: transparent !important;
+        color: #1B5E20 !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        text-align: left !important;
+        padding: 28px 20px 28px 40px !important;
+        width: 180px !important;
+        vertical-align: middle !important;
+        height: auto !important;
+    }
+
+    /* Input Cells */
+    td {
+        padding: 22px 40px 22px 15px !important;
+        vertical-align: middle !important;
+    }
+
+    td label {
+        display: none !important;
+    }
+
+    /* Input Fields */
+    input[type="text"] {
+        width: 100% !important;
+        padding: 16px 20px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        color: #1B5E20 !important;
+        background: #FAFAFA !important;
+        border: 2px solid #C8E6C9 !important;
+        border-radius: 12px !important;
+        outline: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    input[type="text"]::placeholder {
+        color: #81C784 !important;
+        font-weight: 400 !important;
+    }
+
+    input[type="text"]:focus {
+        border-color: #4CAF50 !important;
+        background: #ffffff !important;
+        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15) !important;
+    }
+
+    input[type="text"]:hover {
+        border-color: #81C784 !important;
+    }
+
+    /* Date Input Styling */
+    input[type="date"] {
+        width: 100% !important;
+        padding: 16px 20px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        color: #1B5E20 !important;
+        background: #FAFAFA !important;
+        border: 2px solid #C8E6C9 !important;
+        border-radius: 12px !important;
+        outline: none !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    input[type="date"]:focus {
+        border-color: #4CAF50 !important;
+        background: #ffffff !important;
+        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15) !important;
+    }
+
+    /* Textarea Styling */
+    textarea {
+        width: 100% !important;
+        min-height: 150px !important;
+        padding: 18px 22px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        color: #1B5E20 !important;
+        background: #FAFAFA !important;
+        border: 2px solid #C8E6C9 !important;
+        border-radius: 14px !important;
+        outline: none !important;
+        transition: all 0.3s ease !important;
+        resize: vertical !important;
+        line-height: 1.8 !important;
+    }
+
+    textarea::placeholder {
+        color: #81C784 !important;
+        font-weight: 400 !important;
+    }
+
+    textarea:focus {
+        border-color: #4CAF50 !important;
+        background: #ffffff !important;
+        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15) !important;
+    }
+
+    textarea:hover {
+        border-color: #81C784 !important;
+    }
+
+    textarea.error {
+        border-color: #F44336 !important;
+        animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20%, 60% { transform: translateX(-5px); }
+        40%, 80% { transform: translateX(5px); }
+    }
+
+    /* Footer Row */
+    tr:last-child th {
+        background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%) !important;
+        padding: 35px !important;
+        text-align: center !important;
+        border-top: 2px solid #E8F5E9 !important;
+        height: auto !important;
+    }
+
+    /* Submit Button */
+    input[type="submit"],
+    input#button {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        padding: 18px 60px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        border-radius: 14px !important;
+        cursor: pointer !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        box-shadow: 0 6px 25px rgba(46, 125, 50, 0.35) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    input[type="submit"]:hover,
+    input#button:hover {
+        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%) !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 10px 35px rgba(46, 125, 50, 0.45) !important;
+    }
+
+    input[type="submit"]:active,
+    input#button:active {
+        transform: translateY(-1px) !important;
+    }
+
+    .btn-loading {
+        pointer-events: none !important;
+        opacity: 0.7 !important;
+    }
+
+    /* Input Wrapper Enhancements */
+    .input-wrapper {
+        position: relative;
+    }
+
+    .input-icon {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #81C784;
+        font-size: 18px;
+        transition: color 0.3s ease;
+        pointer-events: none;
+    }
+
+    .input-wrapper input {
+        padding-left: 50px !important;
+    }
+
+    .input-wrapper input:focus ~ .input-icon {
+        color: #4CAF50;
+    }
+
+    /* Date Range Wrapper */
+    .date-range-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .date-input-wrapper {
+        flex: 1;
+        position: relative;
+    }
+
+    .date-input-wrapper i {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #81C784;
+        font-size: 16px;
+        pointer-events: none;
+    }
+
+    .date-input-wrapper input {
+        padding-left: 50px !important;
+    }
+
+    .date-separator {
+        color: #81C784;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    /* Character Counter */
+    .char-counter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        padding: 8px 12px;
+        background: #F1F8E9;
+        border-radius: 8px;
+        font-size: 12px;
+        color: #558B2F;
+        font-weight: 500;
+    }
+
+    .char-counter.warning {
+        background: #FFF8E1;
+        color: #F57C00;
+    }
+
+    .char-counter.danger {
+        background: #FFEBEE;
+        color: #E53935;
+    }
+
+    .char-progress {
+        width: 100px;
+        height: 5px;
+        background: #E0E0E0;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .char-progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #43A047, #2E7D32);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .char-progress-bar.warning {
+        background: linear-gradient(90deg, #FF9800, #F57C00);
+    }
+
+    .char-progress-bar.danger {
+        background: linear-gradient(90deg, #F44336, #D32F2F);
+    }
+
+    /* Helper Text */
+    .helper-text {
+        font-size: 12px;
+        color: #81C784;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .helper-text i {
+        font-size: 11px;
+    }
+
+    /* Date Info Badge */
+    .date-info {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+        padding: 8px 14px;
+        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+        border-radius: 20px;
+        font-size: 12px;
+        color: #1565C0;
+        font-weight: 600;
+    }
+
+    .date-info i {
+        font-size: 14px;
+    }
+
+    /* Toast Notification */
+    .toast {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        padding: 22px 30px;
+        border-radius: 16px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        transform: translateX(150%);
+        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 10000;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+    }
+
+    .toast.show {
+        transform: translateX(0);
+    }
+
+    .toast.success {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+    }
+
+    .toast.error {
+        background: linear-gradient(135deg, #EF5350 0%, #E53935 100%);
+    }
+
+    .toast-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .toast-text h4 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .toast-text p {
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    /* Subsidy Info Card */
+    .subsidy-info {
+        margin-top: 15px;
+        padding: 15px 20px;
+        background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+        border-radius: 12px;
+        border-left: 4px solid #FFC107;
+    }
+
+    .subsidy-info-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #F57C00;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .subsidy-info ul {
+        margin: 0;
+        padding-left: 20px;
+        color: #795548;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    /* Quick Templates */
+    .quick-templates {
+        margin-bottom: 12px;
+    }
+
+    .templates-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #558B2F;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .template-btns {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .template-btn {
+        padding: 8px 14px;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        border: none;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #2E7D32;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .template-btn:hover {
+        background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+        transform: translateY(-2px);
+    }
+
+    .template-btn i {
+        font-size: 11px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+        body {
+            padding: 20px 15px;
+        }
+
+        #form1 {
+            border-radius: 20px;
+        }
+
+        tr:first-child th {
+            font-size: 22px !important;
+            padding: 35px 25px !important;
+        }
+
+        th[scope="row"] {
+            display: block !important;
+            width: 100% !important;
+            padding: 22px 25px 8px 25px !important;
+            text-align: center !important;
+        }
+
+        td {
+            display: block !important;
+            padding: 0 25px 22px 25px !important;
+        }
+
+        input[type="submit"] {
+            width: 100% !important;
+            padding: 18px 30px !important;
+        }
+
+        .toast {
+            left: 15px;
+            right: 15px;
+        }
+
+        .date-range-wrapper {
+            flex-direction: column;
+        }
+
+        .date-separator {
+            display: none;
+        }
+
+        .template-btns {
+            justify-content: center;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Toast Notification -->
+<div class="toast success" id="toast">
+    <div class="toast-icon">
+        <i class="fas fa-check"></i>
+    </div>
+    <div class="toast-text">
+        <h4>Success!</h4>
+        <p>Subsidy added successfully</p>
+    </div>
+</div>
+
+<!-- ORIGINAL CODE - UNCHANGED -->
+<form id="form1" name="form1" method="post" action="/exp_add_subsidy_post">
+  <table width="816" height="329" border="1">
+    <tr>
+      <th height="51" colspan="2" scope="row"> Subsidy Details</th>
+    </tr>
+    <tr>
+      <th height="98" scope="row">Subsidy Name</th>
+      <td><label for="textarea"></label>
+        <label for="textfield3"></label>
+        <input type="text" name="textfield" id="textfield3" />
+<label for="textarea2"></label>
+      <label for="textfield"></label></td>
+    </tr>
+    <tr>
+      <th scope="row">Subsidy Details</th>
+      <td><label for="textfield2"></label>
+        <label for="textarea3"></label>
+      <textarea name="textarea" id="textarea3" cols="45" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <th scope="row">From Date</th>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield2" id="textfield4" /></td>
+    </tr>
+    <tr>
+      <th scope="row">To Date</th>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield3" id="textfield5" /></td>
+    </tr>
+    <tr>
+      <th height="66" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Add" /></th>
+    </tr>
+  </table>
+</form>
+<!-- ORIGINAL CODE ENDS -->
+
+<script>
+(function() {
+    'use strict';
+
+    // DOM Elements
+    var form = document.getElementById('form1');
+    var subsidyNameInput = document.getElementById('textfield3');
+    var subsidyDetailsTextarea = document.getElementById('textarea3');
+    var fromDateInput = document.getElementById('textfield4');
+    var toDateInput = document.getElementById('textfield5');
+    var submitBtn = document.getElementById('button');
+    var toast = document.getElementById('toast');
+
+    var MAX_CHARS = 1500;
+
+    // Initialize
+    function init() {
+        enhanceForm();
+        bindEvents();
+    }
+
+    // Enhance Form Elements
+    function enhanceForm() {
+        // Enhance Header
+        var header = document.querySelector('tr:first-child th');
+        if (header) {
+            header.innerHTML = '<i class="fas fa-hand-holding-usd" style="margin-right: 15px;"></i>Subsidy Details';
+        }
+
+        // Enhance Subsidy Name Label
+        var nameLabel = document.querySelector('tr:nth-child(2) th[scope="row"]');
+        if (nameLabel) {
+            nameLabel.innerHTML = '<i class="fas fa-tag" style="margin-right: 10px; color: #43A047;"></i>Subsidy Name';
+        }
+
+        // Enhance Subsidy Details Label
+        var detailsLabel = document.querySelector('tr:nth-child(3) th[scope="row"]');
+        if (detailsLabel) {
+            detailsLabel.innerHTML = '<i class="fas fa-info-circle" style="margin-right: 10px; color: #43A047;"></i>Subsidy Details';
+        }
+
+        // Enhance From Date Label
+        var fromLabel = document.querySelector('tr:nth-child(4) th[scope="row"]');
+        if (fromLabel) {
+            fromLabel.innerHTML = '<i class="fas fa-calendar-plus" style="margin-right: 10px; color: #43A047;"></i>From Date';
+        }
+
+        // Enhance To Date Label
+        var toLabel = document.querySelector('tr:nth-child(5) th[scope="row"]');
+        if (toLabel) {
+            toLabel.innerHTML = '<i class="fas fa-calendar-check" style="margin-right: 10px; color: #43A047;"></i>To Date';
+        }
+
+        // Enhance Subsidy Name Input
+        if (subsidyNameInput) {
+            subsidyNameInput.setAttribute('placeholder', 'Enter subsidy scheme name');
+
+            var nameTd = subsidyNameInput.parentNode;
+            var nameWrapper = document.createElement('div');
+            nameWrapper.className = 'input-wrapper';
+            subsidyNameInput.parentNode.insertBefore(nameWrapper, subsidyNameInput);
+            nameWrapper.appendChild(subsidyNameInput);
+
+            var nameIcon = document.createElement('i');
+            nameIcon.className = 'fas fa-bookmark input-icon';
+            nameWrapper.appendChild(nameIcon);
+
+            var nameHelper = document.createElement('div');
+            nameHelper.className = 'helper-text';
+            nameHelper.innerHTML = '<i class="fas fa-info-circle"></i> Enter the official subsidy scheme name';
+            nameTd.appendChild(nameHelper);
+        }
+
+        // Enhance Subsidy Details Textarea
+        if (subsidyDetailsTextarea) {
+            subsidyDetailsTextarea.setAttribute('placeholder', 'Enter detailed information about the subsidy...\n\nInclude:\n• Eligibility criteria\n• Benefits offered\n• Application process\n• Required documents');
+
+            var detailsTd = subsidyDetailsTextarea.parentNode;
+
+            // Add Templates
+            var templates = document.createElement('div');
+            templates.className = 'quick-templates';
+            templates.innerHTML = `
+                <div class="templates-header">
+                    <i class="fas fa-magic"></i> Quick Templates
+                </div>
+                <div class="template-btns">
+                    <button type="button" class="template-btn" data-template="agri">
+                        <i class="fas fa-seedling"></i> Agriculture
+                    </button>
+                    <button type="button" class="template-btn" data-template="equip">
+                        <i class="fas fa-tractor"></i> Equipment
+                    </button>
+                    <button type="button" class="template-btn" data-template="fertilizer">
+                        <i class="fas fa-flask"></i> Fertilizer
+                    </button>
+                    <button type="button" class="template-btn" data-template="irrigation">
+                        <i class="fas fa-water"></i> Irrigation
+                    </button>
+                </div>
+            `;
+            detailsTd.insertBefore(templates, subsidyDetailsTextarea);
+
+            // Add Character Counter
+            var charCounter = document.createElement('div');
+            charCounter.className = 'char-counter';
+            charCounter.id = 'charCounter';
+            charCounter.innerHTML = `
+                <span><i class="fas fa-keyboard"></i> <span id="charCount">0</span> / ${MAX_CHARS}</span>
+                <div class="char-progress">
+                    <div class="char-progress-bar" id="charProgressBar"></div>
+                </div>
+            `;
+            detailsTd.appendChild(charCounter);
+        }
+
+        // Enhance From Date Input
+        if (fromDateInput) {
+            fromDateInput.setAttribute('type', 'date');
+            fromDateInput.setAttribute('placeholder', 'Select start date');
+
+            var fromTd = fromDateInput.parentNode;
+            var fromWrapper = document.createElement('div');
+            fromWrapper.className = 'date-input-wrapper';
+            fromDateInput.parentNode.insertBefore(fromWrapper, fromDateInput);
+            fromWrapper.appendChild(fromDateInput);
+
+            var fromIcon = document.createElement('i');
+            fromIcon.className = 'fas fa-calendar-alt';
+            fromWrapper.appendChild(fromIcon);
+
+            var fromHelper = document.createElement('div');
+            fromHelper.className = 'helper-text';
+            fromHelper.innerHTML = '<i class="fas fa-info-circle"></i> Subsidy application start date';
+            fromTd.appendChild(fromHelper);
+        }
+
+        // Enhance To Date Input
+        if (toDateInput) {
+            toDateInput.setAttribute('type', 'date');
+            toDateInput.setAttribute('placeholder', 'Select end date');
+
+            var toTd = toDateInput.parentNode;
+            var toWrapper = document.createElement('div');
+            toWrapper.className = 'date-input-wrapper';
+            toDateInput.parentNode.insertBefore(toWrapper, toDateInput);
+            toWrapper.appendChild(toDateInput);
+
+            var toIcon = document.createElement('i');
+            toIcon.className = 'fas fa-calendar-alt';
+            toWrapper.appendChild(toIcon);
+
+            var toHelper = document.createElement('div');
+            toHelper.className = 'helper-text';
+            toHelper.innerHTML = '<i class="fas fa-info-circle"></i> Subsidy application deadline';
+            toTd.appendChild(toHelper);
+
+            // Add Date Duration Info
+            var durationInfo = document.createElement('div');
+            durationInfo.className = 'date-info';
+            durationInfo.id = 'durationInfo';
+            durationInfo.style.display = 'none';
+            durationInfo.innerHTML = '<i class="fas fa-clock"></i> <span id="durationText">Duration: --</span>';
+            toTd.appendChild(durationInfo);
+        }
+
+        // Enhance Submit Button
+        if (submitBtn) {
+            submitBtn.value = 'Add Subsidy';
+        }
+    }
+
+    // Bind Events
+    function bindEvents() {
+        var charCount = document.getElementById('charCount');
+        var charProgressBar = document.getElementById('charProgressBar');
+        var charCounter = document.getElementById('charCounter');
+        var durationInfo = document.getElementById('durationInfo');
+        var durationText = document.getElementById('durationText');
+
+        // Template buttons
+        document.querySelectorAll('.template-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var template = this.getAttribute('data-template');
+                var templates = {
+                    agri: '🌾 AGRICULTURE SUBSIDY\n\n📋 Eligibility:\n• Small and marginal farmers\n• Land holding up to 2 hectares\n• Valid land documents required\n\n💰 Benefits:\n• Financial assistance for crop production\n• Input cost reduction\n\n📄 Required Documents:\n• Aadhaar Card\n• Land Records\n• Bank Account Details\n\n📝 How to Apply:\n• Visit nearest agriculture office\n• Submit application with documents',
+                    equip: '🚜 EQUIPMENT SUBSIDY\n\n📋 Eligibility:\n• Registered farmers\n• Agriculture land ownership\n\n💰 Benefits:\n• Up to 50% subsidy on farm equipment\n• Covers tractors, harvesters, etc.\n\n📄 Required Documents:\n• Identity proof\n• Land documents\n• Quotation from dealer\n\n📝 How to Apply:\n• Apply through DBT portal\n• Submit required documents',
+                    fertilizer: '🧪 FERTILIZER SUBSIDY\n\n📋 Eligibility:\n• All farmers with valid ID\n• Registered in farmer database\n\n💰 Benefits:\n• Reduced fertilizer prices\n• Direct benefit transfer\n\n📄 Required Documents:\n• Aadhaar Card\n• Farmer Registration\n\n📝 How to Apply:\n• Purchase from authorized dealer\n• Subsidy credited automatically',
+                    irrigation: '💧 IRRIGATION SUBSIDY\n\n📋 Eligibility:\n• Farmers with irrigation needs\n• Land ownership documents\n\n💰 Benefits:\n• Drip irrigation subsidy\n• Sprinkler system support\n• Borewell assistance\n\n📄 Required Documents:\n• Land records\n• Water source details\n• Cost estimate\n\n📝 How to Apply:\n• Apply at agriculture department\n• Site inspection required'
+                };
+                subsidyDetailsTextarea.value = templates[template] || '';
+                updateCharCount();
+                subsidyDetailsTextarea.focus();
+            });
+        });
+
+        // Character counter
+        function updateCharCount() {
+            var count = subsidyDetailsTextarea.value.length;
+            var percentage = Math.min((count / MAX_CHARS) * 100, 100);
+
+            charCount.textContent = count;
+            charProgressBar.style.width = percentage + '%';
+
+            charCounter.classList.remove('warning', 'danger');
+            charProgressBar.classList.remove('warning', 'danger');
+
+            if (count > MAX_CHARS * 0.9) {
+                charCounter.classList.add('danger');
+                charProgressBar.classList.add('danger');
+            } else if (count > MAX_CHARS * 0.7) {
+                charCounter.classList.add('warning');
+                charProgressBar.classList.add('warning');
+            }
+        }
+
+        subsidyDetailsTextarea.addEventListener('input', updateCharCount);
+
+        // Date duration calculator
+        function calculateDuration() {
+            if (fromDateInput.value && toDateInput.value) {
+                var from = new Date(fromDateInput.value);
+                var to = new Date(toDateInput.value);
+
+                if (to >= from) {
+                    var diff = Math.ceil((to - from) / (1000 * 60 * 60 * 24));
+                    durationInfo.style.display = 'inline-flex';
+                    durationText.textContent = 'Duration: ' + diff + ' days';
+                } else {
+                    durationInfo.style.display = 'inline-flex';
+                    durationText.textContent = 'Invalid: End date must be after start date';
+                    durationInfo.style.background = 'linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%)';
+                    durationInfo.style.color = '#E53935';
+                }
+            } else {
+                durationInfo.style.display = 'none';
+            }
+        }
+
+        fromDateInput.addEventListener('change', calculateDuration);
+        toDateInput.addEventListener('change', calculateDuration);
+
+        // Focus effects
+        [subsidyNameInput, subsidyDetailsTextarea, fromDateInput, toDateInput].forEach(function(input) {
+            if (input) {
+                input.addEventListener('focus', function() {
+                    var row = this.closest('tr');
+                    if (row) {
+                        row.style.background = 'linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%)';
+                    }
+                });
+
+                input.addEventListener('blur', function() {
+                    var row = this.closest('tr');
+                    if (row) {
+                        row.style.background = '';
+                    }
+                });
+            }
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            var isValid = true;
+            var errors = [];
+
+            if (!subsidyNameInput.value.trim()) {
+                subsidyNameInput.style.borderColor = '#F44336';
+                isValid = false;
+                errors.push('Subsidy name is required');
+            }
+
+            if (!subsidyDetailsTextarea.value.trim()) {
+                subsidyDetailsTextarea.classList.add('error');
+                isValid = false;
+                errors.push('Subsidy details are required');
+            }
+
+            if (!fromDateInput.value) {
+                fromDateInput.style.borderColor = '#F44336';
+                isValid = false;
+                errors.push('From date is required');
+            }
+
+            if (!toDateInput.value) {
+                toDateInput.style.borderColor = '#F44336';
+                isValid = false;
+                errors.push('To date is required');
+            }
+
+            if (!isValid) {
+                e.preventDefault();
+                showToast('error', 'Error!', errors[0]);
+
+                setTimeout(function() {
+                    subsidyNameInput.style.borderColor = '';
+                    subsidyDetailsTextarea.classList.remove('error');
+                    fromDateInput.style.borderColor = '';
+                    toDateInput.style.borderColor = '';
+                }, 2000);
+                return;
+            }
+
+            submitBtn.value = 'Adding...';
+            submitBtn.classList.add('btn-loading');
+        });
+    }
+
+    // Show Toast
+    function showToast(type, title, message) {
+        toast.className = 'toast ' + type;
+        toast.querySelector('.toast-icon i').className = type === 'success' ? 'fas fa-check' : 'fas fa-exclamation';
+        toast.querySelector('.toast-text h4').textContent = title;
+        toast.querySelector('.toast-text p').textContent = message;
+        toast.classList.add('show');
+
+        setTimeout(function() {
+            toast.classList.remove('show');
+        }, 4000);
+    }
+
+    // Global
+    window.showSubsidyToast = showToast;
+
+    // Run
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+
+</body>
+</html>

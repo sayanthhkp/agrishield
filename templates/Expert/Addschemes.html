@@ -1,0 +1,1119 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form action="/exp_add_scheme_post" method="post" enctype="multipart/form-data" name="form1" id="form1">#}
+{#  <table width="811" height="228" border="1">#}
+{#    <tr>#}
+{#      <th colspan="2" scope="row">Add Gov Schemes</th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th width="178" height="123" scope="row">schemes</th>#}
+{#      <td width="617"><label for="textarea"></label>#}
+{#      <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th height="123" scope="row">File</th>#}
+{#      <td><label for="fileField"></label>#}
+{#      <input type="file" name="fileField" id="fileField" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th height="68" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Add" /></th>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Add Government Schemes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 50%, #A5D6A7 100%);
+        padding: 40px 20px;
+    }
+
+    /* Form Container */
+    #form1 {
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        width: 100%;
+        max-width: 700px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    #form1:hover {
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+    }
+
+    /* Table Styles */
+    table {
+        width: 100% !important;
+        height: auto !important;
+        border: none !important;
+        border-collapse: collapse;
+    }
+
+    tr, th, td {
+        border: none !important;
+    }
+
+    /* Header Row */
+    tr:first-child th {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%) !important;
+        padding: 45px 35px !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        font-size: 28px !important;
+        font-weight: 800 !important;
+        position: relative;
+        overflow: hidden;
+    }
+
+    tr:first-child th::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+    }
+
+    tr:first-child th::after {
+        content: '';
+        position: absolute;
+        bottom: -60px;
+        left: -60px;
+        width: 180px;
+        height: 180px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+    }
+
+    /* Content Rows */
+    tr:not(:first-child):not(:last-child) {
+        background: #ffffff;
+        transition: all 0.3s ease;
+    }
+
+    tr:not(:first-child):not(:last-child):hover {
+        background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%);
+    }
+
+    /* Label Cells */
+    th[scope="row"] {
+        background: transparent !important;
+        color: #1B5E20 !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        text-align: left !important;
+        padding: 30px 20px 30px 40px !important;
+        width: 160px !important;
+        vertical-align: top !important;
+        text-transform: capitalize !important;
+    }
+
+    /* Input Cells */
+    td {
+        padding: 25px 40px 25px 15px !important;
+        vertical-align: middle !important;
+    }
+
+    td label {
+        display: none !important;
+    }
+
+    /* Textarea Styling */
+    textarea {
+        width: 100% !important;
+        min-height: 180px !important;
+        padding: 18px 22px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        color: #1B5E20 !important;
+        background: #FAFAFA !important;
+        border: 2px solid #C8E6C9 !important;
+        border-radius: 14px !important;
+        outline: none !important;
+        transition: all 0.3s ease !important;
+        resize: vertical !important;
+        line-height: 1.8 !important;
+    }
+
+    textarea::placeholder {
+        color: #81C784 !important;
+        font-weight: 400 !important;
+    }
+
+    textarea:focus {
+        border-color: #4CAF50 !important;
+        background: #ffffff !important;
+        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15) !important;
+    }
+
+    textarea:hover {
+        border-color: #81C784 !important;
+    }
+
+    textarea.error {
+        border-color: #F44336 !important;
+        animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20%, 60% { transform: translateX(-5px); }
+        40%, 80% { transform: translateX(5px); }
+    }
+
+    /* File Input Styling */
+    input[type="file"] {
+        width: 100% !important;
+        padding: 0 !important;
+        font-size: 14px !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        color: #1B5E20 !important;
+        cursor: pointer !important;
+        display: none !important;
+    }
+
+    /* Custom File Upload */
+    .file-upload-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .file-upload-area {
+        border: 3px dashed #C8E6C9;
+        border-radius: 16px;
+        padding: 40px 30px;
+        text-align: center;
+        background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .file-upload-area:hover {
+        border-color: #4CAF50;
+        background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%);
+    }
+
+    .file-upload-area.dragover {
+        border-color: #2E7D32;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        transform: scale(1.02);
+    }
+
+    .file-upload-area.has-file {
+        border-color: #4CAF50;
+        border-style: solid;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+    }
+
+    .upload-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 32px;
+        color: white;
+        box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .file-upload-area:hover .upload-icon {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(46, 125, 50, 0.4);
+    }
+
+    .upload-text h4 {
+        color: #1B5E20;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .upload-text p {
+        color: #81C784;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .upload-text .file-types {
+        color: #A5D6A7;
+        font-size: 12px;
+    }
+
+    .file-name {
+        margin-top: 15px;
+        padding: 12px 20px;
+        background: white;
+        border-radius: 10px;
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .file-name.show {
+        display: flex;
+    }
+
+    .file-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #2E7D32;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .file-info i {
+        font-size: 20px;
+        color: #43A047;
+    }
+
+    .remove-file {
+        background: #FFEBEE;
+        border: none;
+        color: #E53935;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .remove-file:hover {
+        background: #FFCDD2;
+        transform: rotate(90deg);
+    }
+
+    /* Footer Row */
+    tr:last-child th {
+        background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%) !important;
+        padding: 35px !important;
+        text-align: center !important;
+        border-top: 2px solid #E8F5E9 !important;
+    }
+
+    /* Submit Button */
+    input[type="submit"],
+    input#button {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        padding: 18px 60px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        border-radius: 14px !important;
+        cursor: pointer !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        box-shadow: 0 6px 25px rgba(46, 125, 50, 0.35) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    input[type="submit"]:hover,
+    input#button:hover {
+        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%) !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 10px 35px rgba(46, 125, 50, 0.45) !important;
+    }
+
+    input[type="submit"]:active,
+    input#button:active {
+        transform: translateY(-1px) !important;
+    }
+
+    .btn-loading {
+        pointer-events: none !important;
+        opacity: 0.7 !important;
+    }
+
+    /* Textarea Enhancements */
+    .textarea-wrapper {
+        position: relative;
+    }
+
+    .textarea-toolbar {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 12px;
+        padding: 12px 15px;
+        background: linear-gradient(135deg, #F5F5F5 0%, #EEEEEE 100%);
+        border-radius: 12px;
+        flex-wrap: wrap;
+    }
+
+    .toolbar-btn {
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: white;
+        border-radius: 8px;
+        cursor: pointer;
+        color: #666;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .toolbar-btn:hover {
+        background: #E8F5E9;
+        color: #2E7D32;
+        transform: translateY(-2px);
+    }
+
+    .toolbar-btn.active {
+        background: #2E7D32;
+        color: white;
+    }
+
+    .toolbar-divider {
+        width: 1px;
+        height: 38px;
+        background: #DDD;
+        margin: 0 5px;
+    }
+
+    /* Character Counter */
+    .char-counter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
+        padding: 10px 15px;
+        background: #F1F8E9;
+        border-radius: 10px;
+        font-size: 13px;
+        color: #558B2F;
+        font-weight: 500;
+    }
+
+    .char-counter.warning {
+        background: #FFF8E1;
+        color: #F57C00;
+    }
+
+    .char-counter.danger {
+        background: #FFEBEE;
+        color: #E53935;
+    }
+
+    .char-progress {
+        width: 120px;
+        height: 6px;
+        background: #E0E0E0;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .char-progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #43A047, #2E7D32);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .char-progress-bar.warning {
+        background: linear-gradient(90deg, #FF9800, #F57C00);
+    }
+
+    .char-progress-bar.danger {
+        background: linear-gradient(90deg, #F44336, #D32F2F);
+    }
+
+    /* Preview Section */
+    .preview-section {
+        margin-top: 15px;
+        background: linear-gradient(135deg, #F1F8E9 0%, #DCEDC8 100%);
+        border: 2px dashed #AED581;
+        border-radius: 12px;
+        overflow: hidden;
+        display: none;
+    }
+
+    .preview-section.show {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .preview-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 18px;
+        background: rgba(139, 195, 74, 0.2);
+        border-bottom: 1px solid #AED581;
+    }
+
+    .preview-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #558B2F;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .preview-close {
+        background: none;
+        border: none;
+        color: #7CB342;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 5px;
+        transition: all 0.2s ease;
+    }
+
+    .preview-close:hover {
+        color: #558B2F;
+        background: rgba(255,255,255,0.5);
+    }
+
+    .preview-content {
+        color: #33691E;
+        font-size: 14px;
+        line-height: 1.8;
+        white-space: pre-wrap;
+        padding: 20px;
+        background: white;
+        margin: 15px;
+        border-radius: 8px;
+        min-height: 60px;
+        max-height: 150px;
+        overflow-y: auto;
+    }
+
+    /* Toast Notification */
+    .toast {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        padding: 22px 30px;
+        border-radius: 16px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        transform: translateX(150%);
+        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 10000;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+    }
+
+    .toast.show {
+        transform: translateX(0);
+    }
+
+    .toast.success {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+    }
+
+    .toast.error {
+        background: linear-gradient(135deg, #EF5350 0%, #E53935 100%);
+    }
+
+    .toast-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .toast-text h4 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .toast-text p {
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    /* Helper Text */
+    .helper-text {
+        font-size: 12px;
+        color: #81C784;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .helper-text i {
+        font-size: 11px;
+    }
+
+    /* Scheme Templates */
+    .scheme-templates {
+        margin-bottom: 15px;
+    }
+
+    .templates-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #558B2F;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .template-btns {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .template-btn {
+        padding: 8px 16px;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        border: none;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #2E7D32;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .template-btn:hover {
+        background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+        transform: translateY(-2px);
+    }
+
+    .template-btn i {
+        font-size: 11px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+        body {
+            padding: 20px 15px;
+        }
+
+        #form1 {
+            border-radius: 20px;
+        }
+
+        tr:first-child th {
+            font-size: 22px !important;
+            padding: 35px 25px !important;
+        }
+
+        th[scope="row"] {
+            display: block !important;
+            width: 100% !important;
+            padding: 25px 25px 10px 25px !important;
+            text-align: center !important;
+        }
+
+        td {
+            display: block !important;
+            padding: 0 25px 25px 25px !important;
+        }
+
+        input[type="submit"] {
+            width: 100% !important;
+            padding: 18px 30px !important;
+        }
+
+        .toast {
+            left: 15px;
+            right: 15px;
+        }
+
+        .textarea-toolbar {
+            justify-content: center;
+        }
+
+        .file-upload-area {
+            padding: 30px 20px;
+        }
+
+        .upload-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+        }
+
+        .template-btns {
+            justify-content: center;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Toast Notification -->
+<div class="toast success" id="toast">
+    <div class="toast-icon">
+        <i class="fas fa-check"></i>
+    </div>
+    <div class="toast-text">
+        <h4>Success!</h4>
+        <p>Scheme added successfully</p>
+    </div>
+</div>
+
+<!-- ORIGINAL CODE - UNCHANGED -->
+<form action="/exp_add_scheme_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="811" height="228" border="1">
+    <tr>
+      <th colspan="2" scope="row">Add Gov Schemes</th>
+    </tr>
+    <tr>
+      <th width="178" height="123" scope="row">schemes</th>
+      <td width="617"><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <th height="123" scope="row">File</th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" /></td>
+    </tr>
+    <tr>
+      <th height="68" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Add" /></th>
+    </tr>
+  </table>
+</form>
+<!-- ORIGINAL CODE ENDS -->
+
+<script>
+(function() {
+    'use strict';
+
+    // DOM Elements
+    var form = document.getElementById('form1');
+    var textarea = document.getElementById('textarea');
+    var fileInput = document.getElementById('fileField');
+    var submitBtn = document.getElementById('button');
+    var toast = document.getElementById('toast');
+
+    var MAX_CHARS = 2000;
+
+    // Initialize
+    function init() {
+        enhanceForm();
+        bindEvents();
+    }
+
+    // Enhance Form Elements
+    function enhanceForm() {
+        // Enhance Header
+        var header = document.querySelector('tr:first-child th');
+        if (header) {
+            header.innerHTML = '<i class="fas fa-landmark" style="margin-right: 15px;"></i>Add Gov Schemes';
+        }
+
+        // Enhance Schemes Label
+        var schemesLabel = document.querySelector('tr:nth-child(2) th[scope="row"]');
+        if (schemesLabel) {
+            schemesLabel.innerHTML = '<i class="fas fa-scroll" style="margin-right: 10px; color: #43A047;"></i>Scheme Details';
+        }
+
+        // Enhance File Label
+        var fileLabel = document.querySelector('tr:nth-child(3) th[scope="row"]');
+        if (fileLabel) {
+            fileLabel.innerHTML = '<i class="fas fa-file-pdf" style="margin-right: 10px; color: #43A047;"></i>Document';
+        }
+
+        // Enhance Textarea
+        if (textarea) {
+            textarea.setAttribute('placeholder', 'Enter scheme details here...\n\nExample:\n• Scheme Name: PM Kisan Samman Nidhi\n• Benefits: Direct income support\n• Eligibility: All farmers\n• How to Apply: Visit nearest CSC center');
+
+            var textareaTd = textarea.parentNode;
+
+            // Add Templates
+            var templates = document.createElement('div');
+            templates.className = 'scheme-templates';
+            templates.innerHTML = `
+                <div class="templates-header">
+                    <i class="fas fa-lightbulb"></i> Quick Templates
+                </div>
+                <div class="template-btns">
+                    <button type="button" class="template-btn" data-template="subsidy">
+                        <i class="fas fa-money-bill-wave"></i> Subsidy Scheme
+                    </button>
+                    <button type="button" class="template-btn" data-template="loan">
+                        <i class="fas fa-hand-holding-usd"></i> Loan Scheme
+                    </button>
+                    <button type="button" class="template-btn" data-template="insurance">
+                        <i class="fas fa-shield-alt"></i> Insurance Scheme
+                    </button>
+                </div>
+            `;
+            textareaTd.insertBefore(templates, textarea);
+
+            // Wrap textarea
+            var wrapper = document.createElement('div');
+            wrapper.className = 'textarea-wrapper';
+            textarea.parentNode.insertBefore(wrapper, textarea);
+            wrapper.appendChild(textarea);
+
+            // Add Toolbar
+            var toolbar = document.createElement('div');
+            toolbar.className = 'textarea-toolbar';
+            toolbar.innerHTML = `
+                <button type="button" class="toolbar-btn" id="btnBold" title="Bold">
+                    <i class="fas fa-bold"></i>
+                </button>
+                <button type="button" class="toolbar-btn" id="btnItalic" title="Italic">
+                    <i class="fas fa-italic"></i>
+                </button>
+                <button type="button" class="toolbar-btn" id="btnBullet" title="Bullet Point">
+                    <i class="fas fa-list-ul"></i>
+                </button>
+                <div class="toolbar-divider"></div>
+                <button type="button" class="toolbar-btn" id="btnPreview" title="Preview">
+                    <i class="fas fa-eye"></i>
+                </button>
+                <button type="button" class="toolbar-btn" id="btnClear" title="Clear">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            `;
+            wrapper.insertBefore(toolbar, textarea);
+
+            // Add Character Counter
+            var charCounter = document.createElement('div');
+            charCounter.className = 'char-counter';
+            charCounter.id = 'charCounter';
+            charCounter.innerHTML = `
+                <span><i class="fas fa-keyboard"></i> <span id="charCount">0</span> / ${MAX_CHARS} characters</span>
+                <div class="char-progress">
+                    <div class="char-progress-bar" id="charProgressBar"></div>
+                </div>
+            `;
+            wrapper.appendChild(charCounter);
+
+            // Add Preview Section
+            var preview = document.createElement('div');
+            preview.className = 'preview-section';
+            preview.id = 'previewSection';
+            preview.innerHTML = `
+                <div class="preview-header">
+                    <div class="preview-title">
+                        <i class="fas fa-eye"></i> Preview
+                    </div>
+                    <button type="button" class="preview-close" id="previewClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="preview-content" id="previewContent">Nothing to preview...</div>
+            `;
+            wrapper.appendChild(preview);
+        }
+
+        // Enhance File Input
+        if (fileInput) {
+            var fileTd = fileInput.parentNode;
+
+            // Create custom upload area
+            var uploadWrapper = document.createElement('div');
+            uploadWrapper.className = 'file-upload-wrapper';
+            uploadWrapper.innerHTML = `
+                <div class="file-upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="upload-text">
+                        <h4>Drag & Drop your file here</h4>
+                        <p>or click to browse</p>
+                        <span class="file-types">Supports: PDF, DOC, DOCX, JPG, PNG (Max 10MB)</span>
+                    </div>
+                    <div class="file-name" id="fileName">
+                        <div class="file-info">
+                            <i class="fas fa-file"></i>
+                            <span id="selectedFileName">No file selected</span>
+                        </div>
+                        <button type="button" class="remove-file" id="removeFile">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            fileTd.insertBefore(uploadWrapper, fileInput);
+            uploadWrapper.appendChild(fileInput);
+
+            // Add helper text
+            var fileHelper = document.createElement('div');
+            fileHelper.className = 'helper-text';
+            fileHelper.innerHTML = '<i class="fas fa-info-circle"></i> Upload the official scheme document or related files';
+            fileTd.appendChild(fileHelper);
+        }
+
+        // Enhance Submit Button
+        if (submitBtn) {
+            submitBtn.value = 'Add Scheme';
+        }
+    }
+
+    // Bind Events
+    function bindEvents() {
+        var charCount = document.getElementById('charCount');
+        var charProgressBar = document.getElementById('charProgressBar');
+        var charCounter = document.getElementById('charCounter');
+        var previewSection = document.getElementById('previewSection');
+        var previewContent = document.getElementById('previewContent');
+        var previewClose = document.getElementById('previewClose');
+        var uploadArea = document.getElementById('uploadArea');
+        var fileName = document.getElementById('fileName');
+        var selectedFileName = document.getElementById('selectedFileName');
+        var removeFile = document.getElementById('removeFile');
+
+        // Template buttons
+        document.querySelectorAll('.template-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var template = this.getAttribute('data-template');
+                var templates = {
+                    subsidy: '📋 SUBSIDY SCHEME\n\n• Scheme Name: \n• Department: \n• Subsidy Amount: \n• Eligibility: \n• Required Documents: \n• Application Process: \n• Deadline: \n• Contact: ',
+                    loan: '💰 LOAN SCHEME\n\n• Scheme Name: \n• Loan Amount: \n• Interest Rate: \n• Repayment Period: \n• Eligibility: \n• Collateral Required: \n• Application Process: \n• Contact: ',
+                    insurance: '🛡️ INSURANCE SCHEME\n\n• Scheme Name: \n• Coverage: \n• Premium: \n• Sum Insured: \n• Eligibility: \n• Claim Process: \n• Enrollment Period: \n• Contact: '
+                };
+                textarea.value = templates[template] || '';
+                updateCharCount();
+                textarea.focus();
+            });
+        });
+
+        // Toolbar buttons
+        document.getElementById('btnBold').addEventListener('click', function(e) {
+            e.preventDefault();
+            insertFormat('**', '**');
+        });
+
+        document.getElementById('btnItalic').addEventListener('click', function(e) {
+            e.preventDefault();
+            insertFormat('_', '_');
+        });
+
+        document.getElementById('btnBullet').addEventListener('click', function(e) {
+            e.preventDefault();
+            insertFormat('• ', '');
+        });
+
+        document.getElementById('btnPreview').addEventListener('click', function(e) {
+            e.preventDefault();
+            togglePreview();
+        });
+
+        document.getElementById('btnClear').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (textarea.value && confirm('Clear all content?')) {
+                textarea.value = '';
+                updateCharCount();
+                previewSection.classList.remove('show');
+            }
+        });
+
+        previewClose.addEventListener('click', function() {
+            previewSection.classList.remove('show');
+            document.getElementById('btnPreview').classList.remove('active');
+        });
+
+        // Textarea events
+        textarea.addEventListener('input', updateCharCount);
+
+        textarea.addEventListener('focus', function() {
+            this.closest('tr').style.background = 'linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%)';
+        });
+
+        textarea.addEventListener('blur', function() {
+            this.closest('tr').style.background = '';
+        });
+
+        // File upload events
+        uploadArea.addEventListener('click', function() {
+            fileInput.click();
+        });
+
+        uploadArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', function() {
+            this.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.classList.remove('dragover');
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                updateFileName();
+            }
+        });
+
+        fileInput.addEventListener('change', updateFileName);
+
+        removeFile.addEventListener('click', function(e) {
+            e.stopPropagation();
+            fileInput.value = '';
+            fileName.classList.remove('show');
+            uploadArea.classList.remove('has-file');
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            if (!textarea.value.trim()) {
+                e.preventDefault();
+                textarea.classList.add('error');
+                showToast('error', 'Error!', 'Please enter scheme details');
+                setTimeout(function() {
+                    textarea.classList.remove('error');
+                }, 1500);
+                return;
+            }
+
+            submitBtn.value = 'Adding...';
+            submitBtn.classList.add('btn-loading');
+        });
+
+        // Helper Functions
+        function updateCharCount() {
+            var count = textarea.value.length;
+            var percentage = Math.min((count / MAX_CHARS) * 100, 100);
+
+            charCount.textContent = count;
+            charProgressBar.style.width = percentage + '%';
+
+            charCounter.classList.remove('warning', 'danger');
+            charProgressBar.classList.remove('warning', 'danger');
+
+            if (count > MAX_CHARS * 0.9) {
+                charCounter.classList.add('danger');
+                charProgressBar.classList.add('danger');
+            } else if (count > MAX_CHARS * 0.7) {
+                charCounter.classList.add('warning');
+                charProgressBar.classList.add('warning');
+            }
+
+            if (previewSection.classList.contains('show')) {
+                previewContent.textContent = textarea.value || 'Nothing to preview...';
+            }
+        }
+
+        function insertFormat(before, after) {
+            var start = textarea.selectionStart;
+            var end = textarea.selectionEnd;
+            var text = textarea.value;
+            var selected = text.substring(start, end);
+
+            textarea.value = text.substring(0, start) + before + selected + after + text.substring(end);
+            textarea.focus();
+            textarea.selectionStart = start + before.length;
+            textarea.selectionEnd = end + before.length;
+            updateCharCount();
+        }
+
+        function togglePreview() {
+            previewSection.classList.toggle('show');
+            document.getElementById('btnPreview').classList.toggle('active');
+            if (previewSection.classList.contains('show')) {
+                previewContent.textContent = textarea.value || 'Nothing to preview...';
+            }
+        }
+
+        function updateFileName() {
+            if (fileInput.files.length > 0) {
+                var file = fileInput.files[0];
+                var fileSize = (file.size / 1024 / 1024).toFixed(2);
+                selectedFileName.textContent = file.name + ' (' + fileSize + ' MB)';
+                fileName.classList.add('show');
+                uploadArea.classList.add('has-file');
+
+                // Update icon based on file type
+                var icon = fileName.querySelector('.file-info i');
+                var ext = file.name.split('.').pop().toLowerCase();
+                var iconClass = 'fas fa-file';
+
+                if (ext === 'pdf') iconClass = 'fas fa-file-pdf';
+                else if (['doc', 'docx'].includes(ext)) iconClass = 'fas fa-file-word';
+                else if (['jpg', 'jpeg', 'png', 'gif'].includes(ext)) iconClass = 'fas fa-file-image';
+
+                icon.className = iconClass;
+            }
+        }
+    }
+
+    // Show Toast
+    function showToast(type, title, message) {
+        toast.className = 'toast ' + type;
+        toast.querySelector('.toast-icon i').className = type === 'success' ? 'fas fa-check' : 'fas fa-exclamation';
+        toast.querySelector('.toast-text h4').textContent = title;
+        toast.querySelector('.toast-text p').textContent = message;
+        toast.classList.add('show');
+
+        setTimeout(function() {
+            toast.classList.remove('show');
+        }, 4000);
+    }
+
+    // Global
+    window.showSchemeToast = showToast;
+
+    // Run
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+
+</body>
+</html>

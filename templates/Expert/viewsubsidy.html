@@ -1,0 +1,1130 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="">#}
+{#  <table width="805" height="205" border="1">#}
+{#    <tr>#}
+{#      <th width="137" scope="col">SI/NO</th>#}
+{#      <th width="160" scope="col">Subsidy</th>#}
+{#      <th width="122" scope="col">Details</th>#}
+{#      <th width="79" scope="col">From Date </th>#}
+{#      <th width="106" scope="col">To Date</th>#}
+{#      <th width="161" scope="col">Actions</th>#}
+{#    </tr>#}
+{#      {% for i in data %}#}
+{#    <tr>#}
+{#      <td>&nbsp;{{ forloop.counter }}</td>#}
+{#      <td>&nbsp;{{i.subsidy}}</td>#}
+{#      <td>&nbsp;{{i.subsidy_details}}</td>#}
+{#      <td>&nbsp;{{i.subsidy_fromdate}}</td>#}
+{#      <td>&nbsp;{{i.subsidy_todate}}</td>#}
+{#      <td><div align="center">#}
+{#        <p><a href="/exp_edit_subsidy/{{ i.id }}">Edit</a></p>#}
+{#        <p><a href="/exp_delete_subsidy/{{ i.id }}">Delete</a></p>#}
+{#      </div></td>#}
+{#    </tr>#}
+{#      {% endfor %}#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>View Subsidies</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', Arial, sans-serif;
+        min-height: 100vh;
+        background-color: #E8F5E9;
+        padding: 40px 20px;
+    }
+
+    /* Page Container */
+    .page-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* Page Header */
+    .page-header {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+        padding: 40px 30px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .page-header p {
+        margin-top: 8px;
+        opacity: 0.9;
+        font-size: 14px;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 25px 30px;
+        background: #F1F8E9;
+        border-bottom: 2px solid #C8E6C9;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 25px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .stat-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .stat-icon {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+    }
+
+    .stat-icon.blue {
+        background: linear-gradient(135deg, #42A5F5 0%, #1E88E5 100%);
+    }
+
+    .stat-icon.orange {
+        background: linear-gradient(135deg, #FFA726 0%, #FB8C00 100%);
+    }
+
+    .stat-info h3 {
+        font-size: 22px;
+        color: #1B5E20;
+        font-weight: 800;
+    }
+
+    .stat-info p {
+        font-size: 12px;
+        color: #81C784;
+        font-weight: 600;
+    }
+
+    /* Toolbar */
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        background: white;
+        border-bottom: 1px solid #E8F5E9;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .search-wrapper {
+        flex: 1;
+        max-width: 400px;
+        min-width: 200px;
+        position: relative;
+    }
+
+    .search-wrapper i {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #81C784;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 14px 18px 14px 50px;
+        border: 2px solid #C8E6C9;
+        border-radius: 12px;
+        font-size: 14px;
+        font-family: 'Inter', sans-serif;
+        background: #FAFAFA;
+        transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: #4CAF50;
+        background: white;
+        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+    }
+
+    .search-input::placeholder {
+        color: #A5D6A7;
+    }
+
+    .btn-add {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+    }
+
+    .btn-add:hover {
+        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+    }
+
+    /* Form & Table */
+    #form1 {
+        background: #ffffff;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100% !important;
+        height: auto !important;
+        border: none !important;
+        border-collapse: collapse;
+        min-width: 800px;
+    }
+
+    tr, th, td {
+        border: none !important;
+    }
+
+    /* Table Header */
+    tr:first-child {
+        background: linear-gradient(135deg, #43A047 0%, #388E3C 100%) !important;
+    }
+
+    tr:first-child th {
+        color: #ffffff !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        padding: 18px 15px !important;
+        text-align: left !important;
+        white-space: nowrap;
+    }
+
+    tr:first-child th:first-child {
+        text-align: center !important;
+        width: 70px !important;
+    }
+
+    tr:first-child th:nth-child(2) {
+        width: 160px !important;
+    }
+
+    tr:first-child th:nth-child(3) {
+        width: auto !important;
+    }
+
+    tr:first-child th:nth-child(4),
+    tr:first-child th:nth-child(5) {
+        width: 120px !important;
+        text-align: center !important;
+    }
+
+    tr:first-child th:last-child {
+        text-align: center !important;
+        width: 150px !important;
+    }
+
+    /* Table Body Rows */
+    tr:not(:first-child) {
+        background: #ffffff !important;
+        border-bottom: 1px solid #E8F5E9 !important;
+        transition: all 0.3s ease;
+    }
+
+    tr:not(:first-child):hover {
+        background: #F1F8E9 !important;
+    }
+
+    tr:not(:first-child):nth-child(even) {
+        background: #FAFAFA !important;
+    }
+
+    tr:not(:first-child):nth-child(even):hover {
+        background: #F1F8E9 !important;
+    }
+
+    /* Table Cells */
+    td {
+        padding: 18px 15px !important;
+        vertical-align: middle !important;
+        font-size: 13px;
+        color: #333;
+    }
+
+    /* SI/NO Column */
+    td:first-child {
+        text-align: center !important;
+        font-weight: 800;
+        color: #2E7D32;
+    }
+
+    /* Subsidy Column */
+    td:nth-child(2) {
+        color: #1B5E20;
+        font-weight: 600;
+    }
+
+    /* Details Column */
+    td:nth-child(3) {
+        color: #555;
+        line-height: 1.5;
+    }
+
+    /* Date Columns */
+    td:nth-child(4),
+    td:nth-child(5) {
+        text-align: center !important;
+        white-space: nowrap;
+    }
+
+    /* Actions Column */
+    td:last-child {
+        text-align: center !important;
+    }
+
+    td div[align="center"] {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 8px !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    td div[align="center"] p {
+        margin: 0 !important;
+    }
+
+    /* Action Links */
+    td a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 9px 16px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    td a[href*="edit"] {
+        background: linear-gradient(135deg, #42A5F5 0%, #1E88E5 100%);
+        color: white;
+        box-shadow: 0 3px 10px rgba(33, 150, 243, 0.3);
+    }
+
+    td a[href*="edit"]:hover {
+        background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+    }
+
+    td a[href*="delete"] {
+        background: linear-gradient(135deg, #EF5350 0%, #E53935 100%);
+        color: white;
+        box-shadow: 0 3px 10px rgba(244, 67, 54, 0.3);
+    }
+
+    td a[href*="delete"]:hover {
+        background: linear-gradient(135deg, #E53935 0%, #C62828 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+    }
+
+    /* Enhanced Elements */
+    .serial-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        border-radius: 50%;
+        font-size: 13px;
+        font-weight: 800;
+        color: #2E7D32;
+    }
+
+    .subsidy-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        border-radius: 10px;
+        font-weight: 700;
+        color: #1B5E20;
+        font-size: 13px;
+    }
+
+    .subsidy-badge i {
+        color: #43A047;
+    }
+
+    .details-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        cursor: pointer;
+        padding: 8px 12px;
+        background: #FAFAFA;
+        border-left: 3px solid #4CAF50;
+        border-radius: 0 8px 8px 0;
+        transition: all 0.3s ease;
+        line-height: 1.6;
+    }
+
+    .details-text:hover {
+        background: #F1F8E9;
+        -webkit-line-clamp: unset;
+    }
+
+    .date-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .date-from {
+        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+        color: #1565C0;
+    }
+
+    .date-to {
+        background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+        color: #E65100;
+    }
+
+    /* Duration Badge */
+    .duration-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 10px;
+        background: #E8F5E9;
+        border-radius: 12px;
+        font-size: 10px;
+        color: #2E7D32;
+        font-weight: 600;
+        margin-top: 6px;
+    }
+
+    /* Table Footer */
+    .table-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        background: #F5F5F5;
+        border-top: 2px solid #E8F5E9;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #666;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .footer-info i {
+        color: #4CAF50;
+    }
+
+    .footer-info strong {
+        color: #2E7D32;
+    }
+
+    /* Details Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .modal.show {
+        display: flex;
+    }
+
+    .modal-box {
+        background: white;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 550px;
+        max-height: 80vh;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: modalIn 0.3s ease;
+    }
+
+    @keyframes modalIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9) translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    .modal-header {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+        color: white;
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-header h3 {
+        font-size: 18px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .modal-close {
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        transition: all 0.3s ease;
+    }
+
+    .modal-close:hover {
+        background: rgba(255,255,255,0.3);
+        transform: rotate(90deg);
+    }
+
+    .modal-body {
+        padding: 30px;
+        max-height: 350px;
+        overflow-y: auto;
+        line-height: 1.8;
+        color: #333;
+        font-size: 15px;
+    }
+
+    .modal-footer {
+        padding: 20px 30px;
+        background: #F5F5F5;
+        border-top: 1px solid #E0E0E0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .modal-date {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: #666;
+        font-weight: 600;
+    }
+
+    .modal-date i {
+        color: #43A047;
+    }
+
+    /* Delete Modal */
+    .delete-box {
+        background: white;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        padding: 40px 30px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: modalIn 0.3s ease;
+    }
+
+    .delete-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        font-size: 35px;
+        color: #E53935;
+    }
+
+    .delete-box h3 {
+        color: #333;
+        font-size: 22px;
+        margin-bottom: 12px;
+        font-weight: 800;
+    }
+
+    .delete-box p {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .delete-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .btn-cancel {
+        padding: 14px 30px;
+        background: #E0E0E0;
+        color: #555;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .btn-cancel:hover {
+        background: #BDBDBD;
+        transform: translateY(-2px);
+    }
+
+    .btn-delete {
+        padding: 14px 30px;
+        background: linear-gradient(135deg, #EF5350 0%, #E53935 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .btn-delete:hover {
+        background: linear-gradient(135deg, #E53935 0%, #C62828 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+    }
+
+    /* Status Badge */
+    .status-active {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 12px;
+        background: #E8F5E9;
+        color: #2E7D32;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .status-expired {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 12px;
+        background: #FFEBEE;
+        color: #C62828;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        body {
+            padding: 20px 15px;
+        }
+
+        .page-header {
+            padding: 30px 20px;
+        }
+
+        .page-header h1 {
+            font-size: 22px;
+        }
+
+        .stats-bar {
+            padding: 20px;
+            gap: 12px;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 140px;
+            justify-content: center;
+        }
+
+        .toolbar {
+            flex-direction: column;
+            padding: 15px 20px;
+        }
+
+        .search-wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .btn-add {
+            width: 100%;
+            justify-content: center;
+        }
+
+        #form1 {
+            overflow-x: auto;
+        }
+
+        tr:first-child th {
+            padding: 15px 10px !important;
+            font-size: 10px !important;
+        }
+
+        td {
+            padding: 12px 10px !important;
+            font-size: 12px;
+        }
+
+        td div[align="center"] {
+            flex-direction: column !important;
+            gap: 6px !important;
+        }
+
+        td a {
+            width: 100%;
+            padding: 8px 12px;
+            font-size: 11px;
+        }
+
+        .table-footer {
+            flex-direction: column;
+            text-align: center;
+            padding: 15px 20px;
+        }
+
+        .delete-buttons {
+            flex-direction: column;
+        }
+
+        .btn-cancel, .btn-delete {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .modal-footer {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Details Modal -->
+<div class="modal" id="detailsModal">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h3><i class="fas fa-hand-holding-usd"></i> <span id="modalSubsidyName">Subsidy Details</span></h3>
+            <button class="modal-close" id="closeDetailsModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body" id="modalDetailsBody">
+            <!-- Details will be loaded here -->
+        </div>
+        <div class="modal-footer">
+            <div class="modal-date">
+                <i class="fas fa-calendar-check"></i>
+                <span>From: <strong id="modalFromDate">-</strong></span>
+            </div>
+            <div class="modal-date">
+                <i class="fas fa-calendar-times"></i>
+                <span>To: <strong id="modalToDate">-</strong></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal" id="deleteModal">
+    <div class="delete-box">
+        <div class="delete-icon">
+            <i class="fas fa-trash-alt"></i>
+        </div>
+        <h3>Delete Subsidy?</h3>
+        <p>Are you sure you want to delete this subsidy? This action cannot be undone.</p>
+        <div class="delete-buttons">
+            <button class="btn-cancel" id="cancelDelete">Cancel</button>
+            <a href="#" class="btn-delete" id="confirmDelete">
+                <i class="fas fa-trash-alt"></i> Delete
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Page Container -->
+<div class="page-container">
+    <!-- Header -->
+    <div class="page-header">
+        <h1><i class="fas fa-hand-holding-usd"></i> Subsidy Management</h1>
+        <p>View and manage government subsidies for farmers</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <div class="stat-info">
+                <h3 id="totalSubsidies">0</h3>
+                <p>Total Subsidies</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon blue"><i class="fas fa-check-circle"></i></div>
+            <div class="stat-info">
+                <h3 id="activeSubsidies">0</h3>
+                <p>Active</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon orange"><i class="fas fa-clock"></i></div>
+            <div class="stat-info">
+                <h3 id="expiredSubsidies">0</h3>
+                <p>Expired</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search subsidies...">
+        </div>
+        <a href="/exp_add_subsidy" class="btn-add">
+            <i class="fas fa-plus"></i> Add Subsidy
+        </a>
+    </div>
+
+<!-- ORIGINAL CODE - UNCHANGED -->
+<form id="form1" name="form1" method="post" action="">
+  <table width="805" height="205" border="1">
+    <tr>
+      <th width="137" scope="col">SI/NO</th>
+      <th width="160" scope="col">Subsidy</th>
+      <th width="122" scope="col">Details</th>
+      <th width="79" scope="col">From Date </th>
+      <th width="106" scope="col">To Date</th>
+      <th width="161" scope="col">Actions</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{i.subsidy}}</td>
+      <td>&nbsp;{{i.subsidy_details}}</td>
+      <td>&nbsp;{{i.subsidy_fromdate}}</td>
+      <td>&nbsp;{{i.subsidy_todate}}</td>
+      <td><div align="center">
+        <p><a href="/exp_edit_subsidy/{{ i.id }}">Edit</a></p>
+        <p><a href="/exp_delete_subsidy/{{ i.id }}">Delete</a></p>
+      </div></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+<!-- END ORIGINAL CODE -->
+
+    <!-- Footer -->
+    <div class="table-footer">
+        <div class="footer-info">
+            <i class="fas fa-list"></i>
+            Showing <strong id="showingCount">0</strong> subsidies
+        </div>
+        <div class="footer-info">
+            <i class="fas fa-info-circle"></i>
+            Click on details to view full information
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    // Elements
+    var detailsModal = document.getElementById('detailsModal');
+    var closeDetailsModal = document.getElementById('closeDetailsModal');
+    var deleteModal = document.getElementById('deleteModal');
+    var cancelDelete = document.getElementById('cancelDelete');
+    var confirmDelete = document.getElementById('confirmDelete');
+    var searchInput = document.getElementById('searchInput');
+
+    // Initialize
+    function init() {
+        enhanceTable();
+        updateStats();
+        bindEvents();
+    }
+
+    // Enhance Table
+    function enhanceTable() {
+        var rows = document.querySelectorAll('#form1 table tr:not(:first-child)');
+
+        rows.forEach(function(row) {
+            row.classList.add('data-row');
+            var cells = row.querySelectorAll('td');
+
+            // Serial Number
+            if (cells[0]) {
+                var num = cells[0].textContent.trim();
+                cells[0].innerHTML = '<span class="serial-badge">' + num + '</span>';
+            }
+
+            // Subsidy Name
+            if (cells[1]) {
+                var subsidy = cells[1].textContent.trim();
+                cells[1].innerHTML = '<span class="subsidy-badge"><i class="fas fa-hand-holding-usd"></i> ' + subsidy + '</span>';
+                cells[1].dataset.subsidy = subsidy;
+            }
+
+            // Details
+            if (cells[2]) {
+                var details = cells[2].textContent.trim();
+                cells[2].innerHTML = '<div class="details-text">' + details + '</div>';
+                cells[2].dataset.details = details;
+
+                cells[2].querySelector('.details-text').addEventListener('click', function() {
+                    openDetailsModal(
+                        cells[1] ? cells[1].dataset.subsidy : 'Subsidy',
+                        details,
+                        cells[3] ? cells[3].dataset.fromdate : '-',
+                        cells[4] ? cells[4].dataset.todate : '-'
+                    );
+                });
+            }
+
+            // From Date
+            if (cells[3]) {
+                var fromDate = cells[3].textContent.trim();
+                cells[3].innerHTML = '<span class="date-badge date-from"><i class="fas fa-play"></i> ' + fromDate + '</span>';
+                cells[3].dataset.fromdate = fromDate;
+            }
+
+            // To Date
+            if (cells[4]) {
+                var toDate = cells[4].textContent.trim();
+                cells[4].innerHTML = '<span class="date-badge date-to"><i class="fas fa-stop"></i> ' + toDate + '</span>';
+                cells[4].dataset.todate = toDate;
+            }
+
+            // Actions
+            if (cells[5]) {
+                var editLink = cells[5].querySelector('a[href*="edit"]');
+                var deleteLink = cells[5].querySelector('a[href*="delete"]');
+
+                if (editLink) {
+                    editLink.innerHTML = '<i class="fas fa-edit"></i> Edit';
+                }
+
+                if (deleteLink) {
+                    deleteLink.innerHTML = '<i class="fas fa-trash-alt"></i> Delete';
+                    deleteLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        openDeleteModal(this.href);
+                    });
+                }
+            }
+        });
+    }
+
+    // Update Stats
+    function updateStats() {
+        var rows = document.querySelectorAll('.data-row');
+        var total = rows.length;
+        var active = 0;
+        var expired = 0;
+        var today = new Date();
+
+        rows.forEach(function(row) {
+            var toDateCell = row.querySelector('td:nth-child(5)');
+            if (toDateCell && toDateCell.dataset.todate) {
+                var toDate = new Date(toDateCell.dataset.todate);
+                if (toDate >= today) {
+                    active++;
+                } else {
+                    expired++;
+                }
+            }
+        });
+
+        document.getElementById('totalSubsidies').textContent = total;
+        document.getElementById('activeSubsidies').textContent = active;
+        document.getElementById('expiredSubsidies').textContent = expired;
+        document.getElementById('showingCount').textContent = total;
+    }
+
+    // Open Details Modal
+    function openDetailsModal(name, details, fromDate, toDate) {
+        document.getElementById('modalSubsidyName').textContent = name;
+        document.getElementById('modalDetailsBody').textContent = details;
+        document.getElementById('modalFromDate').textContent = fromDate;
+        document.getElementById('modalToDate').textContent = toDate;
+        detailsModal.classList.add('show');
+    }
+
+    // Close Details Modal
+    function closeDetailsModalFn() {
+        detailsModal.classList.remove('show');
+    }
+
+    // Open Delete Modal
+    function openDeleteModal(url) {
+        confirmDelete.href = url;
+        deleteModal.classList.add('show');
+    }
+
+    // Close Delete Modal
+    function closeDeleteModalFn() {
+        deleteModal.classList.remove('show');
+    }
+
+    // Search
+    function searchSubsidies() {
+        var query = searchInput.value.toLowerCase().trim();
+        var rows = document.querySelectorAll('.data-row');
+        var visible = 0;
+
+        rows.forEach(function(row) {
+            var subsidyCell = row.querySelector('td:nth-child(2)');
+            var detailsCell = row.querySelector('td:nth-child(3)');
+            var subsidyText = subsidyCell ? (subsidyCell.dataset.subsidy || '').toLowerCase() : '';
+            var detailsText = detailsCell ? (detailsCell.dataset.details || '').toLowerCase() : '';
+
+            if (subsidyText.includes(query) || detailsText.includes(query)) {
+                row.style.display = '';
+                visible++;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        document.getElementById('showingCount').textContent = visible;
+    }
+
+    // Bind Events
+    function bindEvents() {
+        closeDetailsModal.addEventListener('click', closeDetailsModalFn);
+        detailsModal.addEventListener('click', function(e) {
+            if (e.target === detailsModal) closeDetailsModalFn();
+        });
+
+        cancelDelete.addEventListener('click', closeDeleteModalFn);
+        deleteModal.addEventListener('click', function(e) {
+            if (e.target === deleteModal) closeDeleteModalFn();
+        });
+
+        searchInput.addEventListener('input', searchSubsidies);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeDetailsModalFn();
+                closeDeleteModalFn();
+            }
+        });
+    }
+
+    // Run
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+
+</body>
+</html>

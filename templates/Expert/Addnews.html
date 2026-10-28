@@ -1,0 +1,1497 @@
+#}{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/exp_add_news_post">#}
+{#  <table width="811" height="228" border="1">#}
+{#    <tr>#}
+{#      <th colspan="2" scope="row">Add News</th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th width="178" height="123" scope="row">News</th>#}
+{#      <td width="617"><label for="textarea"></label>#}
+{#      <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th height="68" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Add" /></th>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{#{% extends "Expert/Expertindex.html" %}#}
+{#{% block body %}#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Add News</title>#}
+{#<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">#}
+{#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">#}
+{#<style>#}
+{#    * {#}
+{#        margin: 0;#}
+{#        padding: 0;#}
+{#        box-sizing: border-box;#}
+{#    }#}
+{##}
+{#    body {#}
+{#        font-family: 'Inter', Arial, sans-serif;#}
+{#        min-height: 100vh;#}
+{#        display: flex;#}
+{#        justify-content: center;#}
+{#        align-items: center;#}
+{#        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 50%, #A5D6A7 100%);#}
+{#        padding: 20px;#}
+{#    }#}
+{##}
+{#    #form1 {#}
+{#        background: #ffffff;#}
+{#        border-radius: 20px;#}
+{#        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);#}
+{#        padding: 0;#}
+{#        width: 100%;#}
+{#        max-width: 700px;#}
+{#        overflow: hidden;#}
+{#        position: relative;#}
+{#        transition: all 0.3s ease;#}
+{#    }#}
+{##}
+{#    #form1:hover {#}
+{#        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);#}
+{#        transform: translateY(-2px);#}
+{#    }#}
+{##}
+{#    table {#}
+{#        width: 100% !important;#}
+{#        height: auto !important;#}
+{#        border: none !important;#}
+{#        border-collapse: collapse;#}
+{#    }#}
+{##}
+{#    tr, th, td {#}
+{#        border: none !important;#}
+{#    }#}
+{##}
+{#    /* Header Row */#}
+{#    tr:first-child th {#}
+{#        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%) !important;#}
+{#        padding: 40px 30px !important;#}
+{#        text-align: center !important;#}
+{#        color: #ffffff !important;#}
+{#        font-size: 28px !important;#}
+{#        font-weight: 700 !important;#}
+{#    }#}
+{##}
+{#    /* Content Rows */#}
+{#    tr:not(:first-child):not(:last-child) {#}
+{#        background: #ffffff;#}
+{#        border-bottom: 1px solid #E8F5E9 !important;#}
+{#    }#}
+{##}
+{#    tr:not(:first-child):not(:last-child):hover {#}
+{#        background: #F1F8E9;#}
+{#    }#}
+{##}
+{#    /* Label Cells */#}
+{#    th[scope="row"] {#}
+{#        background: transparent !important;#}
+{#        color: #1B5E20 !important;#}
+{#        font-size: 15px !important;#}
+{#        font-weight: 600 !important;#}
+{#        text-align: left !important;#}
+{#        padding: 30px 15px 30px 30px !important;#}
+{#        width: 150px !important;#}
+{#        vertical-align: top !important;#}
+{#    }#}
+{##}
+{#    /* Input Cells */#}
+{#    td {#}
+{#        padding: 25px 30px 25px 10px !important;#}
+{#        vertical-align: middle !important;#}
+{#    }#}
+{##}
+{#    td label {#}
+{#        display: none !important;#}
+{#    }#}
+{##}
+{#    /* Textarea Styling */#}
+{#    textarea {#}
+{#        width: 100% !important;#}
+{#        min-height: 180px !important;#}
+{#        padding: 18px 20px !important;#}
+{#        font-size: 15px !important;#}
+{#        font-weight: 500 !important;#}
+{#        font-family: 'Inter', Arial, sans-serif !important;#}
+{#        color: #1B5E20 !important;#}
+{#        background: #FAFAFA !important;#}
+{#        border: 2px solid #C8E6C9 !important;#}
+{#        border-radius: 12px !important;#}
+{#        outline: none !important;#}
+{#        transition: all 0.3s ease !important;#}
+{#        resize: vertical !important;#}
+{#        line-height: 1.6 !important;#}
+{#    }#}
+{##}
+{#    textarea::placeholder {#}
+{#        color: #81C784 !important;#}
+{#        font-weight: 400 !important;#}
+{#    }#}
+{##}
+{#    textarea:focus {#}
+{#        border-color: #4CAF50 !important;#}
+{#        background: #ffffff !important;#}
+{#        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15) !important;#}
+{#    }#}
+{##}
+{#    /* Character Counter */#}
+{#    .char-counter {#}
+{#        text-align: right;#}
+{#        font-size: 12px;#}
+{#        color: #81C784;#}
+{#        margin-top: 8px;#}
+{#        font-weight: 500;#}
+{#    }#}
+{##}
+{#    .char-counter.warning {#}
+{#        color: #FF9800;#}
+{#    }#}
+{##}
+{#    .char-counter.danger {#}
+{#        color: #F44336;#}
+{#    }#}
+{##}
+{#    /* Footer Row */#}
+{#    tr:last-child th {#}
+{#        background: #F5F5F5 !important;#}
+{#        padding: 30px !important;#}
+{#        text-align: center !important;#}
+{#        border-top: 2px solid #E8F5E9 !important;#}
+{#    }#}
+{##}
+{#    /* Submit Button */#}
+{#    input[type="submit"],#}
+{#    input#button {#}
+{#        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%) !important;#}
+{#        color: #ffffff !important;#}
+{#        border: none !important;#}
+{#        padding: 16px 50px !important;#}
+{#        font-size: 16px !important;#}
+{#        font-weight: 700 !important;#}
+{#        font-family: 'Inter', Arial, sans-serif !important;#}
+{#        border-radius: 12px !important;#}
+{#        cursor: pointer !important;#}
+{#        text-transform: uppercase !important;#}
+{#        letter-spacing: 1.5px !important;#}
+{#        box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3) !important;#}
+{#        transition: all 0.3s ease !important;#}
+{#        position: relative;#}
+{#        overflow: hidden;#}
+{#    }#}
+{##}
+{#    input[type="submit"]:hover,#}
+{#    input#button:hover {#}
+{#        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%) !important;#}
+{#        transform: translateY(-2px) !important;#}
+{#        box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4) !important;#}
+{#    }#}
+{##}
+{#    input[type="submit"]:active,#}
+{#    input#button:active {#}
+{#        transform: translateY(0) !important;#}
+{#    }#}
+{##}
+{#    /* Button Loading State */#}
+{#    .btn-loading {#}
+{#        pointer-events: none !important;#}
+{#        opacity: 0.8 !important;#}
+{#    }#}
+{##}
+{#    /* Success Message Tooltip */#}
+{#    .success-tooltip {#}
+{#        position: fixed;#}
+{#        top: 30px;#}
+{#        right: 30px;#}
+{#        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);#}
+{#        color: white;#}
+{#        padding: 18px 25px;#}
+{#        border-radius: 12px;#}
+{#        box-shadow: 0 10px 30px rgba(46, 125, 50, 0.3);#}
+{#        display: flex;#}
+{#        align-items: center;#}
+{#        gap: 12px;#}
+{#        transform: translateX(150%);#}
+{#        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);#}
+{#        z-index: 10000;#}
+{#    }#}
+{##}
+{#    .success-tooltip.show {#}
+{#        transform: translateX(0);#}
+{#    }#}
+{##}
+{#    .success-tooltip i {#}
+{#        font-size: 22px;#}
+{#    }#}
+{##}
+{#    .success-tooltip-content h4 {#}
+{#        font-size: 15px;#}
+{#        font-weight: 700;#}
+{#        margin-bottom: 3px;#}
+{#    }#}
+{##}
+{#    .success-tooltip-content p {#}
+{#        font-size: 13px;#}
+{#        opacity: 0.9;#}
+{#    }#}
+{##}
+{#    /* Textarea wrapper for enhancements */#}
+{#    .textarea-wrapper {#}
+{#        position: relative;#}
+{#    }#}
+{##}
+{#    .textarea-toolbar {#}
+{#        display: flex;#}
+{#        gap: 8px;#}
+{#        margin-bottom: 10px;#}
+{#        padding: 10px;#}
+{#        background: #F5F5F5;#}
+{#        border-radius: 8px;#}
+{#    }#}
+{##}
+{#    .toolbar-btn {#}
+{#        width: 35px;#}
+{#        height: 35px;#}
+{#        border: none;#}
+{#        background: white;#}
+{#        border-radius: 6px;#}
+{#        cursor: pointer;#}
+{#        color: #666;#}
+{#        transition: all 0.2s ease;#}
+{#        display: flex;#}
+{#        align-items: center;#}
+{#        justify-content: center;#}
+{#    }#}
+{##}
+{#    .toolbar-btn:hover {#}
+{#        background: #E8F5E9;#}
+{#        color: #2E7D32;#}
+{#    }#}
+{##}
+{#    /* Preview Section */#}
+{#    .preview-section {#}
+{#        margin-top: 15px;#}
+{#        padding: 15px;#}
+{#        background: #F9FBE7;#}
+{#        border: 2px dashed #C5E1A5;#}
+{#        border-radius: 10px;#}
+{#        display: none;#}
+{#    }#}
+{##}
+{#    .preview-section.show {#}
+{#        display: block;#}
+{#    }#}
+{##}
+{#    .preview-header {#}
+{#        display: flex;#}
+{#        align-items: center;#}
+{#        gap: 8px;#}
+{#        color: #558B2F;#}
+{#        font-weight: 600;#}
+{#        font-size: 13px;#}
+{#        margin-bottom: 10px;#}
+{#    }#}
+{##}
+{#    .preview-content {#}
+{#        color: #33691E;#}
+{#        font-size: 14px;#}
+{#        line-height: 1.6;#}
+{#        white-space: pre-wrap;#}
+{#    }#}
+{##}
+{#    /* Responsive Design */#}
+{#    @media (max-width: 600px) {#}
+{#        body {#}
+{#            padding: 15px;#}
+{#        }#}
+{##}
+{#        tr:first-child th {#}
+{#            font-size: 24px !important;#}
+{#            padding: 30px 20px !important;#}
+{#        }#}
+{##}
+{#        th[scope="row"] {#}
+{#            display: block !important;#}
+{#            width: 100% !important;#}
+{#            padding: 20px 20px 10px 20px !important;#}
+{#            text-align: center !important;#}
+{#        }#}
+{##}
+{#        td {#}
+{#            display: block !important;#}
+{#            padding: 0 20px 25px 20px !important;#}
+{#        }#}
+{##}
+{#        textarea {#}
+{#            min-height: 150px !important;#}
+{#        }#}
+{##}
+{#        input[type="submit"] {#}
+{#            width: 100% !important;#}
+{#        }#}
+{##}
+{#        .success-tooltip {#}
+{#            left: 15px;#}
+{#            right: 15px;#}
+{#            top: 15px;#}
+{#        }#}
+{##}
+{#        .textarea-toolbar {#}
+{#            flex-wrap: wrap;#}
+{#        }#}
+{#    }#}
+{#</style>#}
+{#</head>#}
+{##}
+{#<body>#}
+{##}
+{#<!-- Success Tooltip -->#}
+{#<div class="success-tooltip" id="successTooltip">#}
+{#    <i class="fas fa-check-circle"></i>#}
+{#    <div class="success-tooltip-content">#}
+{#        <h4>Success!</h4>#}
+{#        <p>News has been added successfully</p>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#<form id="form1" name="form1" method="post" action="/exp_add_news_post">#}
+{#  <table width="811" height="228" border="1">#}
+{#    <tr>#}
+{#      <th colspan="2" scope="row">#}
+{#          <i class="fas fa-newspaper" style="margin-right: 12px;"></i>Add News#}
+{#      </th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th width="178" height="123" scope="row">#}
+{#          <i class="fas fa-pen-fancy" style="margin-right: 8px; color: #43A047;"></i>News#}
+{#      </th>#}
+{#      <td width="617">#}
+{#          <label for="textarea"></label>#}
+{#          <div class="textarea-wrapper">#}
+{#              <!-- Optional Toolbar -->#}
+{#              <div class="textarea-toolbar" id="textareaToolbar">#}
+{#                  <button type="button" class="toolbar-btn" title="Bold" onclick="insertFormat('**', '**')">#}
+{#                      <i class="fas fa-bold"></i>#}
+{#                  </button>#}
+{#                  <button type="button" class="toolbar-btn" title="Italic" onclick="insertFormat('_', '_')">#}
+{#                      <i class="fas fa-italic"></i>#}
+{#                  </button>#}
+{#                  <button type="button" class="toolbar-btn" title="Heading" onclick="insertFormat('## ', '')">#}
+{#                      <i class="fas fa-heading"></i>#}
+{#                  </button>#}
+{#                  <button type="button" class="toolbar-btn" title="Bullet Point" onclick="insertFormat('• ', '')">#}
+{#                      <i class="fas fa-list-ul"></i>#}
+{#                  </button>#}
+{#                  <button type="button" class="toolbar-btn" title="Preview" onclick="togglePreview()">#}
+{#                      <i class="fas fa-eye"></i>#}
+{#                  </button>#}
+{#                  <button type="button" class="toolbar-btn" title="Clear" onclick="clearTextarea()">#}
+{#                      <i class="fas fa-eraser"></i>#}
+{#                  </button>#}
+{#              </div>#}
+{##}
+{#              <textarea name="textarea" id="textarea" cols="45" rows="5" placeholder="Write your news article here..."></textarea>#}
+{##}
+{#              <div class="char-counter" id="charCounter">#}
+{#                  <i class="fas fa-font"></i> <span id="charCount">0</span> characters#}
+{#              </div>#}
+{##}
+{#              <!-- Preview Section -->#}
+{#              <div class="preview-section" id="previewSection">#}
+{#                  <div class="preview-header">#}
+{#                      <i class="fas fa-eye"></i> Preview#}
+{#                  </div>#}
+{#                  <div class="preview-content" id="previewContent"></div>#}
+{#              </div>#}
+{#          </div>#}
+{#      </td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th height="68" colspan="2" scope="row">#}
+{#          <input type="submit" name="button" id="button" value="Publish News" />#}
+{#      </th>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{##}
+{#<script>#}
+{#(function() {#}
+{#    'use strict';#}
+{##}
+{#    var textarea = document.getElementById('textarea');#}
+{#    var charCount = document.getElementById('charCount');#}
+{#    var charCounter = document.getElementById('charCounter');#}
+{#    var previewSection = document.getElementById('previewSection');#}
+{#    var previewContent = document.getElementById('previewContent');#}
+{#    var successTooltip = document.getElementById('successTooltip');#}
+{#    var form = document.getElementById('form1');#}
+{#    var button = document.getElementById('button');#}
+{##}
+{#    // Character Counter#}
+{#    function updateCharCount() {#}
+{#        var count = textarea.value.length;#}
+{#        charCount.textContent = count;#}
+{##}
+{#        charCounter.classList.remove('warning', 'danger');#}
+{##}
+{#        if (count > 900) {#}
+{#            charCounter.classList.add('danger');#}
+{#        } else if (count > 700) {#}
+{#            charCounter.classList.add('warning');#}
+{#        }#}
+{#    }#}
+{##}
+{#    // Insert formatting#}
+{#    window.insertFormat = function(before, after) {#}
+{#        var start = textarea.selectionStart;#}
+{#        var end = textarea.selectionEnd;#}
+{#        var text = textarea.value;#}
+{#        var selectedText = text.substring(start, end);#}
+{##}
+{#        var newText = text.substring(0, start) + before + selectedText + after + text.substring(end);#}
+{#        textarea.value = newText;#}
+{##}
+{#        textarea.focus();#}
+{#        textarea.selectionStart = start + before.length;#}
+{#        textarea.selectionEnd = end + before.length;#}
+{##}
+{#        updateCharCount();#}
+{#    };#}
+{##}
+{#    // Toggle Preview#}
+{#    window.togglePreview = function() {#}
+{#        previewSection.classList.toggle('show');#}
+{#        if (previewSection.classList.contains('show')) {#}
+{#            previewContent.textContent = textarea.value || 'Nothing to preview...';#}
+{#        }#}
+{#    };#}
+{##}
+{#    // Clear Textarea#}
+{#    window.clearTextarea = function() {#}
+{#        if (textarea.value && confirm('Are you sure you want to clear the content?')) {#}
+{#            textarea.value = '';#}
+{#            updateCharCount();#}
+{#            previewSection.classList.remove('show');#}
+{#        }#}
+{#    };#}
+{##}
+{#    // Show Success Message#}
+{#    function showSuccess() {#}
+{#        successTooltip.classList.add('show');#}
+{#        setTimeout(function() {#}
+{#            successTooltip.classList.remove('show');#}
+{#        }, 4000);#}
+{#    }#}
+{##}
+{#    // Auto-resize textarea#}
+{#    function autoResize() {#}
+{#        textarea.style.height = 'auto';#}
+{#        textarea.style.height = Math.max(180, textarea.scrollHeight) + 'px';#}
+{#    }#}
+{##}
+{#    // Form submission#}
+{#    function handleSubmit(e) {#}
+{#        if (!textarea.value.trim()) {#}
+{#            e.preventDefault();#}
+{#            textarea.style.borderColor = '#F44336';#}
+{#            textarea.style.boxShadow = '0 0 0 4px rgba(244, 67, 54, 0.15)';#}
+{#            textarea.setAttribute('placeholder', 'Please enter news content...');#}
+{#            textarea.focus();#}
+{##}
+{#            setTimeout(function() {#}
+{#                textarea.style.borderColor = '';#}
+{#                textarea.style.boxShadow = '';#}
+{#            }, 2000);#}
+{#            return;#}
+{#        }#}
+{##}
+{#        // Show loading state#}
+{#        button.value = 'Publishing...';#}
+{#        button.classList.add('btn-loading');#}
+{##}
+{#        // For demo - uncomment to test success animation#}
+{#        /*#}
+{#        e.preventDefault();#}
+{#        setTimeout(function() {#}
+{#            showSuccess();#}
+{#            button.value = 'Publish News';#}
+{#            button.classList.remove('btn-loading');#}
+{#            textarea.value = '';#}
+{#            updateCharCount();#}
+{#        }, 1500);#}
+{#        */#}
+{#    }#}
+{##}
+{#    // Initialize#}
+{#    function init() {#}
+{#        textarea.addEventListener('input', function() {#}
+{#            updateCharCount();#}
+{#            autoResize();#}
+{##}
+{#            if (previewSection.classList.contains('show')) {#}
+{#                previewContent.textContent = textarea.value || 'Nothing to preview...';#}
+{#            }#}
+{#        });#}
+{##}
+{#        textarea.addEventListener('focus', function() {#}
+{#            this.parentNode.parentNode.parentNode.style.background = '#F1F8E9';#}
+{#        });#}
+{##}
+{#        textarea.addEventListener('blur', function() {#}
+{#            this.parentNode.parentNode.parentNode.style.background = '';#}
+{#        });#}
+{##}
+{#        form.addEventListener('submit', handleSubmit);#}
+{##}
+{#        updateCharCount();#}
+{#    }#}
+{##}
+{#    // Expose showSuccess for external use#}
+{#    window.showNewsSuccess = showSuccess;#}
+{##}
+{#    if (document.readyState === 'loading') {#}
+{#        document.addEventListener('DOMContentLoaded', init);#}
+{#    } else {#}
+{#        init();#}
+{#    }#}
+{#})();#}
+{#</script>#}
+{##}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+{% extends "Expert/Expertindex.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Add News</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    .news-container {
+        font-family: 'Inter', Arial, sans-serif;
+        min-height: calc(100vh - 100px);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 20px;
+    }
+
+    #form1 {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        width: 100%;
+        max-width: 750px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    #form1:hover {
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+
+    table {
+        width: 100% !important;
+        height: auto !important;
+        border: none !important;
+        border-collapse: collapse;
+    }
+
+    tr, th, td {
+        border: none !important;
+    }
+
+    tr:first-child th {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%) !important;
+        padding: 40px 30px !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        font-size: 28px !important;
+        font-weight: 700 !important;
+    }
+
+    tr:not(:first-child):not(:last-child) {
+        background: #ffffff;
+        border-bottom: 1px solid #E8F5E9 !important;
+    }
+
+    tr:not(:first-child):not(:last-child):hover {
+        background: #F1F8E9;
+    }
+
+    th[scope="row"] {
+        background: transparent !important;
+        color: #1B5E20 !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        text-align: left !important;
+        padding: 30px 15px 30px 30px !important;
+        width: 150px !important;
+        vertical-align: top !important;
+    }
+
+    td {
+        padding: 25px 30px 25px 10px !important;
+        vertical-align: middle !important;
+    }
+
+    td label {
+        display: none !important;
+    }
+
+    textarea {
+        width: 100% !important;
+        min-height: 200px !important;
+        padding: 18px 20px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        color: #1B5E20 !important;
+        background: #FAFAFA !important;
+        border: 2px solid #C8E6C9 !important;
+        border-radius: 12px !important;
+        outline: none !important;
+        transition: all 0.3s ease !important;
+        resize: vertical !important;
+        line-height: 1.7 !important;
+    }
+
+    textarea::placeholder {
+        color: #81C784 !important;
+        font-weight: 400 !important;
+    }
+
+    textarea:focus {
+        border-color: #4CAF50 !important;
+        background: #ffffff !important;
+        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15) !important;
+    }
+
+    textarea.error {
+        border-color: #F44336 !important;
+        box-shadow: 0 0 0 4px rgba(244, 67, 54, 0.15) !important;
+        animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20%, 60% { transform: translateX(-5px); }
+        40%, 80% { transform: translateX(5px); }
+    }
+
+    tr:last-child th {
+        background: #F5F5F5 !important;
+        padding: 30px !important;
+        text-align: center !important;
+        border-top: 2px solid #E8F5E9 !important;
+    }
+
+    input[type="submit"],
+    input#button {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        padding: 16px 50px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        border-radius: 12px !important;
+        cursor: pointer !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    input[type="submit"]:hover,
+    input#button:hover {
+        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4) !important;
+    }
+
+    .btn-loading {
+        pointer-events: none !important;
+        opacity: 0.7 !important;
+    }
+
+    /* Textarea Wrapper */
+    .textarea-wrapper {
+        position: relative;
+    }
+
+    /* Toolbar Styles */
+    .textarea-toolbar {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 12px;
+        padding: 10px 12px;
+        background: linear-gradient(135deg, #F5F5F5 0%, #EEEEEE 100%);
+        border-radius: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .toolbar-btn {
+        width: 36px;
+        height: 36px;
+        border: none;
+        background: white;
+        border-radius: 8px;
+        cursor: pointer;
+        color: #666;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .toolbar-btn:hover {
+        background: #E8F5E9;
+        color: #2E7D32;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .toolbar-btn:active {
+        transform: translateY(0);
+        background: #C8E6C9;
+    }
+
+    .toolbar-btn.active {
+        background: #2E7D32;
+        color: white;
+    }
+
+    .toolbar-divider {
+        width: 1px;
+        height: 24px;
+        background: #DDD;
+        margin: 0 6px;
+    }
+
+    /* Character Counter */
+    .char-counter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        padding: 10px 14px;
+        background: #F1F8E9;
+        border-radius: 8px;
+        font-size: 13px;
+        color: #558B2F;
+        font-weight: 500;
+    }
+
+    .char-counter.warning {
+        background: #FFF8E1;
+        color: #F57C00;
+    }
+
+    .char-counter.danger {
+        background: #FFEBEE;
+        color: #E53935;
+    }
+
+    .char-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .char-progress {
+        width: 120px;
+        height: 6px;
+        background: #E0E0E0;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .char-progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #43A047, #2E7D32);
+        border-radius: 3px;
+        transition: width 0.3s ease, background 0.3s ease;
+    }
+
+    .char-progress-bar.warning {
+        background: linear-gradient(90deg, #FF9800, #F57C00);
+    }
+
+    .char-progress-bar.danger {
+        background: linear-gradient(90deg, #F44336, #D32F2F);
+    }
+
+    /* Preview Section */
+    .preview-section {
+        margin-top: 15px;
+        background: linear-gradient(135deg, #F1F8E9 0%, #DCEDC8 100%);
+        border: 2px dashed #AED581;
+        border-radius: 12px;
+        overflow: hidden;
+        display: none;
+        animation: slideDown 0.3s ease;
+    }
+
+    .preview-section.show {
+        display: block;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; max-height: 0; }
+        to { opacity: 1; max-height: 500px; }
+    }
+
+    .preview-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 15px;
+        background: rgba(139, 195, 74, 0.3);
+        border-bottom: 1px solid #AED581;
+    }
+
+    .preview-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #558B2F;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .preview-close {
+        background: none;
+        border: none;
+        color: #7CB342;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px 8px;
+        border-radius: 5px;
+        transition: all 0.2s ease;
+    }
+
+    .preview-close:hover {
+        color: #558B2F;
+        background: rgba(255,255,255,0.5);
+    }
+
+    .preview-content {
+        color: #33691E;
+        font-size: 14px;
+        line-height: 1.8;
+        white-space: pre-wrap;
+        padding: 20px;
+        background: white;
+        margin: 15px;
+        border-radius: 8px;
+        min-height: 80px;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    /* Success Tooltip */
+    .success-tooltip {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+        color: white;
+        padding: 18px 24px;
+        border-radius: 14px;
+        box-shadow: 0 10px 40px rgba(46, 125, 50, 0.4);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        transform: translateX(150%);
+        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 10000;
+    }
+
+    .success-tooltip.show {
+        transform: translateX(0);
+    }
+
+    .tooltip-icon {
+        width: 45px;
+        height: 45px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .success-tooltip .tooltip-icon {
+        animation: successPulse 1s ease infinite;
+    }
+
+    @keyframes successPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+
+    .tooltip-content h4 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 3px;
+    }
+
+    .tooltip-content p {
+        font-size: 13px;
+        opacity: 0.9;
+    }
+
+    /* Error Tooltip */
+    .error-tooltip {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, #F44336 0%, #D32F2F 100%);
+        color: white;
+        padding: 18px 24px;
+        border-radius: 14px;
+        box-shadow: 0 10px 40px rgba(244, 67, 54, 0.4);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        transform: translateX(150%);
+        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 10000;
+    }
+
+    .error-tooltip.show {
+        transform: translateX(0);
+    }
+
+    /* Word Count Badge */
+    .word-count-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        background: #E8F5E9;
+        border-radius: 20px;
+        font-size: 12px;
+        color: #2E7D32;
+        font-weight: 600;
+        margin-top: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .news-container {
+            padding: 20px 15px;
+        }
+
+        tr:first-child th {
+            font-size: 22px !important;
+            padding: 30px 20px !important;
+        }
+
+        th[scope="row"] {
+            display: block !important;
+            width: 100% !important;
+            padding: 20px 20px 10px 20px !important;
+            text-align: center !important;
+        }
+
+        td {
+            display: block !important;
+            padding: 0 20px 25px 20px !important;
+        }
+
+        textarea {
+            min-height: 160px !important;
+        }
+
+        input[type="submit"] {
+            width: 100% !important;
+        }
+
+        .success-tooltip,
+        .error-tooltip {
+            left: 15px;
+            right: 15px;
+            top: 15px;
+        }
+
+        .textarea-toolbar {
+            justify-content: center;
+        }
+
+        .char-counter {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .char-progress {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Success Tooltip -->
+<div class="success-tooltip" id="successTooltip">
+    <div class="tooltip-icon">
+        <i class="fas fa-check"></i>
+    </div>
+    <div class="tooltip-content">
+        <h4>Published Successfully!</h4>
+        <p>Your news article is now live</p>
+    </div>
+</div>
+
+<!-- Error Tooltip -->
+<div class="error-tooltip" id="errorTooltip">
+    <div class="tooltip-icon">
+        <i class="fas fa-exclamation"></i>
+    </div>
+    <div class="tooltip-content">
+        <h4>Oops!</h4>
+        <p>Please enter news content first</p>
+    </div>
+</div>
+
+<div class="news-container">
+    <form id="form1" name="form1" method="post" action="/exp_add_news_post">
+      <table width="811" height="228" border="1">
+        <tr>
+          <th colspan="2" scope="row">
+              <i class="fas fa-newspaper" style="margin-right: 12px;"></i>Add News
+          </th>
+        </tr>
+        <tr>
+          <th width="178" height="123" scope="row">
+              <i class="fas fa-pen-fancy" style="margin-right: 8px; color: #43A047;"></i>News
+              <div class="word-count-badge">
+                  <i class="fas fa-file-word"></i>
+                  <span id="wordCount">0</span> words
+              </div>
+          </th>
+          <td width="617">
+              <label for="textarea"></label>
+              <div class="textarea-wrapper">
+                  <!-- Toolbar -->
+                  <div class="textarea-toolbar">
+                      <button type="button" class="toolbar-btn" id="btnBold" title="Bold (Ctrl+B)">
+                          <i class="fas fa-bold"></i>
+                      </button>
+                      <button type="button" class="toolbar-btn" id="btnItalic" title="Italic (Ctrl+I)">
+                          <i class="fas fa-italic"></i>
+                      </button>
+                      <button type="button" class="toolbar-btn" id="btnUnderline" title="Underline (Ctrl+U)">
+                          <i class="fas fa-underline"></i>
+                      </button>
+                      <div class="toolbar-divider"></div>
+                      <button type="button" class="toolbar-btn" id="btnHeading" title="Heading">
+                          <i class="fas fa-heading"></i>
+                      </button>
+                      <button type="button" class="toolbar-btn" id="btnQuote" title="Quote">
+                          <i class="fas fa-quote-left"></i>
+                      </button>
+                      <button type="button" class="toolbar-btn" id="btnBullet" title="Bullet List">
+                          <i class="fas fa-list-ul"></i>
+                      </button>
+                      <button type="button" class="toolbar-btn" id="btnNumber" title="Numbered List">
+                          <i class="fas fa-list-ol"></i>
+                      </button>
+                      <div class="toolbar-divider"></div>
+                      <button type="button" class="toolbar-btn" id="btnPreview" title="Preview">
+                          <i class="fas fa-eye"></i>
+                      </button>
+                      <button type="button" class="toolbar-btn" id="btnClear" title="Clear All">
+                          <i class="fas fa-trash-alt"></i>
+                      </button>
+                      <button type="button" class="toolbar-btn" id="btnUndo" title="Undo (Ctrl+Z)">
+                          <i class="fas fa-undo"></i>
+                      </button>
+                  </div>
+
+                  <textarea name="textarea" id="textarea" cols="45" rows="5" placeholder="Write your news article here..."></textarea>
+
+                  <!-- Character Counter -->
+                  <div class="char-counter" id="charCounter">
+                      <div class="char-info">
+                          <span><i class="fas fa-keyboard"></i> <span id="charCount">0</span> / 1000</span>
+                      </div>
+                      <div class="char-progress">
+                          <div class="char-progress-bar" id="charProgressBar"></div>
+                      </div>
+                  </div>
+
+                  <!-- Preview Section -->
+                  <div class="preview-section" id="previewSection">
+                      <div class="preview-header">
+                          <div class="preview-title">
+                              <i class="fas fa-eye"></i> Live Preview
+                          </div>
+                          <button type="button" class="preview-close" id="previewClose">
+                              <i class="fas fa-times"></i>
+                          </button>
+                      </div>
+                      <div class="preview-content" id="previewContent">Nothing to preview yet...</div>
+                  </div>
+              </div>
+          </td>
+        </tr>
+        <tr>
+          <th height="68" colspan="2" scope="row">
+              <input type="submit" name="button" id="button" value="Publish News" />
+          </th>
+        </tr>
+      </table>
+    </form>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    // ============ DOM Elements ============
+    var textarea = document.getElementById('textarea');
+    var charCount = document.getElementById('charCount');
+    var charCounter = document.getElementById('charCounter');
+    var charProgressBar = document.getElementById('charProgressBar');
+    var wordCount = document.getElementById('wordCount');
+    var previewSection = document.getElementById('previewSection');
+    var previewContent = document.getElementById('previewContent');
+    var previewClose = document.getElementById('previewClose');
+    var successTooltip = document.getElementById('successTooltip');
+    var errorTooltip = document.getElementById('errorTooltip');
+    var form = document.getElementById('form1');
+    var submitBtn = document.getElementById('button');
+
+    // Toolbar Buttons
+    var btnBold = document.getElementById('btnBold');
+    var btnItalic = document.getElementById('btnItalic');
+    var btnUnderline = document.getElementById('btnUnderline');
+    var btnHeading = document.getElementById('btnHeading');
+    var btnQuote = document.getElementById('btnQuote');
+    var btnBullet = document.getElementById('btnBullet');
+    var btnNumber = document.getElementById('btnNumber');
+    var btnPreview = document.getElementById('btnPreview');
+    var btnClear = document.getElementById('btnClear');
+    var btnUndo = document.getElementById('btnUndo');
+
+    // Constants
+    var MAX_CHARS = 1000;
+    var textHistory = [''];
+    var historyIndex = 0;
+
+    // ============ Core Functions ============
+
+    // Insert text around selection
+    function insertFormat(before, after) {
+        var start = textarea.selectionStart;
+        var end = textarea.selectionEnd;
+        var text = textarea.value;
+        var selectedText = text.substring(start, end);
+
+        // Create new text
+        var newText = text.substring(0, start) + before + selectedText + after + text.substring(end);
+
+        // Update textarea
+        textarea.value = newText;
+
+        // Save to history
+        saveToHistory();
+
+        // Set cursor position
+        textarea.focus();
+        if (selectedText.length > 0) {
+            textarea.selectionStart = start + before.length;
+            textarea.selectionEnd = end + before.length;
+        } else {
+            textarea.selectionStart = start + before.length;
+            textarea.selectionEnd = start + before.length;
+        }
+
+        // Update counters
+        updateCounts();
+
+        console.log('Format applied:', before, after); // Debug log
+    }
+
+    // Update character and word count
+    function updateCounts() {
+        var text = textarea.value;
+        var chars = text.length;
+        var percentage = Math.min((chars / MAX_CHARS) * 100, 100);
+
+        // Update char count
+        charCount.textContent = chars;
+        charProgressBar.style.width = percentage + '%';
+
+        // Update word count
+        var words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+        wordCount.textContent = words;
+
+        // Update styling
+        charCounter.classList.remove('warning', 'danger');
+        charProgressBar.classList.remove('warning', 'danger');
+
+        if (chars > MAX_CHARS * 0.9) {
+            charCounter.classList.add('danger');
+            charProgressBar.classList.add('danger');
+        } else if (chars > MAX_CHARS * 0.7) {
+            charCounter.classList.add('warning');
+            charProgressBar.classList.add('warning');
+        }
+
+        // Update preview if visible
+        if (previewSection.classList.contains('show')) {
+            previewContent.textContent = text || 'Nothing to preview yet...';
+        }
+    }
+
+    // Save to history for undo
+    function saveToHistory() {
+        historyIndex++;
+        textHistory = textHistory.slice(0, historyIndex);
+        textHistory.push(textarea.value);
+
+        if (textHistory.length > 30) {
+            textHistory.shift();
+            historyIndex--;
+        }
+    }
+
+    // Undo function
+    function undo() {
+        if (historyIndex > 0) {
+            historyIndex--;
+            textarea.value = textHistory[historyIndex];
+            updateCounts();
+            textarea.focus();
+        }
+    }
+
+    // Toggle preview
+    function togglePreview() {
+        previewSection.classList.toggle('show');
+        btnPreview.classList.toggle('active');
+
+        if (previewSection.classList.contains('show')) {
+            previewContent.textContent = textarea.value || 'Nothing to preview yet...';
+        }
+    }
+
+    // Clear textarea
+    function clearAll() {
+        if (textarea.value.trim() !== '') {
+            if (confirm('Are you sure you want to clear all content?')) {
+                saveToHistory();
+                textarea.value = '';
+                updateCounts();
+                previewSection.classList.remove('show');
+                btnPreview.classList.remove('active');
+                textarea.focus();
+            }
+        }
+    }
+
+    // Show success message
+    function showSuccess() {
+        successTooltip.classList.add('show');
+        setTimeout(function() {
+            successTooltip.classList.remove('show');
+        }, 4000);
+    }
+
+    // Show error message
+    function showError() {
+        errorTooltip.classList.add('show');
+        setTimeout(function() {
+            errorTooltip.classList.remove('show');
+        }, 3000);
+    }
+
+    // ============ Event Handlers ============
+
+    // Bold button
+    btnBold.addEventListener('click', function(e) {
+        e.preventDefault();
+        insertFormat('**', '**');
+    });
+
+    // Italic button
+    btnItalic.addEventListener('click', function(e) {
+        e.preventDefault();
+        insertFormat('_', '_');
+    });
+
+    // Underline button
+    btnUnderline.addEventListener('click', function(e) {
+        e.preventDefault();
+        insertFormat('__', '__');
+    });
+
+    // Heading button
+    btnHeading.addEventListener('click', function(e) {
+        e.preventDefault();
+        insertFormat('## ', '');
+    });
+
+    // Quote button
+    btnQuote.addEventListener('click', function(e) {
+        e.preventDefault();
+        insertFormat('> ', '');
+    });
+
+    // Bullet button
+    btnBullet.addEventListener('click', function(e) {
+        e.preventDefault();
+        insertFormat('• ', '');
+    });
+
+    // Number button
+    btnNumber.addEventListener('click', function(e) {
+        e.preventDefault();
+        insertFormat('1. ', '');
+    });
+
+    // Preview button
+    btnPreview.addEventListener('click', function(e) {
+        e.preventDefault();
+        togglePreview();
+    });
+
+    // Clear button
+    btnClear.addEventListener('click', function(e) {
+        e.preventDefault();
+        clearAll();
+    });
+
+    // Undo button
+    btnUndo.addEventListener('click', function(e) {
+        e.preventDefault();
+        undo();
+    });
+
+    // Preview close button
+    previewClose.addEventListener('click', function(e) {
+        e.preventDefault();
+        previewSection.classList.remove('show');
+        btnPreview.classList.remove('active');
+    });
+
+    // Textarea input event
+    textarea.addEventListener('input', function() {
+        updateCounts();
+        saveToHistory();
+    });
+
+    // Textarea focus event
+    textarea.addEventListener('focus', function() {
+        var row = this.closest('tr');
+        if (row) {
+            row.style.background = '#F1F8E9';
+        }
+    });
+
+    // Textarea blur event
+    textarea.addEventListener('blur', function() {
+        var row = this.closest('tr');
+        if (row) {
+            row.style.background = '';
+        }
+    });
+
+    // Keyboard shortcuts
+    textarea.addEventListener('keydown', function(e) {
+        if (e.ctrlKey || e.metaKey) {
+            switch(e.key.toLowerCase()) {
+                case 'b':
+                    e.preventDefault();
+                    insertFormat('**', '**');
+                    break;
+                case 'i':
+                    e.preventDefault();
+                    insertFormat('_', '_');
+                    break;
+                case 'u':
+                    e.preventDefault();
+                    insertFormat('__', '__');
+                    break;
+                case 'z':
+                    e.preventDefault();
+                    undo();
+                    break;
+            }
+        }
+    });
+
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        if (!textarea.value.trim()) {
+            e.preventDefault();
+            textarea.classList.add('error');
+            showError();
+            textarea.focus();
+
+            setTimeout(function() {
+                textarea.classList.remove('error');
+            }, 2000);
+            return false;
+        }
+
+        // Show loading state
+        submitBtn.value = 'Publishing...';
+        submitBtn.classList.add('btn-loading');
+
+        // For testing - uncomment below
+        /*
+        e.preventDefault();
+        setTimeout(function() {
+            showSuccess();
+            submitBtn.value = 'Publish News';
+            submitBtn.classList.remove('btn-loading');
+            textarea.value = '';
+            updateCounts();
+            previewSection.classList.remove('show');
+            btnPreview.classList.remove('active');
+        }, 1500);
+        */
+    });
+
+    // ============ Initialize ============
+    updateCounts();
+
+    // Expose functions globally for external use
+    window.showNewsSuccess = showSuccess;
+    window.showNewsError = showError;
+
+    console.log('News form initialized successfully!');
+
+})();
+</script>
+
+</body>
+</html>
+{% endblock %}

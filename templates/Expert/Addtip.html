@@ -1,0 +1,1064 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/exp_add_tip_post">#}
+{#  <table width="807" height="288" border="1">#}
+{#    <tr>#}
+{#      <th colspan="2" scope="row">Add Tips</th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th width="313" height="164" scope="row">Tips</th>#}
+{#      <td width="478"><label for="textarea"></label>#}
+{#      <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th height="83" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Add" /></th>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Add Tips</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 50%, #A5D6A7 100%);
+        padding: 40px 20px;
+    }
+
+    /* Form Container */
+    #form1 {
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        width: 100%;
+        max-width: 700px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    #form1:hover {
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+    }
+
+    /* Decorative Elements */
+    #form1::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 250px;
+        height: 250px;
+        background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, transparent 60%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    #form1::after {
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, transparent 0%, rgba(76, 175, 80, 0.05) 60%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    /* Table Styles */
+    table {
+        width: 100% !important;
+        height: auto !important;
+        border: none !important;
+        border-collapse: collapse;
+    }
+
+    tr, th, td {
+        border: none !important;
+    }
+
+    /* Header Row */
+    tr:first-child th {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%) !important;
+        padding: 50px 35px !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        font-size: 30px !important;
+        font-weight: 800 !important;
+        position: relative;
+        overflow: hidden;
+    }
+
+    tr:first-child th::before {
+        content: '';
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 180px;
+        height: 180px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+    }
+
+    tr:first-child th::after {
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        width: 220px;
+        height: 220px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+    }
+
+    /* Content Row */
+    tr:nth-child(2) {
+        background: #ffffff;
+        transition: all 0.3s ease;
+    }
+
+    tr:nth-child(2):hover {
+        background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%);
+    }
+
+    /* Label Cell */
+    th[scope="row"] {
+        background: transparent !important;
+        color: #1B5E20 !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        text-align: left !important;
+        padding: 35px 20px 35px 40px !important;
+        width: 180px !important;
+        vertical-align: top !important;
+        height: auto !important;
+    }
+
+    /* Input Cell */
+    td {
+        padding: 30px 40px 30px 15px !important;
+        vertical-align: middle !important;
+    }
+
+    td label {
+        display: none !important;
+    }
+
+    /* Textarea Styling */
+    textarea {
+        width: 100% !important;
+        min-height: 220px !important;
+        padding: 22px 25px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        color: #1B5E20 !important;
+        background: #FAFAFA !important;
+        border: 2px solid #C8E6C9 !important;
+        border-radius: 16px !important;
+        outline: none !important;
+        transition: all 0.3s ease !important;
+        resize: vertical !important;
+        line-height: 1.9 !important;
+    }
+
+    textarea::placeholder {
+        color: #81C784 !important;
+        font-weight: 400 !important;
+    }
+
+    textarea:focus {
+        border-color: #4CAF50 !important;
+        background: #ffffff !important;
+        box-shadow: 0 0 0 5px rgba(76, 175, 80, 0.12) !important;
+    }
+
+    textarea:hover {
+        border-color: #81C784 !important;
+    }
+
+    textarea.error {
+        border-color: #F44336 !important;
+        animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20%, 60% { transform: translateX(-5px); }
+        40%, 80% { transform: translateX(5px); }
+    }
+
+    /* Footer Row */
+    tr:last-child th {
+        background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%) !important;
+        padding: 40px !important;
+        text-align: center !important;
+        border-top: 2px solid #E8F5E9 !important;
+        height: auto !important;
+    }
+
+    /* Submit Button */
+    input[type="submit"],
+    input#button {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        padding: 18px 70px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        border-radius: 14px !important;
+        cursor: pointer !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        box-shadow: 0 6px 25px rgba(46, 125, 50, 0.35) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    input[type="submit"]:hover,
+    input#button:hover {
+        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%) !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 10px 35px rgba(46, 125, 50, 0.45) !important;
+    }
+
+    input[type="submit"]:active,
+    input#button:active {
+        transform: translateY(-1px) !important;
+    }
+
+    .btn-loading {
+        pointer-events: none !important;
+        opacity: 0.7 !important;
+    }
+
+    /* Textarea Wrapper */
+    .textarea-wrapper {
+        position: relative;
+    }
+
+    /* Toolbar */
+    .toolbar {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 15px;
+        padding: 14px 18px;
+        background: linear-gradient(135deg, #F8F9FA 0%, #ECEFF1 100%);
+        border-radius: 14px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .toolbar-btn {
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: white;
+        border-radius: 10px;
+        cursor: pointer;
+        color: #666;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .toolbar-btn:hover {
+        background: #E8F5E9;
+        color: #2E7D32;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .toolbar-btn:active {
+        transform: translateY(0);
+    }
+
+    .toolbar-btn.active {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+        color: white;
+    }
+
+    .toolbar-divider {
+        width: 1px;
+        height: 30px;
+        background: #DDD;
+        margin: 0 8px;
+    }
+
+    /* Quick Tips Templates */
+    .quick-tips {
+        margin-bottom: 18px;
+    }
+
+    .quick-tips-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #558B2F;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .quick-tips-header i {
+        font-size: 18px;
+        color: #7CB342;
+    }
+
+    .tip-categories {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .tip-category-btn {
+        padding: 10px 18px;
+        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        border: none;
+        border-radius: 25px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #2E7D32;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .tip-category-btn:hover {
+        background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(46, 125, 50, 0.2);
+    }
+
+    .tip-category-btn i {
+        font-size: 14px;
+    }
+
+    /* Character Counter */
+    .char-counter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
+        padding: 12px 18px;
+        background: linear-gradient(135deg, #F1F8E9 0%, #DCEDC8 100%);
+        border-radius: 12px;
+        font-size: 13px;
+        color: #558B2F;
+        font-weight: 600;
+    }
+
+    .char-counter.warning {
+        background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+        color: #F57C00;
+    }
+
+    .char-counter.danger {
+        background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+        color: #E53935;
+    }
+
+    .char-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .char-progress {
+        width: 150px;
+        height: 8px;
+        background: rgba(255,255,255,0.7);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .char-progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #66BB6A, #43A047);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .char-progress-bar.warning {
+        background: linear-gradient(90deg, #FFB74D, #FF9800);
+    }
+
+    .char-progress-bar.danger {
+        background: linear-gradient(90deg, #EF5350, #E53935);
+    }
+
+    /* Preview Section */
+    .preview-section {
+        margin-top: 18px;
+        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+        border: 2px dashed #64B5F6;
+        border-radius: 14px;
+        overflow: hidden;
+        display: none;
+    }
+
+    .preview-section.show {
+        display: block;
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; max-height: 0; }
+        to { opacity: 1; max-height: 400px; }
+    }
+
+    .preview-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: rgba(33, 150, 243, 0.15);
+        border-bottom: 1px solid #64B5F6;
+    }
+
+    .preview-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #1565C0;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .preview-close {
+        background: none;
+        border: none;
+        color: #42A5F5;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 5px;
+        border-radius: 5px;
+        transition: all 0.2s ease;
+    }
+
+    .preview-close:hover {
+        color: #1565C0;
+        background: rgba(255,255,255,0.5);
+    }
+
+    .preview-content {
+        color: #0D47A1;
+        font-size: 14px;
+        line-height: 1.9;
+        white-space: pre-wrap;
+        padding: 22px;
+        background: white;
+        margin: 15px;
+        border-radius: 10px;
+        min-height: 80px;
+        max-height: 180px;
+        overflow-y: auto;
+    }
+
+    /* Tip Example Card */
+    .tip-example {
+        margin-top: 18px;
+        padding: 18px 22px;
+        background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+        border-radius: 14px;
+        border-left: 5px solid #FFC107;
+    }
+
+    .tip-example-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #F57C00;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .tip-example-header i {
+        font-size: 18px;
+    }
+
+    .tip-example p {
+        color: #795548;
+        font-size: 13px;
+        line-height: 1.8;
+        margin: 0;
+    }
+
+    /* Toast Notification */
+    .toast {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        padding: 22px 30px;
+        border-radius: 16px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        transform: translateX(150%);
+        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 10000;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+    }
+
+    .toast.show {
+        transform: translateX(0);
+    }
+
+    .toast.success {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+    }
+
+    .toast.error {
+        background: linear-gradient(135deg, #EF5350 0%, #E53935 100%);
+    }
+
+    .toast-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .toast-text h4 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .toast-text p {
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    /* Word Counter Badge */
+    .word-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        background: white;
+        border-radius: 20px;
+        font-size: 12px;
+        color: #558B2F;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+        body {
+            padding: 20px 15px;
+        }
+
+        #form1 {
+            border-radius: 20px;
+        }
+
+        tr:first-child th {
+            font-size: 24px !important;
+            padding: 40px 25px !important;
+        }
+
+        th[scope="row"] {
+            display: block !important;
+            width: 100% !important;
+            padding: 25px 25px 10px 25px !important;
+            text-align: center !important;
+        }
+
+        td {
+            display: block !important;
+            padding: 0 25px 25px 25px !important;
+        }
+
+        input[type="submit"] {
+            width: 100% !important;
+            padding: 18px 30px !important;
+        }
+
+        .toast {
+            left: 15px;
+            right: 15px;
+        }
+
+        .toolbar {
+            justify-content: center;
+        }
+
+        .tip-categories {
+            justify-content: center;
+        }
+
+        .char-counter {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .char-progress {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Toast Notification -->
+<div class="toast success" id="toast">
+    <div class="toast-icon">
+        <i class="fas fa-check"></i>
+    </div>
+    <div class="toast-text">
+        <h4>Success!</h4>
+        <p>Tip added successfully</p>
+    </div>
+</div>
+
+<!-- ORIGINAL CODE - UNCHANGED -->
+<form id="form1" name="form1" method="post" action="/exp_add_tip_post">
+  <table width="807" height="288" border="1">
+    <tr>
+      <th colspan="2" scope="row">Add Tips</th>
+    </tr>
+    <tr>
+      <th width="313" height="164" scope="row">Tips</th>
+      <td width="478"><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <th height="83" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Add" /></th>
+    </tr>
+  </table>
+</form>
+<!-- ORIGINAL CODE ENDS -->
+
+<script>
+(function() {
+    'use strict';
+
+    // DOM Elements
+    var form = document.getElementById('form1');
+    var textarea = document.getElementById('textarea');
+    var submitBtn = document.getElementById('button');
+    var toast = document.getElementById('toast');
+
+    var MAX_CHARS = 1000;
+
+    // Initialize
+    function init() {
+        enhanceForm();
+        bindEvents();
+    }
+
+    // Enhance Form Elements
+    function enhanceForm() {
+        // Enhance Header
+        var header = document.querySelector('tr:first-child th');
+        if (header) {
+            header.innerHTML = '<i class="fas fa-lightbulb" style="margin-right: 15px;"></i>Add Tips';
+        }
+
+        // Enhance Tips Label
+        var tipsLabel = document.querySelector('tr:nth-child(2) th[scope="row"]');
+        if (tipsLabel) {
+            tipsLabel.innerHTML = `
+                <i class="fas fa-leaf" style="margin-right: 10px; color: #43A047;"></i>Farming Tips
+                <div class="word-badge" style="margin-top: 12px;">
+                    <i class="fas fa-font"></i>
+                    <span id="wordCount">0</span> words
+                </div>
+            `;
+        }
+
+        // Enhance Textarea
+        if (textarea) {
+            textarea.setAttribute('placeholder', 'Share your farming tip here...\n\nExample:\n🌱 Water plants early morning for better absorption\n🌾 Rotate crops to maintain soil health\n🌿 Use organic compost for healthier produce');
+
+            var textareaTd = textarea.parentNode;
+
+            // Add Quick Tips Categories
+            var quickTips = document.createElement('div');
+            quickTips.className = 'quick-tips';
+            quickTips.innerHTML = `
+                <div class="quick-tips-header">
+                    <i class="fas fa-magic"></i>
+                    Quick Tip Templates
+                </div>
+                <div class="tip-categories">
+                    <button type="button" class="tip-category-btn" data-category="crop">
+                        <i class="fas fa-seedling"></i> Crop Care
+                    </button>
+                    <button type="button" class="tip-category-btn" data-category="water">
+                        <i class="fas fa-tint"></i> Irrigation
+                    </button>
+                    <button type="button" class="tip-category-btn" data-category="pest">
+                        <i class="fas fa-bug"></i> Pest Control
+                    </button>
+                    <button type="button" class="tip-category-btn" data-category="soil">
+                        <i class="fas fa-mountain"></i> Soil Health
+                    </button>
+                    <button type="button" class="tip-category-btn" data-category="harvest">
+                        <i class="fas fa-wheat-awn"></i> Harvesting
+                    </button>
+                </div>
+            `;
+            textareaTd.insertBefore(quickTips, textarea);
+
+            // Wrap textarea
+            var wrapper = document.createElement('div');
+            wrapper.className = 'textarea-wrapper';
+            textarea.parentNode.insertBefore(wrapper, textarea);
+            wrapper.appendChild(textarea);
+
+            // Add Toolbar
+            var toolbar = document.createElement('div');
+            toolbar.className = 'toolbar';
+            toolbar.innerHTML = `
+                <button type="button" class="toolbar-btn" id="btnBold" title="Bold (Ctrl+B)">
+                    <i class="fas fa-bold"></i>
+                </button>
+                <button type="button" class="toolbar-btn" id="btnItalic" title="Italic (Ctrl+I)">
+                    <i class="fas fa-italic"></i>
+                </button>
+                <button type="button" class="toolbar-btn" id="btnBullet" title="Bullet Point">
+                    <i class="fas fa-list-ul"></i>
+                </button>
+                <button type="button" class="toolbar-btn" id="btnNumber" title="Numbered List">
+                    <i class="fas fa-list-ol"></i>
+                </button>
+                <div class="toolbar-divider"></div>
+                <button type="button" class="toolbar-btn" id="btnEmoji" title="Add Emoji">
+                    <i class="fas fa-smile"></i>
+                </button>
+                <button type="button" class="toolbar-btn" id="btnPreview" title="Preview">
+                    <i class="fas fa-eye"></i>
+                </button>
+                <button type="button" class="toolbar-btn" id="btnClear" title="Clear">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            `;
+            wrapper.insertBefore(toolbar, textarea);
+
+            // Add Character Counter
+            var charCounter = document.createElement('div');
+            charCounter.className = 'char-counter';
+            charCounter.id = 'charCounter';
+            charCounter.innerHTML = `
+                <div class="char-info">
+                    <i class="fas fa-keyboard"></i>
+                    <span><span id="charCount">0</span> / ${MAX_CHARS} characters</span>
+                </div>
+                <div class="char-progress">
+                    <div class="char-progress-bar" id="charProgressBar"></div>
+                </div>
+            `;
+            wrapper.appendChild(charCounter);
+
+            // Add Preview Section
+            var preview = document.createElement('div');
+            preview.className = 'preview-section';
+            preview.id = 'previewSection';
+            preview.innerHTML = `
+                <div class="preview-header">
+                    <div class="preview-title">
+                        <i class="fas fa-eye"></i> Preview
+                    </div>
+                    <button type="button" class="preview-close" id="previewClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="preview-content" id="previewContent">Nothing to preview...</div>
+            `;
+            wrapper.appendChild(preview);
+
+            // Add Tip Example
+            var tipExample = document.createElement('div');
+            tipExample.className = 'tip-example';
+            tipExample.id = 'tipExample';
+            tipExample.innerHTML = `
+                <div class="tip-example-header">
+                    <i class="fas fa-lightbulb"></i>
+                    Tip Writing Guidelines
+                </div>
+                <p>
+                    ✓ Keep tips concise and actionable<br>
+                    ✓ Include specific timing or quantities when possible<br>
+                    ✓ Use emojis to make tips more engaging<br>
+                    ✓ Share personal experience when relevant
+                </p>
+            `;
+            textareaTd.appendChild(tipExample);
+        }
+
+        // Enhance Submit Button
+        if (submitBtn) {
+            submitBtn.value = 'Publish Tip';
+        }
+    }
+
+    // Bind Events
+    function bindEvents() {
+        var charCount = document.getElementById('charCount');
+        var wordCount = document.getElementById('wordCount');
+        var charProgressBar = document.getElementById('charProgressBar');
+        var charCounter = document.getElementById('charCounter');
+        var previewSection = document.getElementById('previewSection');
+        var previewContent = document.getElementById('previewContent');
+        var previewClose = document.getElementById('previewClose');
+        var tipExample = document.getElementById('tipExample');
+
+        // Tip templates
+        var tipTemplates = {
+            crop: '🌱 CROP CARE TIP\n\n✅ Tip: \n\n📅 Best Time: \n\n💡 Why It Works: \n\n⚠️ Things to Avoid: ',
+            water: '💧 IRRIGATION TIP\n\n✅ Tip: \n\n📅 Best Time: Early morning or late evening\n\n💡 Why It Works: \n\n💦 Water Amount: ',
+            pest: '🐛 PEST CONTROL TIP\n\n✅ Tip: \n\n🎯 Target Pests: \n\n🌿 Natural Solution: \n\n⚠️ Prevention: ',
+            soil: '🏔️ SOIL HEALTH TIP\n\n✅ Tip: \n\n📊 Benefits: \n\n🔄 Frequency: \n\n💡 Pro Tip: ',
+            harvest: '🌾 HARVESTING TIP\n\n✅ Tip: \n\n📅 Best Time: \n\n✂️ Method: \n\n📦 Storage: '
+        };
+
+        // Template buttons
+        document.querySelectorAll('.tip-category-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var category = this.getAttribute('data-category');
+                textarea.value = tipTemplates[category] || '';
+                updateCounts();
+                textarea.focus();
+
+                // Hide example after using template
+                tipExample.style.display = 'none';
+            });
+        });
+
+        // Toolbar buttons
+        document.getElementById('btnBold').addEventListener('click', function(e) {
+            e.preventDefault();
+            insertFormat('**', '**');
+        });
+
+        document.getElementById('btnItalic').addEventListener('click', function(e) {
+            e.preventDefault();
+            insertFormat('_', '_');
+        });
+
+        document.getElementById('btnBullet').addEventListener('click', function(e) {
+            e.preventDefault();
+            insertFormat('• ', '');
+        });
+
+        document.getElementById('btnNumber').addEventListener('click', function(e) {
+            e.preventDefault();
+            insertFormat('1. ', '');
+        });
+
+        document.getElementById('btnEmoji').addEventListener('click', function(e) {
+            e.preventDefault();
+            showEmojiPicker();
+        });
+
+        document.getElementById('btnPreview').addEventListener('click', function(e) {
+            e.preventDefault();
+            togglePreview();
+        });
+
+        document.getElementById('btnClear').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (textarea.value && confirm('Clear all content?')) {
+                textarea.value = '';
+                updateCounts();
+                previewSection.classList.remove('show');
+                tipExample.style.display = 'block';
+            }
+        });
+
+        previewClose.addEventListener('click', function() {
+            previewSection.classList.remove('show');
+            document.getElementById('btnPreview').classList.remove('active');
+        });
+
+        // Update counts
+        function updateCounts() {
+            var count = textarea.value.length;
+            var percentage = Math.min((count / MAX_CHARS) * 100, 100);
+
+            charCount.textContent = count;
+            charProgressBar.style.width = percentage + '%';
+
+            // Word count
+            var words = textarea.value.trim() === '' ? 0 : textarea.value.trim().split(/\s+/).length;
+            wordCount.textContent = words;
+
+            // Update styling
+            charCounter.classList.remove('warning', 'danger');
+            charProgressBar.classList.remove('warning', 'danger');
+
+            if (count > MAX_CHARS * 0.9) {
+                charCounter.classList.add('danger');
+                charProgressBar.classList.add('danger');
+            } else if (count > MAX_CHARS * 0.7) {
+                charCounter.classList.add('warning');
+                charProgressBar.classList.add('warning');
+            }
+
+            // Update preview if visible
+            if (previewSection.classList.contains('show')) {
+                previewContent.textContent = textarea.value || 'Nothing to preview...';
+            }
+
+            // Hide example when typing
+            if (count > 20) {
+                tipExample.style.display = 'none';
+            }
+        }
+
+        // Insert format
+        function insertFormat(before, after) {
+            var start = textarea.selectionStart;
+            var end = textarea.selectionEnd;
+            var text = textarea.value;
+            var selected = text.substring(start, end);
+
+            textarea.value = text.substring(0, start) + before + selected + after + text.substring(end);
+            textarea.focus();
+            textarea.selectionStart = start + before.length;
+            textarea.selectionEnd = end + before.length;
+            updateCounts();
+        }
+
+        // Toggle preview
+        function togglePreview() {
+            previewSection.classList.toggle('show');
+            document.getElementById('btnPreview').classList.toggle('active');
+            if (previewSection.classList.contains('show')) {
+                previewContent.textContent = textarea.value || 'Nothing to preview...';
+            }
+        }
+
+        // Emoji picker (simplified)
+        function showEmojiPicker() {
+            var emojis = ['🌱', '🌾', '💧', '☀️', '🌿', '🍃', '🌻', '🌽', '🍅', '🥕', '🥬', '🌶️', '✅', '💡', '⚠️', '📅'];
+            var emoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+            var start = textarea.selectionStart;
+            var text = textarea.value;
+            textarea.value = text.substring(0, start) + emoji + ' ' + text.substring(start);
+            textarea.focus();
+            textarea.selectionStart = start + emoji.length + 1;
+            textarea.selectionEnd = start + emoji.length + 1;
+            updateCounts();
+        }
+
+        // Textarea events
+        textarea.addEventListener('input', updateCounts);
+
+        textarea.addEventListener('focus', function() {
+            var row = this.closest('tr');
+            if (row) {
+                row.style.background = 'linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 100%)';
+            }
+        });
+
+        textarea.addEventListener('blur', function() {
+            var row = this.closest('tr');
+            if (row) {
+                row.style.background = '';
+            }
+        });
+
+        // Keyboard shortcuts
+        textarea.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key.toLowerCase()) {
+                    case 'b':
+                        e.preventDefault();
+                        insertFormat('**', '**');
+                        break;
+                    case 'i':
+                        e.preventDefault();
+                        insertFormat('_', '_');
+                        break;
+                }
+            }
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            if (!textarea.value.trim()) {
+                e.preventDefault();
+                textarea.classList.add('error');
+                showToast('error', 'Error!', 'Please enter a tip before submitting');
+
+                setTimeout(function() {
+                    textarea.classList.remove('error');
+                }, 2000);
+                return;
+            }
+
+            submitBtn.value = 'Publishing...';
+            submitBtn.classList.add('btn-loading');
+        });
+    }
+
+    // Show Toast
+    function showToast(type, title, message) {
+        toast.className = 'toast ' + type;
+        toast.querySelector('.toast-icon i').className = type === 'success' ? 'fas fa-check' : 'fas fa-exclamation';
+        toast.querySelector('.toast-text h4').textContent = title;
+        toast.querySelector('.toast-text p').textContent = message;
+        toast.classList.add('show');
+
+        setTimeout(function() {
+            toast.classList.remove('show');
+        }, 4000);
+    }
+
+    // Global
+    window.showTipToast = showToast;
+
+    // Run
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+
+</body>
+</html>

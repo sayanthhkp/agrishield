@@ -1,0 +1,306 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/login_post">#}
+{#  <table width="567" height="251" border="1">#}
+{#    <tr>#}
+{#      <th colspan="2" scope="row"><b>Login</b></th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Username</th>#}
+{#      <td><label for="textfield"></label>#}
+{#      <input type="text" name="textfield" id="textfield" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Password</th>#}
+{#      <td><label for="textfield2"></label>#}
+{#      <input type="text" name="textfield2" id="textfield2" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Login" /></th>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Agrishield - Expert Login</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="Login to Agrishield Expert Portal" name="description">
+
+    <!-- Favicon -->
+    <link href="/static/main_temp/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/static/main_temp/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/static/main_temp/css/style.css" rel="stylesheet">
+
+    <style>
+        /* Additional styles for the login page */
+        .login-container {
+            min-height: 100vh;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                        url('/static/main_temp/img/farming2.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h2 {
+            color: #198754;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #198754;
+            box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+            outline: none;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: #198754;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-login:hover {
+            background: #157347;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-container img {
+            max-height: 60px;
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .input-icon input {
+            padding-left: 45px;
+        }
+
+        .forgot-link {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .forgot-link a {
+            color: #198754;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .login-card {
+                padding: 30px 20px;
+                margin: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="/">
+                    <img class="img-fluid" src="/static/main_temp/img/logoagri.jpeg" alt="Agrishield Logo">
+                </a>
+            </div>
+
+            <!-- Login Header -->
+            <div class="login-header">
+                <h2>Expert Login</h2>
+                <p>Welcome back to Agrishield Expert Portal</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="form1" name="form1" method="post" action="/login_post">
+                <!-- Username Field -->
+                <div class="form-group">
+                    <label for="textfield">Username</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text"
+                               class="form-control"
+                               name="textfield"
+                               id="textfield"
+                               placeholder="Enter your username"
+                               required />
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="textfield2">Password</label>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password"
+                               class="form-control"
+                               name="textfield2"
+                               id="textfield2"
+                               placeholder="Enter your password"
+                               required />
+                    </div>
+                    <div class="forgot-link">
+                        <a href="/forgotpassword">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <input type="submit"
+                           class="btn-login"
+                           name="button"
+                           id="button"
+                           value="Login" />
+                </div>
+
+                <!-- Additional Options -->
+                <div class="login-footer">
+                    <p>Need help? <a href="#">Contact Administrator</a></p>
+                    <p>&copy; 2024 Agrishield. All rights reserved.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/main_temp/lib/wow/wow.min.js"></script>
+    <script src="/static/main_temp/lib/easing/easing.min.js"></script>
+
+    <script>
+        // Spinner
+        var spinner = function () {
+            setTimeout(function () {
+                if ($('#spinner').length > 0) {
+                    $('#spinner').removeClass('show');
+                }
+            }, 1);
+        };
+        spinner();
+
+        // Form validation
+        $(document).ready(function() {
+            $('#form1').submit(function(e) {
+                var username = $('#textfield').val().trim();
+                var password = $('#textfield2').val().trim();
+
+                if (!username || !password) {
+                    e.preventDefault();
+                    alert('Please fill in all required fields.');
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

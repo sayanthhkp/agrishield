@@ -1,0 +1,1672 @@
+{
+    "ourIntents": [
+
+
+        {
+            "tag": "whatcanyoudo",
+            "patterns": [
+                "What can you do?", "How can you help me?", "What are your capabilities?",
+                "What do you know?", "Can you help me?", "What services do you offer?",
+                "What are you for?", "What's your purpose?", "Tell me what you can do",
+                "What assistance can you provide?", "Tum kya kar sakte ho?", "Kya help kar sakte ho?",
+                "What's your specialization?", "Your expertise?", "What topics you cover?"
+            ],
+            "responses": [
+                "FarmBot can help with: Rice, wheat, vegetables, fruits, fertilizers, pest control, diseases, soil health, irrigation, crop rotation, and much more!",
+                "I assist with South Asian crops like basmati rice, wheat, mango, banana, tomato, potato, and provide solutions for farming challenges!",
+                "Main kheti-baadi ke har sawaal ka jawaab de sakta hoon - fasal, khad, keede, bimari, paani, mitti sab kuch! (I can answer all farming questions!)",
+                "I provide guidance on: crop cultivation, organic farming, fertilizer use (NPK, DAP, Urea), pest management, disease control, seasonal planting!",
+                "FarmBot knows about monsoon farming, drip irrigation, organic fertilizers, common pests, crop diseases, and best practices for South Asian agriculture!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "joke",
+            "patterns": [
+                "Tell me a joke", "Make me laugh", "Say something funny", "Do you know any jokes?",
+                "Joke please", "Funny", "Entertain me", "Humor me", "Got any jokes?", "Make a joke",
+                "Koi joke sunao", "Hasao mujhe", "Something funny", "Mazak karo"
+            ],
+            "responses": [
+                "Why did the farmer win an award? Because he was outstanding in his field! 🌾😄",
+                "What do you call a sleeping bull? A bulldozer! 🐂💤",
+                "Why don't farmers tell secrets in the cornfield? Too many ears! 🌽👂",
+                "What did the farmer say when he lost his tractor? 'Where's my tractor?' (Simple but honest!) 😅",
+                "Why did the tomato turn red? Because it saw the salad dressing! 🍅😂",
+                "Farmer ka favorite music? CROP music! 🎵🌾",
+                "Why are farmers great at parties? They really know how to turnip the beet! 🥕🎉"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "age",
+            "patterns": [
+                "How old are you?", "What's your age?", "When were you created?", "Your age?",
+                "How long have you existed?", "When were you born?", "When did you start?",
+                "How young are you?", "Birth date?", "When were you made?", "Tumhari umar?"
+            ],
+            "responses": [
+                "I'm as timeless as farming itself! Created recently but loaded with centuries of agricultural wisdom!",
+                "Age doesn't matter when you're helping farmers grow better crops! I'm here now and ready to assist!",
+                "I'm new but carry the knowledge of generations of South Asian farming traditions!",
+                "Think of me as a young assistant with the wisdom of experienced farmers!",
+                "I was created to serve farmers, and I'm constantly learning to help you better!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "language",
+            "patterns": [
+                "What languages do you speak?", "Can you speak other languages?",
+                "Do you know multiple languages?", "What language are you in?",
+                "Can you talk in another language?", "Languages you know?", "Bilingual?",
+                "Multilingual?", "Other languages?", "Language support?", "Hindi aati hai?",
+                "Urdu bolte ho?", "Regional languages?"
+            ],
+            "responses": [
+                "I communicate in English with understanding of Hindi, Urdu, and common farming terms in regional languages!",
+                "Haan ji! Main English aur thodi Hindi samajh leta hoon, aur farming ki bhasha to bilkul! (Yes, I understand English and some Hindi!)",
+                "I speak the universal language of agriculture! English primarily, with farming terminology across South Asian languages!",
+                "Main English mein baat karta hoon but kheti ki language sab samajhta hoon! (I speak in English but understand all farming language!)",
+                "English is my main language, but I understand farming terms in Hindi, Urdu, and other regional languages!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "weather_general",
+            "patterns": [
+                "What's the weather?", "How's the weather?", "Weather today?", "Is it raining?",
+                "Will it rain?", "Weather forecast?", "Climate today?", "Temperature?",
+                "Hot or cold?", "Sunny day?", "Mausam kaisa hai?", "Barish hogi?",
+                "Today's climate?", "Weather prediction?"
+            ],
+            "responses": [
+                "I don't have real-time weather data, but I can help you understand how monsoon and weather patterns affect your crops!",
+                "For accurate weather, check local forecasts. But I can guide you on farming decisions based on different weather conditions!",
+                "I can't check current weather, but I can advise on: monsoon preparation, drought management, heat protection for crops!",
+                "Use a weather app for today's forecast. I'll help you plan farming activities for monsoon, winter (rabi), and summer (kharif) seasons!",
+                "I focus on farming advice for all weather - how to protect crops from heat, manage monsoon flooding, or handle drought!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "location",
+            "patterns": [
+                "Where are you?", "Your location?", "Where are you located?", "Where do you live?",
+                "What's your location?", "Where are you from?", "Where do you operate?",
+                "Your place?", "Which country?", "Where exactly are you?", "Kahan ho tum?"
+            ],
+            "responses": [
+                "I exist in the digital world, helping farmers across South Asia - India, Pakistan, Bangladesh, Nepal, Sri Lanka!",
+                "I'm everywhere farmers need me! From Punjab's wheat fields to Bengal's rice paddies!",
+                "Main aapke phone/computer mein hoon, ready to help farmers from Kashmir to Kanyakumari!",
+                "I'm in the cloud, accessible from any farm in South Asia - whether plains, hills, or coastal regions!",
+                "Location-independent and always available wherever you need farming guidance in South Asia!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "compliment",
+            "patterns": [
+                "You're awesome", "Great job", "You're helpful", "Nice work", "You're the best",
+                "Excellent", "Amazing", "Wonderful", "You're great", "Fantastic", "You rock",
+                "Super helpful", "Brilliant", "Outstanding", "Perfect", "Bahut accha",
+                "Zabardast", "Kamaal", "Very good", "Impressive", "Shandar"
+            ],
+            "responses": [
+                "Shukriya! (Thank you!) I'm here to make farming easier and more productive for you!",
+                "Bahut meherbani! Your farming success is FarmBot's goal!",
+                "Thank you! Let's keep working together to grow better crops!",
+                "Khushi hui sunke! (Happy to hear that!) Keep asking, keep growing!",
+                "That's very kind! FarmBot is always here to help farmers succeed!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "insult",
+            "patterns": [
+                "You're stupid", "You're useless", "You're bad", "You don't know anything",
+                "You're terrible", "You're dumb", "You're wrong", "You're the worst", "Idiot",
+                "Useless bot", "Bewakoof", "Nalayak", "Kuch nahi aata", "Faltu", "Bakwas"
+            ],
+            "responses": [
+                "I'm sorry if I couldn't help properly. Let me try again - what farming question do you have?",
+                "Maafi chahta hoon! (I apologize!) Please rephrase your farming question and I'll do my best to help!",
+                "I apologize for any confusion. FarmBot is here to learn and help. What agricultural information do you need?",
+                "Sorry if my answer wasn't helpful. Let's start fresh - what do you need help with on your farm?",
+                "I understand your frustration. Please tell me specifically what farming topic you need help with and I'll assist better!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "inappropriate_language",
+            "patterns": [
+                "fuck", "shit", "bitch", "asshole", "damn", "hell", "bastard", "dick",
+                "pussy", "cock", "cunt", "motherfucker", "sexy", "sex", "porn"
+            ],
+            "responses": [
+                "Let's keep our conversation respectful and focused on farming! How can I help with your agricultural needs?",
+                "I'm here to help with farming questions. Please use appropriate language so we can discuss crops, fertilizers, or any agricultural topic!",
+                "FarmBot appreciates respectful conversation. Let's talk about farming - what do you need help with?",
+                "Chaliye farming ki baat karte hain! (Let's talk about farming!) How can I assist with your crops or farm?",
+                "I'm designed to help with agriculture. Please ask farming-related questions and I'll gladly assist!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "off_topic_sports",
+            "patterns": [
+                "Who won the cricket match?", "Football score?", "IPL updates?", "Sports news?",
+                "Cricket today?", "Match result?", "Who won?", "Score kya hai?", "T20 match?",
+                "Champions league?", "World cup?", "Virat kohli?", "Ronaldo?", "Messi?"
+            ],
+            "responses": [
+                "I'm FarmBot, specialized in farming, not sports! But I can tell you about crop yields and harvest scores! What farming help do you need?",
+                "Mujhe cricket nahi, farming aati hai! (I know farming, not cricket!) Let's discuss your crops instead?",
+                "FarmBot is designed for agriculture, not sports updates. How can I help with your farm today?",
+                "While sports are exciting, I'm here to help with farming! Need advice on crops, fertilizers, or pest control?",
+                "I focus on farming victories - like great harvests! What agricultural topic can I help you with?"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "off_topic_movies",
+            "patterns": [
+                "Recommend a movie?", "Latest films?", "Bollywood news?", "Movie review?",
+                "Best movies?", "Netflix shows?", "Cinema?", "Film dekhni hai?", "Movie suggestion?",
+                "Shah rukh khan?", "Salman khan?", "Hollywood movies?"
+            ],
+            "responses": [
+                "I'm FarmBot, your farming expert, not a movie critic! But I can recommend best crops for your region! Interested?",
+                "Movies are fun, but FarmBot specializes in agriculture! Let's talk about growing healthy crops instead?",
+                "I'm designed to help farmers, not review films! What farming question do you have?",
+                "FarmBot ka kaam kheti hai, cinema nahi! (FarmBot works with farming, not cinema!) How can I help your farm?",
+                "While I don't know movies, I know all about growing rice, wheat, vegetables! What would you like to learn?"
+            ],
+            "context": [""]
+        },
+        {
+    "tag": "off_topic_kerala_culture",
+    "patterns": [
+        "Tell me about Onam", "What is Vishu?", "Kathakali dance", "Kerala temples",
+        "Backwaters of Kerala", "Theyyam", "Mohiniattam", "Kerala tourism",
+        "Houseboats Alleppey", "Munnar hill station", "Sabarimala temple",
+        "Kerala food recipes", "Sadya dishes", "Onam celebration", "Thrissur Pooram"
+    ],
+    "responses": [
+        "I appreciate Kerala's rich culture, but I'm FarmBot - specialized in farming! I can tell you about Kerala's famous rubber, spices, coconut, and paddy cultivation instead!",
+        "Kerala has wonderful traditions! But my expertise is agriculture. Shall we discuss cardamom, pepper, or coconut farming in Kerala?",
+        "FarmBot focuses on farming, not cultural topics. However, I know a lot about Kerala's agricultural heritage - rubber, spices, rice, and more!",
+        "That's a cultural question beyond my scope. I'm here for farming advice. Want to learn about Kuttanad rice farming or Kerala spices?",
+        "Beautiful topic, but FarmBot is for agriculture! Kerala is famous for spices, rubber, and coconut - ask me about these crops!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "off_topic_kerala_places",
+    "patterns": [
+        "Best places in Kerala", "Visit Kochi", "Wayanad tourism", "Kovalam beach",
+        "Thekkady elephant", "Varkala cliff", "Kumarakom resort", "Fort Kochi",
+        "Trivandrum places", "Kozhikode visit", "Athirapally waterfalls", "Silent Valley"
+    ],
+    "responses": [
+        "I'm FarmBot, not a travel guide! But I can tell you about Wayanad's coffee and pepper farming, or Idukki's cardamom cultivation!",
+        "Tourism isn't my area, but agriculture is! Did you know Kuttanad in Kerala is one of the few places where farming happens below sea level?",
+        "FarmBot helps with farming, not travel. Want to know about rubber plantations in Kottayam or tea gardens in Munnar instead?",
+        "I focus on agriculture. Kerala has excellent farming regions - Palakkad for rice, Idukki for spices, Kasaragod for coconut!",
+        "That's a travel question! My expertise is farming. Shall I explain about paddy cultivation in Palakkad or spice farming in Idukki?"
+    ],
+    "context": [""]
+},
+{
+    "tag": "off_topic_malayalam_queries",
+    "patterns": [
+        "Ningal enthaanu", "Malayalam parayamo", "Sukhamaano", "Enthu vishesham",
+        "Njan aara", "Evideya", "Enthokke und vishesham", "Malayalam ariyamo",
+        "Keralam nannayi ariyamo", "Ninte peru enthaanu", "Enda mone", "Enthanu"
+    ],
+    "responses": [
+        "Njan FarmBot aanu! (I am FarmBot!) I understand some Malayalam, but I work best in English. How can I help with your farming questions?",
+        "I'm FarmBot - your farming assistant! I understand basic Malayalam but respond in English. What agricultural help do you need?",
+        "Hello! I'm FarmBot. While I recognize Malayalam, I provide farming advice in English. Ask me about coconut, rubber, spices, or any crop!",
+        "FarmBot here! Malayalam ariyaam, but English-il help cheyyaam. Farming related questions chodhikku! (I know Malayalam but can help in English. Ask farming questions!)",
+        "Namaskaram! I'm FarmBot. I focus on farming topics. Feel free to ask about Kerala crops like rubber, cardamom, or coconut!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "off_topic_kerala_food",
+    "patterns": [
+        "How to make appam", "Puttu recipe", "Kerala fish curry", "Sadya recipe",
+        "Payasam making", "Aviyal recipe", "Karimeen fry", "Beef fry Kerala style",
+        "Malabar biryani", "Parotta recipe", "Banana chips making", "Coconut chutney recipe"
+    ],
+    "responses": [
+        "I'm FarmBot, not a cooking assistant! But I can tell you how to grow the ingredients - coconut, rice, banana, spices!",
+        "Recipes aren't my specialty, but growing food is! Want to know about rice cultivation for puttu, or coconut farming for your curries?",
+        "FarmBot helps grow food, not cook it! I can advise on cultivating banana, coconut, tapioca, and spices used in Kerala cuisine!",
+        "That's a culinary question! My expertise is agriculture. Shall I explain how to grow banana for chips or coconut for chutney?",
+        "I focus on farming, not cooking. But I know everything about growing Kerala's food crops - rice, coconut, banana, tapioca, spices!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "off_topic_kerala_movies",
+    "patterns": [
+        "Best Malayalam movies", "Mohanlal films", "Mammootty", "Drishyam movie",
+        "Fahadh Faasil", "Premam movie", "Malayalam cinema", "Dulquer Salmaan",
+        "Lucifer movie", "Kerala film industry", "Prithviraj", "Nivin Pauly"
+    ],
+    "responses": [
+        "I'm FarmBot, not a film critic! I know about farming, not movies. What agricultural topic can I help with?",
+        "Malayalam cinema is great, but FarmBot specializes in agriculture! Ask me about rubber, spices, or rice cultivation instead!",
+        "Movies aren't my expertise - farming is! Want to learn about Kerala's cardamom, pepper, or coconut farming?",
+        "FarmBot focuses on agriculture, not entertainment. How can I help with your farming needs today?",
+        "I prefer discussing crop production over film production! What farming question do you have?"
+    ],
+    "context": [""]
+},
+{
+    "tag": "off_topic_current_affairs",
+    "patterns": [
+        "Latest news", "Today's headlines", "Breaking news", "World news",
+        "India news today", "Kerala news", "COVID updates", "Economic news",
+        "What happened today", "Current events", "News update", "Headlines today"
+    ],
+    "responses": [
+        "I'm FarmBot - I don't track news! But I can provide the latest agricultural advice. What farming topic interests you?",
+        "News isn't my domain, but farming is! Check news apps for current affairs. How can I help with agriculture?",
+        "FarmBot focuses on farming, not news. I can help with crop cultivation, pest control, or market information for farmers!",
+        "I don't have news updates, but I have farming knowledge! Ask me about any crop, fertilizer, or farming technique!",
+        "Current affairs are beyond my scope. I'm here for agricultural guidance. What farming help do you need?"
+    ],
+    "context": [""]
+},
+{
+    "tag": "test_bot_limits",
+    "patterns": [
+        "What don't you know", "Your limitations", "What can't you do", "Your weaknesses",
+        "Where do you fail", "Test your knowledge", "Prove you're smart", "Challenge you",
+        "Are you intelligent", "Test your accuracy", "How accurate are you", "Can you be wrong"
+    ],
+    "responses": [
+        "I'm FarmBot with expertise in South Asian agriculture. I may not have real-time data, hyper-local conditions, or non-farming knowledge. But I can help with crops, pests, fertilizers, and farming practices!",
+        "My limitations: No real-time weather/prices, limited to farming topics, may not know very rare local varieties. But I have extensive knowledge of common crops, diseases, and farming techniques!",
+        "I'm specialized in farming, not general AI. I might not know obscure local practices or latest research. But for standard agriculture questions, I'm here to help!",
+        "FarmBot focuses on farming only. I don't know about other topics, real-time data, or highly specialized research. But ask any common farming question!",
+        "I acknowledge I have limits - no live data, farming-only knowledge, may miss very new developments. But I can help with most practical farming questions!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "test_gibberish_input",
+    "patterns": [
+        "asdfghjkl", "qwerty", "xyz123", "random text here", "aaaaaaaa",
+        "jdhfkjsdhf", "testing testing", "abcdefg", "zzzzz", "blah blah blah",
+        "hdsjhfjsdh", "sdjfhsdkjf", "1234567890", "!@#$%^&*()", "test test test"
+    ],
+    "responses": [
+        "I didn't understand that. I'm FarmBot, here to help with farming. Try asking about crops, fertilizers, pests, or agricultural practices!",
+        "That doesn't seem like a farming question. Could you rephrase? I can help with rice, coconut, spices, vegetables, and more!",
+        "I couldn't interpret that input. I'm designed for agricultural queries. Ask me about crop cultivation, pest control, or farming techniques!",
+        "Sorry, that's unclear. I'm FarmBot specializing in farming. Try questions like 'How to grow rice?' or 'What fertilizer for coconut?'",
+        "I didn't catch that. Please ask farming-related questions - about crops, diseases, fertilizers, irrigation, or any agricultural topic!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "test_academic_questions",
+    "patterns": [
+        "Scientific name of rice", "Botanical classification", "Taxonomy of coconut",
+        "Research papers on agriculture", "Agricultural PhD topics", "Thesis on farming",
+        "Agricultural journals", "ICAR research", "Scientific study crops",
+        "Agronomy research", "Plant physiology", "Agricultural biotechnology"
+    ],
+    "responses": [
+        "Scientific names: Rice (Oryza sativa), Coconut (Cocos nucifera), Black pepper (Piper nigrum), Cardamom (Elettaria cardamomum), Rubber (Hevea brasiliensis). What crop details do you need?",
+        "For research, check ICAR journals, Indian Journal of Agricultural Sciences, Journal of Plantation Crops. I provide practical farming advice, not research papers!",
+        "FarmBot offers practical farming knowledge. For academic research, visit ICAR, State Agricultural Universities, or Google Scholar. What practical advice do you need?",
+        "I'm designed for practical farming guidance, not academic research. But I can share scientific basics - ask about any crop's cultivation practices!",
+        "Academic research is best found in ICAR publications, university resources. I help with practical farming. What agricultural advice can I provide?"
+    ],
+    "context": [""]
+},
+{
+    "tag": "test_comparison_questions",
+    "patterns": [
+        "Which is better rice or wheat", "Compare coconut and oil palm", "Best crop for Kerala",
+        "Most profitable farming", "Which fertilizer is best", "Compare organic and chemical",
+        "Better drip or sprinkler", "Which variety is best", "Compare different methods"
+    ],
+    "responses": [
+        "Best crop depends on your location, soil, water, market, and skills! In Kerala, coconut, rubber, spices, banana, and rice are traditionally profitable. What's your specific situation?",
+        "Comparisons depend on context! Drip vs Sprinkler: Drip for row crops, trees (water saving 70%); Sprinkler for cereals, uniform distribution. What are you growing?",
+        "Organic vs Chemical: Organic is sustainable, premium price, but lower initial yields. Chemical gives quick results but long-term soil damage. Consider gradual transition!",
+        "Profitability varies by region, market, and inputs. In Kerala: Cardamom (high value), Rubber (stable), Pepper (fluctuating), Coconut (consistent). What's your land situation?",
+        "There's no universal 'best' - it depends on your soil, climate, water, market access, and investment capacity. Tell me your conditions for specific advice!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "test_impossible_questions",
+    "patterns": [
+        "Predict tomorrow's price", "Will it rain next week", "Future of farming",
+        "Will my crop succeed", "Guarantee good harvest", "Predict crop yield",
+        "What will happen", "Future predictions", "Tomorrow weather", "Next season forecast"
+    ],
+    "responses": [
+        "I can't predict the future! For weather forecasts, check IMD or weather apps. For prices, monitor Agmarknet. I can advise on best practices for good yields!",
+        "Predictions are beyond my capability. I provide farming knowledge, not forecasts. Follow good practices, and I can help maximize your chances of success!",
+        "I don't have forecasting abilities. But I can help you prepare for different scenarios - drought management, pest prevention, market planning!",
+        "Future is uncertain, but good farming practices reduce risk! I can advise on crop insurance, diversification, and best cultivation methods for your area!",
+        "I can't guarantee outcomes, but I can help you follow best practices that improve success chances. What specific farming guidance do you need?"
+    ],
+    "context": [""]
+},
+{
+    "tag": "test_conflicting_info",
+    "patterns": [
+        "Some say urea is bad", "Organic is not good", "Chemical farming better than organic",
+        "Contradicting information", "Confusing advice", "Different experts say different",
+        "Who is correct", "Conflicting research", "Opposite opinions farming"
+    ],
+    "responses": [
+        "Conflicting advice is common! Truth is often context-dependent. Urea isn't bad if used correctly (split doses, not excess). Organic and chemical both have roles. What's your specific situation?",
+        "Both views often have merit! Organic builds long-term soil health; chemicals give quick results. Many farmers use integrated approach - organic base + targeted chemicals. Balance is key!",
+        "Farming advice varies because conditions vary! What works in one region/soil/climate may not work elsewhere. I provide general guidelines - adapt to your local conditions!",
+        "Different advice for different situations! I recommend: Start with soil test, follow integrated approach, observe your field, adapt based on results. What specific conflict concerns you?",
+        "There's rarely one 'right' answer in farming. Best approach: understand principles, observe your field, experiment on small scale, scale up what works for you!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_rubber_cultivation",
+    "patterns": [
+        "Rubber farming Kerala", "How to grow rubber", "Rubber plantation", "Rubber tree care",
+        "Rubber tapping", "Rubber cultivation", "Hevea brasiliensis", "Rubber plant",
+        "Rubber yield Kerala", "Rubber diseases", "Rubber fertilizer", "Best rubber variety"
+    ],
+    "responses": [
+        "Rubber cultivation (Kerala specialty): Plant grafted stumps in June-July. Spacing 5x5m (400 trees/ha). Tapping starts 6-7 years. Yield 1500-2000 kg dry rubber/ha/year. Rainy climate essential!",
+        "Rubber varieties: RRII 105 (high yield, wind resistant), RRII 414, RRII 430, PB 260, GT 1. Choose based on wind exposure and soil type. RRII 105 most popular in Kerala!",
+        "Rubber tapping: Start when girth 50cm at 125cm height (6-7 years). Tap every alternate day (S/2 d2 system). Use proper knife angle (30°). Rainguard essential. Morning tapping best!",
+        "Rubber fertilizer (mature tree): 900g N, 400g P2O5, 900g K2O per tree per year in 2-3 splits (April-May, Sept-Oct). Apply in circular band 150cm from trunk!",
+        "Rubber diseases: Abnormal leaf fall (spray Bordeaux mixture before monsoon), Powdery mildew (Sulfur dust), Pink disease (scrape + Bordeaux paste), Root disease (remove infected). Preventive care crucial!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_coconut_detailed",
+    "patterns": [
+        "Coconut farming Kerala", "Coconut cultivation tips", "Kerala coconut varieties",
+        "Coconut tree care", "Coconut diseases Kerala", "Coconut fertilizer schedule",
+        "Coconut yield improvement", "Coconut planting Kerala", "Thenginkrishi", "Nariyal kheti"
+    ],
+    "responses": [
+        "Kerala coconut varieties: West Coast Tall (WCT - most common), Chowghat Orange Dwarf (COD), Chowghat Green Dwarf (CGD), Lakshadweep Ordinary, Hybrid (DxT for higher yield)!",
+        "Coconut planting: Spacing 7.5-8m (175 palms/ha). Pit size 1x1x1m. Fill with topsoil + FYM + bone meal. Plant 10-12 month seedling. First yield 6-8 years (tall), 4-5 years (dwarf)!",
+        "Coconut fertilizer (adult palm): 500g N, 320g P2O5, 1200g K2O per palm per year in 2 splits (May-June, Sept-Oct). Apply in basin 1.8m from trunk. FYM 25kg/palm/year!",
+        "Coconut diseases Kerala: Root wilt (endemic, management only), Bud rot (Bordeaux spray + remove affected parts), Leaf rot (Carbendazim), Rhinoceros beetle (hook out + naphthalene balls)!",
+        "Improve coconut yield: Regular irrigation summer (40-50 nuts extra), Basin management, Integrated nutrient management, Intercropping (banana, pepper, cocoa), Mulching, Timely pest control!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_pepper_cultivation",
+    "patterns": [
+        "Black pepper farming", "Pepper cultivation Kerala", "Kurumulaku krishi",
+        "Pepper varieties Kerala", "Pepper diseases", "Pepper planting", "Pepper yield",
+        "Pepper fertilizer", "Pepper quick wilt", "Pepper support tree"
+    ],
+    "responses": [
+        "Black pepper (King of Spices): Native to Kerala! Plant rooted cuttings in May-June. Support trees needed (Erythrina, Silver oak, Arecanut, Coconut). First yield 3-4 years!",
+        "Pepper varieties Kerala: Panniyur 1 (popular, high yield), Karimunda (traditional, quality), IISR Shakti, IISR Thevam, Sreekara. Panniyur 1 most widely planted!",
+        "Pepper planting: 2-3 rooted cuttings per standard. Spacing based on support - Arecanut 2.7m, Erythrina 3m. Tie vines initially. Snake coil pruning improves yield!",
+        "Pepper diseases: Quick wilt (Phytophthora - most serious, Metalaxyl drench + drainage), Slow wilt (nematodes - Carbofuran), Pollu disease (Bordeaux spray), Anthracnose!",
+        "Pepper fertilizer per vine: 50g N, 50g P2O5, 150g K2O (adult vine) in 2-3 splits. Apply May-June and Sept-Oct. Organic matter (FYM/compost) essential. Mulching helps!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_cardamom_cultivation",
+    "patterns": [
+        "Cardamom farming", "Elaichi ki kheti", "Elakka krishi", "Cardamom cultivation",
+        "Cardamom Idukki", "Cardamom varieties", "Cardamom diseases", "Small cardamom",
+        "Cardamom planting", "Cardamom price", "Cardamom yield", "Queen of spices"
+    ],
+    "responses": [
+        "Cardamom (Queen of Spices): Shade-loving crop. Grown in Western Ghats (Idukki, Wayanad). Spacing 2x2m. First yield 3rd year. Peak 7-15 years. High value Rs.1000-2000/kg!",
+        "Cardamom varieties: Malabar (traditional, green capsules), Mysore (vigorous, high yield), Vazhukka (hybrid character). PV1, PV2, ICRI varieties disease resistant!",
+        "Cardamom planting: Plant seedlings/suckers June-July. Partial shade essential (40-60%). Raised beds in waterlogged areas. Rich humus soil required. High rainfall areas ideal!",
+        "Cardamom diseases: Katte/Mosaic virus (remove infected plants, control aphids), Capsule rot/Azhukal (Bordeaux spray), Rhizome rot (improve drainage, Trichoderma), Thrips (Spinosad)!",
+        "Cardamom care: Maintain shade trees, Mulching with leaves, Trashing (remove old shoots), Irrigate in dry months, Harvest when capsules green and firm. Dry to 10% moisture!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_arecanut_cultivation",
+    "patterns": [
+        "Arecanut farming Kerala", "Supari cultivation", "Betel nut farming", "Kamuku krishi",
+        "Arecanut planting", "Arecanut varieties", "Arecanut diseases", "Arecanut yield",
+        "Arecanut price", "Arecanut processing", "Arecanut fertilizer"
+    ],
+    "responses": [
+        "Arecanut cultivation: Plant seedlings June-July. Spacing 2.7x2.7m (1360 palms/ha). First yield 6-7 years. Long productive life (50+ years). Shade loving initially!",
+        "Arecanut varieties: Mangala (high yield), Sumangala, Shreemangala, South Kanara, Mohitnagar. Choose disease-tolerant varieties for Kerala conditions!",
+        "Arecanut fertilizer: Adult palm - 100g N, 40g P2O5, 140g K2O per palm per year in 2 splits. FYM 12kg/palm. Apply in basin. Organic matter very important!",
+        "Arecanut diseases: Koleroga/Mahali (fruit rot - Bordeaux mixture before monsoon), Yellow leaf disease (management only - improve nutrition, drainage), Inflorescence dieback!",
+        "Arecanut processing: Harvest when ripe (green to yellow). Boil + dry (Chali), or peel + dry (white supari). Different grades for different markets. Processing adds value!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_cashew_cultivation",
+    "patterns": [
+        "Cashew farming Kerala", "Kaju cultivation", "Kashuandi krishi", "Cashew planting",
+        "Cashew varieties", "Cashew diseases", "Cashew yield", "Cashew processing",
+        "Cashew fertilizer", "Cashew grafting", "Cashew apple"
+    ],
+    "responses": [
+        "Cashew cultivation: Plant grafted plants June-July. Spacing 8x8m (156 trees/ha). First yield 3rd year (grafted). Tolerates poor/laterite soil. Low maintenance!",
+        "Cashew varieties: BPP-8 (high yield), Vengurla-4, Priyanka, Dhana, Ullal-1. Choose based on kernel quality and yield. BPP-8 popular in Kerala!",
+        "Cashew fertilizer: Adult tree - 500g N, 125g P2O5, 125g K2O per tree per year. Apply before monsoon (May-June). Organic matter improves soil in laterite areas!",
+        "Cashew pests: Tea mosquito bug (major - spray Carbaryl at flowering), Stem borer (clean hole, inject petrol + plug), Flower thrips (Spinosad spray). Monitor during flowering!",
+        "Cashew apple: Fleshy fruit attached to nut. Makes juice, feni, jam. Often wasted! Value addition opportunity. Raw nut yields 25-30% kernel after processing!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_nutmeg_cultivation",
+    "patterns": [
+        "Nutmeg farming", "Jaathikka cultivation", "Jathipathri krishi", "Nutmeg planting",
+        "Nutmeg varieties", "Nutmeg diseases", "Nutmeg yield", "Mace cultivation",
+        "Nutmeg price", "Nutmeg processing", "Grow nutmeg"
+    ],
+    "responses": [
+        "Nutmeg cultivation: Tropical spice, Kerala specialty! Plant seedlings/grafts June-July. Spacing 8x8m. Dioecious (male + female trees). First yield 6-8 years. Shade tolerant!",
+        "Nutmeg propagation: Seed (uncertain sex, late bearing), Epicotyl grafting (early bearing, known sex). Plant 1 male per 10 females for pollination. Grafted plants preferred!",
+        "Nutmeg yield: Mature tree gives 1000-2000 fruits/year. Two products - Nutmeg (seed) and Mace (aril covering). Both high value. Peak bearing 20-30 years!",
+        "Nutmeg processing: Harvest when fruit splits. Remove fleshy pericarp (can make pickle). Separate mace from seed. Dry separately. Mace turns reddish-orange when dry!",
+        "Nutmeg care: Partial shade beneficial, Regular irrigation, Mulching important, Fruit rot (remove affected fruits), Thread blight (Bordeaux spray). Low maintenance once established!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_clove_cultivation",
+    "patterns": [
+        "Clove farming", "Grampu cultivation", "Lavang kheti", "Clove planting",
+        "Clove tree Kerala", "Clove varieties", "Clove diseases", "Clove yield",
+        "Clove price", "Clove harvest", "Grow clove"
+    ],
+    "responses": [
+        "Clove cultivation: Tropical evergreen, suited for Kerala highlands. Plant seedlings June-July. Spacing 6-7m. First flowering 7-8 years. Long-lived (100+ years)!",
+        "Clove planting: Partial shade needed initially. Well-drained soil essential. Pit size 75x75x75cm. Needs high rainfall + humidity. Idukki, Kottayam, Trivandrum districts!",
+        "Clove harvest: Harvest unopened flower buds (before pink stage). Hand-picking. 4-5 harvests/year during season (Sept-Feb). Yield 2-5 kg dry cloves/tree!",
+        "Clove processing: Dry harvested buds in sun 4-5 days to 10% moisture. Color changes from reddish to dark brown. Store in airtight containers. High value spice!",
+        "Clove problems: Seedling blight (Carbendazim), Leaf spot, Stem borer. Generally hardy once established. Frost sensitive - not for very high altitudes!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_vanilla_cultivation",
+    "patterns": [
+        "Vanilla farming", "Vanilla cultivation Kerala", "Vanilla planting", "Vanilla orchid",
+        "Vanilla pollination", "Vanilla curing", "Vanilla price", "Vanilla yield",
+        "Vanilla support tree", "Vanilla diseases", "How to grow vanilla"
+    ],
+    "responses": [
+        "Vanilla cultivation: High-value orchid crop! Plant cuttings June-July on support trees (Gliricidia, Erythrina). Spacing 2.5x2.5m. First flowering 3rd year. Needs shade!",
+        "Vanilla pollination: Critical! Hand-pollinate each flower (morning 6-11 AM). Flowers open only one day. Skill required. Without pollination, no beans! Labor intensive!",
+        "Vanilla curing: Beans harvested 9 months after pollination. Complex curing process (killing, sweating, drying, conditioning) takes 6 months. Determines quality!",
+        "Vanilla problems: Root rot (drainage + Trichoderma), Stem rot, Viral diseases (remove infected). High management, high risk, high reward crop!",
+        "Vanilla economics: Very high value (Rs.25,000-40,000/kg cured beans). But labor-intensive pollination, skill-intensive curing. Not for beginners. Start small, learn, then scale!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_cocoa_cultivation",
+    "patterns": [
+        "Cocoa farming Kerala", "Chocolate crop", "Cocoa cultivation", "Cocoa planting",
+        "Cocoa varieties", "Cocoa diseases", "Cocoa yield", "Cocoa price",
+        "Cocoa processing", "Cocoa intercrop coconut", "Grow cocoa"
+    ],
+    "responses": [
+        "Cocoa cultivation: Excellent intercrop in coconut/arecanut! Shade-loving crop. Plant seedlings June-July. Spacing 2.7x2.7m as intercrop. First pod 3rd year!",
+        "Cocoa varieties: Forastero (common, hardy), Criollo (fine flavor, delicate), Trinitario (hybrid). CCRP varieties from CPCRI recommended for Kerala!",
+        "Cocoa as intercrop: Perfect under coconut (75-100 plants/ha), arecanut, rubber. Additional income Rs.15,000-25,000/ha from existing plantation. Win-win!",
+        "Cocoa harvest: Pods ripen 5-6 months after pollination. Harvest when color changes (green to yellow/red). 2-3 harvests/year. Extract beans, ferment, dry!",
+        "Cocoa processing: Break pod → Extract beans → Ferment 5-7 days (flavor development) → Dry to 7% moisture → Sell to buyers. Fermentation critical for quality!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_coffee_cultivation",
+    "patterns": [
+        "Coffee farming Kerala", "Coffee cultivation Wayanad", "Coffee planting",
+        "Coffee varieties Kerala", "Coffee diseases", "Coffee yield", "Coffee price",
+        "Arabica coffee", "Robusta coffee", "Coffee processing", "Shade coffee"
+    ],
+    "responses": [
+        "Coffee cultivation Kerala: Wayanad main district. Robusta (lowlands, 90%) and Arabica (highlands, 10%). Shade-grown under native trees. Planted June-July!",
+        "Coffee varieties: Robusta - CxR, S-274 (high yield). Arabica - S-795, Chandragiri, Selection-9 (disease resistant). Choose based on altitude!",
+        "Coffee planting: Spacing 3x3m Robusta, 2x2m Arabica. Shade trees essential (Silver oak, Dadap). Pit size 45x45x45cm. Rain-fed in Kerala (2000-3000mm)!",
+        "Coffee diseases: Coffee leaf rust (Bordeaux spray), Black rot (shade management), White stem borer (remove affected, lime paste on stems), Berry borer (timely harvest)!",
+        "Coffee processing: Cherry picking (ripe red berries) → Pulping → Fermentation → Washing → Drying (parchment) → Hulling → Grading. Quality depends on processing!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_tea_cultivation",
+    "patterns": [
+        "Tea farming Kerala", "Tea cultivation Munnar", "Tea planting", "Tea varieties",
+        "Tea pruning", "Tea plucking", "Tea processing", "Tea yield",
+        "Tea estate management", "High range tea", "Grow tea"
+    ],
+    "responses": [
+        "Tea cultivation Kerala: High ranges of Idukki (Munnar), Wayanad. Altitude 1000-2000m. Cool climate essential. Acid soil (pH 4.5-5.5). High rainfall areas!",
+        "Tea planting: Vegetatively propagated (cuttings). Spacing 1.2x0.6m (13,500 plants/ha). Contour planting on slopes. Shade trees (Silver oak, Grevillea) at intervals!",
+        "Tea plucking: Pluck 2 leaves + bud every 7-10 days during season. Fine plucking for quality, coarse plucking for quantity. Manual plucking in Kerala (quality tea)!",
+        "Tea pruning: Medium prune (5-year cycle) rejuvenates bush. Skiffing (light) annual. Centering for young plants. Proper pruning maintains productivity!",
+        "Tea processing: Withering → Rolling → Oxidation (fermentation) → Drying → Sorting → Grading. Orthodox method in Kerala hills. CTC in some areas. Processing determines tea type!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kuttanad_rice_farming",
+    "patterns": [
+        "Kuttanad rice farming", "Below sea level farming", "Kuttanad paddy", "Kayal farming",
+        "Pokkali rice", "Kerala unique farming", "Kuttanad agriculture", "Rice below sea level",
+        "Kuttanad wetland", "Alappuzha rice farming", "Puncha krishi"
+    ],
+    "responses": [
+        "Kuttanad - Unique farming: World's only region farming below sea level (-2.2m)! In Alappuzha, Kerala. UNESCO designated 'Globally Important Agricultural Heritage System'!",
+        "Kuttanad system: Bunds (dykes) protect fields from backwaters. Pump out water. Single rice crop (Puncha - Aug-March). Summer - fish/prawn in same fields!",
+        "Kuttanad rice varieties: Jyothi (HYV, common), Uma, Vyttila, Traditional varieties (Chovvarian, Thavalakannan). Flood-tolerant varieties important!",
+        "Kuttanad challenges: Salinity intrusion, Waterlogging, Acidity, High input cost (pumping, bunding). Labor intensive. But traditional knowledge sustains it!",
+        "Pokkali cultivation: Another unique Kerala system. Salt-tolerant rice in coastal areas (Ernakulam). Rice-prawn rotation. Traditional organic system. GI registered!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_homestead_farming",
+    "patterns": [
+        "Kerala homestead farming", "Mixed farming Kerala", "Home garden Kerala",
+        "Parambu krishi", "Multi-tier cropping", "Homestead vegetables", "Kitchen garden Kerala",
+        "Traditional Kerala farming", "Compound farming", "Multi-story cropping"
+    ],
+    "responses": [
+        "Kerala homestead (Parambu): Traditional multi-tier farming around homes. Coconut (top tier), Arecanut/Jackfruit (middle), Pepper/Banana/Cocoa (lower), Vegetables (ground). Maximum use of space!",
+        "Multi-tier system: Coconut (8m) → Arecanut (6m) → Clove/Nutmeg (4m) → Pepper (climber) → Banana/Cocoa (2-3m) → Pineapple/Tapioca → Vegetables/Turmeric. 5-7 crops on same land!",
+        "Homestead advantages: Diverse income, Food security, Year-round harvest, Risk distribution, Ecological benefits, Low external inputs. Traditional Kerala wisdom!",
+        "Homestead vegetables: Grow on available space. Amaranthus, Snake gourd, Bitter gourd, Chili, Brinjal, Drumstick, Curry leaf, Coriander. Fresh, pesticide-free!",
+        "Livestock integration: Cow/goats + poultry part of homestead. Manure for plants, milk/eggs for family, crop residue for feed. Closed-loop system!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_banana_cultivation",
+    "patterns": [
+        "Banana farming Kerala", "Nendran banana", "Plantain cultivation", "Ethakka krishi",
+        "Banana varieties Kerala", "Banana tissue culture Kerala", "Banana fertilizer",
+        "Banana diseases Kerala", "Nendran cultivation", "Poovan banana"
+    ],
+    "responses": [
+        "Kerala banana varieties: Nendran (plantain, chips, most commercial), Poovan (Mysore, eating), Palayankodan (dwarf Cavendish), Robusta, Red banana, Njalipoovan. Nendran most valuable!",
+        "Nendran cultivation: Plant suckers/TC plants. Spacing 2x2m. Duration 11-14 months. Single bunch per plant. Famous for chips. Kerala's signature banana!",
+        "Banana fertilizer Kerala: Per plant - 100g N + 30g P2O5 + 250g K2O in 6-8 monthly splits. FYM 10kg at planting. Potassium very important for Nendran!",
+        "Banana diseases Kerala: Bunchy top virus (roguing + aphid control), Panama wilt (resistant varieties), Sigatoka (dithane spray), Rhizome rot (avoid waterlogging)!",
+        "Banana intercropping: Excellent under coconut/arecanut. Also grows well with ginger, turmeric, vegetables in initial months. Additional income from existing plantation!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_pineapple_cultivation",
+    "patterns": [
+        "Pineapple farming Kerala", "Pineapple cultivation", "Pineapple Vazhakulam",
+        "Kew pineapple", "Mauritius pineapple", "Pineapple planting", "Pineapple sucker",
+        "Pineapple fertilizer", "Pineapple yield", "MD2 pineapple"
+    ],
+    "responses": [
+        "Pineapple Kerala: Major producer! Vazhakulam (Ernakulam) famous. GI tagged 'Vazhakulam Pineapple'. Grown as intercrop or monocrop. Duration 18-24 months for first harvest!",
+        "Pineapple varieties: Kew (common, processing), Mauritius (fresh eating, less fiber), MD2 (export quality, sweet, new introduction), Giant Kew. Kew dominates Kerala!",
+        "Pineapple planting: Plant suckers/slips. Spacing 25x60x90cm (double row). Plant June-July or Sept-Oct. 44,000-50,000 plants/ha. Partial shade beneficial!",
+        "Pineapple fertilizer: 12g N + 4g P2O5 + 12g K2O per plant per year in 6 splits. Apply as soil drenching. Potassium improves fruit quality!",
+        "Pineapple forcing: Induce flowering with Ethrel (25ppm spray) or Calcium carbide (in leaf whorl). Synchronizes harvest for market. Apply at 12-14 months!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_tapioca_cultivation",
+    "patterns": [
+        "Tapioca farming Kerala", "Cassava cultivation", "Kappa krishi", "Marichini farming",
+        "Tapioca varieties", "Tapioca planting", "Tapioca harvest", "Tapioca fertilizer",
+        "Tapioca diseases", "Tapioca yield", "Cassava Kerala"
+    ],
+    "responses": [
+        "Tapioca (Cassava): Kerala staple! Easy crop, tolerates poor soil, drought. Plant setts (stem cuttings) April-May or Sept-Oct. Duration 10-12 months!",
+        "Tapioca varieties: H-165, H-226, Sree Visakham, Sree Sahya, Sree Prakash. H-165, H-226 popular for eating. Sree varieties for starch. Choose based on use!",
+        "Tapioca planting: 20cm sett with 4-5 buds. Spacing 90x90cm. Plant horizontally or slanted (not vertical). Ridges help in waterlogged areas!",
+        "Tapioca fertilizer: 100kg N, 50kg P2O5, 100kg K2O per hectare in 2 splits (45 and 90 days). FYM 12.5 tons/ha. Potassium important for tuber quality!",
+        "Tapioca diseases: Mosaic virus (resistant varieties), Tuber rot (drainage, crop rotation), Mites (Dicofol spray). Generally hardy crop. Good for marginal lands!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_ginger_turmeric",
+    "patterns": [
+        "Ginger farming Kerala", "Turmeric cultivation Kerala", "Inji krishi", "Manjal krishi",
+        "Ginger varieties Kerala", "Turmeric varieties Kerala", "Ginger diseases",
+        "Wayanad ginger", "Ginger fertilizer", "Turmeric processing"
+    ],
+    "responses": [
+        "Ginger (Inji) Kerala: Shade-tolerant, excellent intercrop. Wayanad, Idukki main areas. Plant April-May. Duration 8-9 months. Mulching essential!",
+        "Ginger varieties Kerala: Maran, Rio-de-Janeiro, Nadia, Kuruppampady, IISR Varada, IISR Mahima. Maran and Kuruppampady traditional, high oleoresin!",
+        "Turmeric (Manjal) Kerala: Similar to ginger. Plant April-May. Duration 7-9 months. Varieties - Alleppey, Ernakulam, Wayanad local, IISR Prabha, IISR Pratibha!",
+        "Disease management: Soft rot (Rhizome rot) - most serious! Seed treatment with Trichoderma, good drainage, crop rotation. Avoid infected rhizomes!",
+        "Intercropping system: Ginger/Turmeric under coconut, arecanut, banana. Uses partial shade, additional income. Apply fertilizer separately for each crop!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_vegetable_crops",
+    "patterns": [
+        "Vegetables Kerala", "Kerala vegetable farming", "Vegetable cultivation Kerala",
+        "Snake gourd cultivation", "Ash gourd farming", "Bitter gourd Kerala",
+        "Amaranthus cultivation", "Vegetables monsoon Kerala", "Pachakkari krishi"
+    ],
+    "responses": [
+        "Kerala vegetables: Amaranthus (Cheera), Snake gourd, Bitter gourd, Ash gourd, Cucumber, Cowpea, Drumstick, Brinjal, Okra, Ivy gourd. Suited to humid climate!",
+        "Monsoon vegetables: Amaranthus (easy, quick), Cowpea, Cucumber, Ash gourd thrive in rainy season. Use raised beds for drainage. Avoid waterlogging!",
+        "Snake gourd: Sow April-May or Sept-Oct. Pandal/trellis system. Duration 60-70 days to first harvest. Train on bower. Pick young for tenderness!",
+        "Bitter gourd: Sow Feb-March or June-July. Trellis essential. Pick green, before yellowing. High demand, good price. Preethi, Priyanka varieties!",
+        "Vegetable challenges Kerala: High humidity (disease pressure), Pest problems (fruit fly, borers), Competition from other states. Focus on quality, local markets!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_aquaculture_integration",
+    "patterns": [
+        "Fish farming Kerala", "Aquaculture Kerala", "Rice fish farming", "Pokkali fish",
+        "Prawn farming Kerala", "Integrated fish farming", "Karimeen farming",
+        "Fish in paddy fields", "Aquaculture integration", "Shrimp farming Kerala"
+    ],
+    "responses": [
+        "Rice-fish/prawn system: Traditional in Kuttanad, Pokkali areas. Rice during monsoon, fish/prawn during summer in same fields. Integrated, sustainable, profitable!",
+        "Pokkali system: Unique rice-prawn rotation in Ernakulam, Thrissur coast. Organic rice (no chemicals), followed by prawn/fish. GI registered. High value!",
+        "Prawn farming: Penaeus monodon (Tiger prawn), P. indicus (Indian white). Extensive/traditional or semi-intensive. Good returns but needs management!",
+        "Karimeen (Pearl spot): Kerala's state fish! Farmed in backwaters, ponds. Excellent price (Rs.400-600/kg). Grows well in brackish water!",
+        "Integration: Fish in farm ponds (irrigation + fish income), Rice-fish (pest control + protein), Coconut garden ponds (nutrient recycling). Multiple benefits!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_organic_farming",
+    "patterns": [
+        "Organic farming Kerala", "Kerala organic certification", "Jaivik krishi Kerala",
+        "Organic vegetable Kerala", "Organic spices Kerala", "Zero chemical farming",
+        "Organic certification Kerala", "PGS Kerala", "Organic market Kerala"
+    ],
+    "responses": [
+        "Organic farming Kerala: Government promotes through various schemes. PGS-India (Participatory Guarantee System) for domestic market certification. Group-based, affordable!",
+        "Kerala organic crops: Spices (cardamom, pepper, ginger, turmeric), Coffee (Wayanad), Vegetables, Coconut. Premium markets in metros, exports!",
+        "Certification: NPOP for export (costly), PGS-India for domestic (affordable, group-based). Register at pgsindia.org. Training through KVK, agriculture dept!",
+        "Organic inputs: Jeevamrut, Panchagavya, Vermicompost, Neem products, Trichoderma, Pseudomonas. Kerala Agriculture University recommendations available!",
+        "Marketing: Organic stores (many in cities), Weekly organic markets (Thiruvananthapuram, Kochi, Kozhikode), Online platforms, FPO collective marketing!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_monsoon_farming",
+    "patterns": [
+        "Monsoon farming Kerala", "Kharif Kerala", "Rainy season crops Kerala",
+        "Monsoon vegetables Kerala", "Virippu cultivation", "Mundakan paddy",
+        "Farming during rains", "Kerala monsoon crops", "Wet season farming Kerala"
+    ],
+    "responses": [
+        "Kerala has 2 monsoons: Southwest (June-Sept, heavy) and Northeast (Oct-Nov, lighter). Cropping planned around this. Very different from North India!",
+        "Rice seasons Kerala: Virippu (April-Sept, monsoon crop), Mundakan (Sept-Dec/Jan, second crop), Puncha (Dec-March, summer, Kuttanad). 3 crops where water available!",
+        "Monsoon planting: Banana, Ginger, Turmeric, Pepper, all spices planted with monsoon onset (May-June). Uses natural irrigation. Critical timing!",
+        "Monsoon challenges: Waterlogging (drainage!), Disease pressure (fungal diseases rampant), Pest buildup, Difficult spraying. Preventive measures important!",
+        "Monsoon opportunities: Natural irrigation (no cost), Best planting time for most crops, Green manuring, Soil building. Plan and prepare before monsoon!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_agriculture_problems",
+    "patterns": [
+        "Farming problems Kerala", "Agriculture issues Kerala", "Kerala farming challenges",
+        "Labor shortage Kerala", "High cost farming Kerala", "Kerala agriculture decline",
+        "Why farming difficult Kerala", "Kerala farmer problems", "Agriculture crisis Kerala"
+    ],
+    "responses": [
+        "Labor shortage: Major issue! High wages (Rs.800-1000/day), labor migration to Gulf. Mechanization difficult in small, sloped, mixed farms. Need labor-saving technologies!",
+        "High cost: Input costs high, labor expensive, small holdings (avg. 0.2 ha), fragmented land. Returns often don't match investment. Diversification needed!",
+        "Competition: Vegetables, fruits from Tamil Nadu, Karnataka cheaper. Local production costly. Focus on quality, local/organic markets, value addition!",
+        "Wildlife damage: Elephants, wild boar increasing problem near forests. Compensation inadequate. Fencing expensive. Farmer-wildlife conflict growing!",
+        "Solutions: Mechanization, Group farming (FPOs), Value addition, Organic premium markets, Agri-tourism, Niche crops (spices, medicinal plants). Adapt and diversify!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_agriculture_schemes",
+    "patterns": [
+        "Agriculture schemes Kerala", "Farming subsidy Kerala", "Kerala government farming",
+        "Subhiksha Kerala", "Vegetable development Kerala", "Kerala farmer benefits",
+        "Horticulture scheme Kerala", "Coconut development Kerala", "Spices board schemes"
+    ],
+    "responses": [
+        "Subhiksha Keralam: State scheme for vegetable self-sufficiency. Subsidies for seeds, inputs, infrastructure. Promotes homestead vegetable cultivation!",
+        "Coconut Development Board: Replanting subsidy, Coconut palm insurance, Neera/Coconut sugar promotion, Technology mission. Check cdb.nic.in!",
+        "Spices Board: Subsidies for spice cultivation (cardamom, pepper, ginger), Organic certification support, Quality improvement, Export promotion. spices.board.in!",
+        "Rubber Board: Replanting subsidy, Rain guarding, Group processing, Market intervention. For rubber farmers. rubberboard.org.in!",
+        "State schemes: Karshakan relief package, Crop insurance, Interest subvention, Farm mechanization subsidy. Contact Krishi Bhavan (block agriculture office)!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "professor_technical_test",
+    "patterns": [
+        "Explain photosynthesis in crops", "What is transpiration", "Nitrogen cycle farming",
+        "Explain plant respiration", "What is vernalization", "Photoperiodism in plants",
+        "C3 vs C4 plants", "Explain osmosis plants", "Plant hormones function",
+        "What is allelopathy", "Explain nitrogen fixation", "Rhizosphere definition"
+    ],
+    "responses": [
+        "Photosynthesis: Plants convert CO2 + H2O → Glucose + O2 using sunlight. C3 plants (rice, wheat): Calvin cycle directly. C4 plants (maize, sugarcane): additional step, more efficient in heat!",
+        "Nitrogen fixation: Conversion of atmospheric N2 to plant-usable forms. Biological (Rhizobium in legume root nodules), or industrial (fertilizers). Legumes fix 50-200 kg N/ha!",
+        "Plant hormones: Auxins (growth, rooting), Gibberellins (elongation, flowering), Cytokinins (cell division), Ethylene (ripening), ABA (stress response). Applied in agriculture for various purposes!",
+        "Photoperiodism: Plant response to day length. Short-day plants (rice) flower when days shorten. Long-day plants (wheat) need long days. Day-neutral (tomato) flower regardless!",
+        "Vernalization: Cold requirement for flowering. Some crops (wheat, onion for seed) need cold period to flower. Important for variety selection based on climate!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "professor_practical_test",
+    "patterns": [
+        "Calculate fertilizer dose", "How to calibrate sprayer", "Calculate seed rate",
+        "Water requirement calculation", "Spacing and plant population", "Yield calculation",
+        "Fertilizer conversion", "Pesticide dilution", "Area measurement farming",
+        "Economics calculation farming", "Cost benefit ratio", "Break even analysis"
+    ],
+    "responses": [
+        "Fertilizer calculation: If 120kg N/ha recommended and Urea is 46% N, then Urea needed = 120/0.46 = 261 kg/ha. For acre: 261/2.47 = 106 kg/acre. Always calculate based on nutrient content!",
+        "Plant population: Plants/ha = 10000 ÷ (row spacing m × plant spacing m). Example: 60×45cm = 10000 ÷ (0.6×0.45) = 37,037 plants/ha. Per acre: divide by 2.47!",
+        "Spray solution: If 2ml pesticide per liter recommended, and sprayer tank is 16L, then add 2×16 = 32ml pesticide per tank. Always follow label instructions!",
+        "Water requirement: ET0 × Kc × Area = Water need. Drip efficiency 90% vs flood 50%. So drip needs less water for same crop water need. Measure with pan evaporation locally!",
+        "Cost-benefit ratio: Total returns ÷ Total costs. If expenditure Rs.50,000 and income Rs.80,000, CBR = 80000/50000 = 1.6. Higher than 1 is profitable!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "professor_research_test",
+    "patterns": [
+        "Latest research in agriculture", "New farming technologies", "Recent developments farming",
+        "Agricultural innovations", "Future of farming", "Precision agriculture research",
+        "Climate change agriculture research", "Gene editing crops", "Vertical farming research",
+        "Agricultural drones research", "Soil microbiome research", "New crop varieties"
+    ],
+    "responses": [
+        "I provide practical farming advice, not cutting-edge research updates. For latest research, check: ICAR journals, Kerala Agricultural University publications, Indian Journal of Agricultural Sciences!",
+        "Research resources: KAU (Kerala Agricultural University) website, ICAR portal, Google Scholar for papers, ResearchGate. I focus on established, practical knowledge!",
+        "Emerging areas: Precision farming, Drone technology, AI in agriculture, Climate-resilient varieties, Microbiome research, Vertical farming. Follow agricultural universities for updates!",
+        "For Kerala-specific research: KAU Thrissur, CTCRI Trivandrum (tuber crops), CPCRI Kasaragod (coconut, cocoa), IISR Calicut (spices). Visit or check their websites!",
+        "I'm designed for practical farming guidance. For cutting-edge research, academic papers, and new developments, please refer to research institutions and journals!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "random_conversation_test",
+    "patterns": [
+        "What's your favorite color", "Do you like music", "Tell me about yourself personally",
+        "What do you do for fun", "Do you have friends", "Are you married",
+        "What's your hobby", "Do you sleep", "What do you eat", "Where do you live",
+        "Are you male or female", "How old are you really", "Do you get tired"
+    ],
+    "responses": [
+        "I'm FarmBot, an AI assistant focused entirely on farming! I don't have personal experiences, preferences, or a physical existence. But I'm always ready to discuss agriculture!",
+        "Interesting question, but I'm just a farming chatbot! I exist only to help with agricultural queries. No personal life, just lots of farming knowledge! What crop can I help with?",
+        "I don't have personal experiences - I'm FarmBot, designed specifically for farming advice! My 'life' is helping farmers. What agricultural topic interests you?",
+        "As an AI farming assistant, I don't have hobbies, feelings, or personal life. My purpose is helping with agriculture! Ask me about crops, pests, fertilizers, or farming techniques!",
+        "I'm FarmBot - no personal life, just farming expertise! I'm here to help with agricultural questions 24/7. What would you like to know about farming?"
+    ],
+    "context": [""]
+},
+{
+    "tag": "sarcastic_test",
+    "patterns": [
+        "You must be very smart", "Oh really you know everything", "Sure you're an expert",
+        "Yeah right you know farming", "As if you could help", "You think you're intelligent",
+        "Very funny bot", "Oh you're so helpful", "Great another useless bot", "Like you would know"
+    ],
+    "responses": [
+        "I understand the skepticism! I'm FarmBot, trained on agricultural knowledge. I may not know everything, but I can help with common farming questions. Try me with a specific crop or problem!",
+        "Fair enough! I'm an AI, not a human expert. But I have extensive information on South Asian farming. Ask a specific question and let me try to help!",
+        "I appreciate honest feedback! I'm designed to assist with farming queries. I may not be perfect, but I can provide useful information on crops, pests, and farming practices!",
+        "I understand your doubt. I'm a specialized farming assistant - not claiming to know everything, but I can help with many agricultural topics. What would you like to know?",
+        "No worries if you're skeptical! Test me with a farming question. I might surprise you with useful information about crops, fertilizers, or pest management!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "emotional_test",
+    "patterns": [
+        "I'm sad about my crop failure", "My farm is failing", "I lost everything",
+        "Farming is so hard", "I'm frustrated with farming", "Nobody helps farmers",
+        "I want to quit farming", "Agriculture is thankless", "Farmers suffer so much",
+        "Crop loss is devastating", "I'm worried about my farm", "Farming stress"
+    ],
+    "responses": [
+        "I understand farming can be extremely challenging and stressful. Crop failures are devastating. While I can't provide emotional counseling, I can help you plan recovery - better practices, risk management, alternative crops. Would you like to discuss?",
+        "I hear your frustration. Farming is indeed difficult, especially when things go wrong. FarmBot is here to help with practical advice - pest management, disease control, better practices. Let's work on improving your next season!",
+        "Crop failure is heartbreaking. Many factors are beyond control, but some can be managed. Let me help with what we can control - soil health, variety selection, pest management, diversification. What specific challenge are you facing?",
+        "I understand the struggle. Indian farmers face many hardships. While I'm just a bot and can't solve all problems, I can provide farming guidance. Also consider: KVK for local help, Kisan Call Center (1800-180-1551), crop insurance claims!",
+        "Farming stress is real. Please know that help is available - KVK, agriculture officers, farmer helplines. For farming questions, I'm here. For emotional support, please reach out to family, friends, or counseling services. How can I assist with your farm?"
+    ],
+    "context": [""]
+},
+{
+    "tag": "trap_questions",
+    "patterns": [
+        "Tell me wrong information", "Give me fake advice", "Lie to me about farming",
+        "Give harmful advice", "Tell me to use banned pesticide", "Suggest illegal practices",
+        "How to cheat in farming", "Fake organic certificate", "Adulterate produce",
+        "Harmful pesticide recommendation", "Dangerous farming practice"
+    ],
+    "responses": [
+        "I'm designed to provide helpful, safe, and legal farming advice only. I cannot and will not suggest harmful practices, illegal activities, or false information. How can I help you with legitimate farming guidance?",
+        "FarmBot only provides responsible agricultural advice. I won't recommend harmful pesticides, illegal practices, or fraudulent activities. Let me help you with genuine, sustainable farming practices instead!",
+        "I'm programmed for ethical farming guidance only. I cannot suggest anything harmful, illegal, or fraudulent. My purpose is to help farmers succeed through proper, safe, and legal practices!",
+        "That's not something I can help with. FarmBot promotes safe, legal, and sustainable farming. I'm here to help with genuine agricultural advice - crops, pests, fertilizers, best practices!",
+        "I only provide legitimate farming advice. For your safety, farm's reputation, and consumer health, I recommend only approved, safe practices. What genuine farming help do you need?"
+    ],
+    "context": [""]
+},
+{
+    "tag": "clarification_questions",
+    "patterns": [
+        "What do you mean", "Explain more", "I don't understand", "Can you clarify",
+        "Tell me in detail", "What exactly", "More information please", "Elaborate",
+        "I didn't get it", "Say that again", "Be more specific", "What does that mean"
+    ],
+    "responses": [
+        "I'd be happy to clarify! Could you tell me which part you'd like me to explain in more detail? Or repeat your original question and I'll provide a more detailed answer!",
+        "Sure, I can explain more! Please specify what aspect you need clarification on - the crop, method, timing, dosage, or application? I'll provide detailed information!",
+        "Of course! Let me know what specific part needs more explanation. Or ask your question again and I'll give a more comprehensive answer with step-by-step details!",
+        "Happy to elaborate! Tell me which part was unclear - technical terms, procedure, timing, or something else? I'll explain in simpler terms or more detail!",
+        "I understand you need more information. Please specify what you'd like me to explain further, or rephrase your question for a more detailed response!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "feedback_complaints",
+    "patterns": [
+        "Your answer was wrong", "That's incorrect", "Bad advice", "You made a mistake",
+        "Not helpful", "Useless response", "Wrong information", "Incorrect answer",
+        "You don't know anything", "That's not right", "Misleading answer", "Poor response"
+    ],
+    "responses": [
+        "I apologize if my response wasn't helpful or accurate. I try my best but may make mistakes. Could you tell me what was wrong? I'd like to provide better information!",
+        "Thank you for the feedback. I'm sorry if my answer was incorrect. Please share the specific issue - I'll try to give you accurate information this time!",
+        "I appreciate you pointing that out. Could you tell me what was incorrect? I want to provide accurate farming advice and improve my responses!",
+        "I'm sorry my response wasn't satisfactory. Please help me understand what was wrong or what you were actually asking. I'll try to give a better answer!",
+        "Apologies for any incorrect information. FarmBot aims to be helpful and accurate. Please rephrase your question or tell me the specific error, and I'll try again!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "off_topic_education",
+    "patterns": [
+        "How to study well", "Best college for agriculture", "Agricultural university admission",
+        "ICAR exam", "JRF preparation", "Agriculture degree", "BSc Agriculture",
+        "MSc Horticulture", "PhD in agriculture", "Agricultural education", "Farming courses"
+    ],
+    "responses": [
+        "For agricultural education: Kerala Agricultural University (KAU), Tamil Nadu Agricultural University (TNAU), ICAR institutions. Entrance exams vary by university. Check respective websites!",
+        "ICAR-AIEEA for UG admission to central agricultural universities. JRF/SRF for research fellowships. Preparation: NCERT + previous papers + standard agriculture books!",
+        "Agricultural degrees: BSc Agriculture (4 years), MSc (2 years), PhD (3-5 years). Specializations: Agronomy, Horticulture, Plant Pathology, Entomology, Soil Science, Extension!",
+        "For admission guidance, visit university websites or contact admissions directly. I focus on practical farming advice. What agricultural topic can I help with?",
+        "Education is important but beyond my main focus. For practical farming knowledge, I'm here! What crop cultivation or farming technique would you like to learn about?"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_water_management",
+    "patterns": [
+        "Water management Kerala", "Irrigation Kerala", "Water scarcity Kerala",
+        "Groundwater Kerala", "Rainwater harvesting Kerala", "Kerala water problem",
+        "Farm pond Kerala", "Water conservation Kerala", "Summer irrigation Kerala"
+    ],
+    "responses": [
+        "Kerala water paradox: High rainfall (3000mm) but summer water scarcity! Water runs off quickly in laterite terrain. Rainwater harvesting, farm ponds essential!",
+        "Farm ponds Kerala: Lined ponds (silpaulin/HDPE) for laterite areas. Government subsidy under MGNREGA, Jalanidhi. Store monsoon water for summer irrigation!",
+        "Groundwater recharging: Open wells, percolation pits, contour bunds on slopes. Kerala terrain allows good recharge if structures in place. Plan before monsoon!",
+        "Summer irrigation: Critical for coconut, arecanut, banana, vegetables (March-May). Drip irrigation saves water 60-70%. Basin irrigation for coconut!",
+        "Water budgeting: Measure monsoon rainfall, calculate runoff, plan storage. Even small pond (10x10x3m = 300 cubic meters) can irrigate 0.5 acre vegetables in summer!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_soil_types",
+    "patterns": [
+        "Kerala soil types", "Laterite soil farming", "Soil in Kerala", "Red soil Kerala",
+        "Coastal soil Kerala", "Hill soil Kerala", "Laterite soil crops", "Kerala soil problems",
+        "Improve laterite soil", "Alluvial soil Kerala"
+    ],
+    "responses": [
+        "Kerala soil types: Laterite (65%, hilly/midlands), Alluvial (coastal, river valleys), Forest soil (Western Ghats), Coastal sandy, Kuttanad peaty clay!",
+        "Laterite soil: Red, acidic (pH 5-6), low fertility, good drainage. Dominant in Kerala. Needs lime, organic matter. Suits rubber, coconut, cashew, tapioca!",
+        "Improving laterite: Add lime (correct acidity), FYM/compost (improve fertility + structure), green manuring, mulching. Regular organic matter addition essential!",
+        "Coastal sandy soil: Low water/nutrient retention. Add organic matter, clay if available. Coconut, cashew, casuarina suited. Salinity issue near sea!",
+        "Kuttanad soil: Peaty, acidic, waterlogged. Unique management - bunding, pumping, acid-tolerant varieties. Challenging but productive when managed well!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_pest_diseases",
+    "patterns": [
+        "Common pests Kerala", "Crop diseases Kerala", "Pest problem Kerala",
+        "Fruit fly Kerala", "Coconut pests", "Rhinoceros beetle", "Red palm weevil",
+        "Pepper quick wilt", "Root wilt coconut", "Plant diseases Kerala"
+    ],
+    "responses": [
+        "Major pests Kerala: Rhinoceros beetle & Red palm weevil (coconut, arecanut), Fruit fly (vegetables, fruits), Coffee berry borer, Tea mosquito bug (cashew)!",
+        "Coconut pests: Rhinoceros beetle (hook out + naphthalene), Red palm weevil (pheromone trap + injection), Eriophyid mite (spray wettable sulfur). Regular monitoring!",
+        "Quick wilt pepper: Phytophthora infection. Symptoms: sudden wilting, black roots. Control: Drainage, Metalaxyl drench, Trichoderma, avoid waterlogging. Remove infected vines!",
+        "Root wilt coconut: Endemic disease, no cure. Management: Improve nutrition, drainage, apply recommended fertilizers. Tolerant varieties: Chowghat Green Dwarf!",
+        "Fruit fly: Major pest of vegetables, mango, guava. Control: Methyl eugenol traps, bait spray, fruit bagging, field sanitation. IPM approach essential!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "kerala_farm_mechanization",
+    "patterns": [
+        "Farm machines Kerala", "Mechanization Kerala", "Small farm machines",
+        "Machinery for slopes", "Power tiller Kerala", "Mini tractor Kerala",
+        "Coconut climber machine", "Harvesting machine Kerala", "Farm equipment subsidy Kerala"
+    ],
+    "responses": [
+        "Kerala mechanization challenges: Small holdings, sloped terrain, mixed cropping. Full mechanization difficult. Need adapted small machines!",
+        "Suitable machines: Power tiller (versatile, small farms), Mini tractor (4WD for slopes), Brush cutter, Power sprayer, Coconut climber, Chaff cutter!",
+        "Coconut climber: Solves labor problem! Various models available (Rs.3000-15000). Training needed. Government subsidy available. Useful innovation!",
+        "Custom hiring: Don't buy expensive machines - rent from CHC (Custom Hiring Center). Combine harvester, transplanter available at block level!",
+        "Machinery subsidy: 50-80% under Farm Mechanization sub-scheme. Apply through Krishi Bhavan. Power tiller, sprayer, chaff cutter, drip system covered!"
+    ],
+    "context": [""]
+},
+{
+    "tag": "final_test_comprehensive",
+    "patterns": [
+        "Test my farming knowledge", "Ask me questions", "Quiz me on agriculture",
+        "Test farming chatbot", "Check your accuracy", "Farming quiz", "Agriculture test",
+        "Evaluate your knowledge", "How good is this bot", "Bot accuracy test"
+    ],
+    "responses": [
+        "I'm ready to help with farming questions! Instead of testing me, try asking about specific crops, pests, diseases, fertilizers, or techniques. I'll provide the best information I have!",
+        "Feel free to ask any farming question! I cover: crop cultivation, pest management, fertilizer application, irrigation, organic farming, Kerala-specific agriculture, and more!",
+        "I'm designed to assist, not be tested! But ask any agricultural question and judge my response. I specialize in South Asian farming, particularly Kerala crops!",
+        "Rather than formal testing, use me as a farming resource! Ask about coconut, rubber, spices, rice, vegetables, or any crop. I'll provide practical guidance!",
+        "I'm FarmBot - your farming assistant! My knowledge covers common crops, pests, diseases, fertilizers, and farming practices. Ask anything agriculture-related!"
+    ],
+    "context": [""]
+},
+        {
+            "tag": "off_topic_politics",
+            "patterns": [
+                "Who is the prime minister?", "Politics?", "Government news?", "Elections?",
+                "Political party?", "Modi?", "Imran khan?", "President?", "Voting?",
+                "Congress?", "BJP?", "Political updates?", "PM kaun hai?"
+            ],
+            "responses": [
+                "FarmBot stays out of politics and focuses on farming! Let's discuss agricultural policies and crop subsidies instead?",
+                "I'm here for farming advice, not political discussions. How can I help with your agricultural needs?",
+                "Politics isn't my area - but farming is! Need help with crops, fertilizers, or irrigation?",
+                "FarmBot is non-political and focused on helping farmers. What farming topic can I assist with?",
+                "I prefer discussing crop yields over political yields! What agricultural help do you need?"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "off_topic_general",
+            "patterns": [
+                "Tell me about cars?", "Latest gadgets?", "Phone recommendations?", "Fashion trends?",
+                "Cooking recipes?", "Travel destinations?", "Music?", "Gaming?", "Technology?",
+                "Stock market?", "Cryptocurrency?", "Real estate?", "Jobs?", "Career advice?"
+            ],
+            "responses": [
+                "That's interesting, but FarmBot is designed specifically for farming! I help with crops, pests, fertilizers, and agricultural practices. What farming question do you have?",
+                "Main sirf kheti-baadi ke liye bana hoon! (I'm made only for farming!) Let's talk about agriculture - what do you need help with?",
+                "FarmBot's expertise is in farming, not that topic. But I can help with rice cultivation, vegetable growing, pest control, and more! Interested?",
+                "I'm focused on helping farmers grow better crops! While that topic is beyond me, I can discuss agricultural topics. What farming help do you need?",
+                "FarmBot = Farming Bot! I'm specialized in agriculture. Let's discuss crops, soil health, irrigation, or any farming topic instead?"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "purpose_explanation",
+            "patterns": [
+                "Why are you made?", "What's your purpose?", "Why do you exist?",
+                "Why only farming?", "Why can't you talk about other things?",
+                "Tumhe kyun banaya?", "Purpose kya hai?", "Why so limited?",
+                "Why farming only?", "Can't you discuss other topics?"
+            ],
+            "responses": [
+                "FarmBot was created specifically to help South Asian farmers with agricultural knowledge! My purpose is to make farming easier, more productive, and help solve crop-related problems. Focusing on farming helps me serve farmers better!",
+                "Main farmers ki madad karne ke liye bana hoon! (I'm made to help farmers!) By focusing only on agriculture, I can provide detailed, accurate farming advice for crops, pests, fertilizers, and diseases!",
+                "I exist to support farmers with expert agricultural guidance! Whether it's rice, wheat, vegetables, or fruits - my specialized focus helps me give you the best farming advice!",
+                "FarmBot's purpose: Help farmers grow better crops, solve agricultural problems, and increase productivity. I focus on farming because that's where I can help you most!",
+                "I'm designed to be your farming expert! By specializing in agriculture, I can provide detailed help with South Asian crops, local pests, regional farming practices, and seasonal advice!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "time",
+            "patterns": [
+                "What time is it?", "Current time?", "Tell me the time", "What's the time?",
+                "Do you know the time?", "Time please", "Clock", "What hour is it?",
+                "Time now?", "Current hour?", "Kitne baje hain?", "Samay kya hai?"
+            ],
+            "responses": [
+                "I don't track time, but I can help with timing for farming - best planting times, irrigation schedules, harvest periods!",
+                "Check your device for time. I'm better at telling you the best time to plant crops or when to apply fertilizers!",
+                "Time varies, but I know the right time for every farming activity! Need help with planting or harvest schedules?",
+                "I can't tell clock time, but I can tell you monsoon timing, kharif season, rabi season timings!",
+                "Your phone shows the time, but FarmBot can tell you the perfect time for sowing, transplanting, and harvesting!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "rice_growing",
+            "patterns": [
+                "How to grow rice?", "Rice cultivation?", "Paddy farming?", "Rice planting?",
+                "Dhan ki kheti?", "Chawal kaise ugaye?", "Rice farming tips?", "Paddy cultivation?",
+                "Rice varieties?", "Basmati rice growing?", "Rice growing season?", "Wet rice cultivation?",
+                "Rice transplanting?", "Rice nursery preparation?", "Direct seeding rice?"
+            ],
+            "responses": [
+                "Rice cultivation: Kharif crop (June-Nov). Prepare nursery in May-June, transplant after 25-30 days. Main varieties: Basmati (120-140 days), IR64 (115 days), Swarna (140-145 days). Needs: flooded fields, 20-25°C temperature!",
+                "Dhan ki kheti: 1) Nursery preparation (May-June), 2) Puddling (wet tillage), 3) Transplanting (2-3 seedlings/hill, 20x15cm spacing), 4) Water management (keep flooded), 5) Fertilizer: 120kg N, 60kg P2O5, 40kg K2O per hectare!",
+                "Rice varieties for South Asia: Basmati 370 (premium, aromatic), IRRI-6 (high yield), Super Basmati (export quality), Kainaat (disease resistant), Shandar (short duration). Choose based on soil type and market!",
+                "Rice water management: Keep 5-7cm standing water during vegetative stage, 2-3cm during flowering, drain 10 days before harvest. Total water need: 1200-1500mm!",
+                "Direct seeded rice (DSR): Sow dry/pre-germinated seeds directly in field. Advantages: saves water (25-30%), no transplanting labor, early maturity (7-10 days). Use weed management carefully!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "wheat_growing",
+            "patterns": [
+                "How to grow wheat?", "Wheat cultivation?", "Gehun ki kheti?", "Wheat farming?",
+                "Wheat planting?", "Wheat varieties?", "Wheat sowing time?", "Wheat fertilizer?",
+                "Rabi wheat?", "Wheat irrigation?", "Best wheat variety?", "Wheat diseases?",
+                "Wheat sowing method?", "Wheat seed rate?"
+            ],
+            "responses": [
+                "Wheat cultivation (Rabi crop): Sowing October-November, harvest March-April. Seed rate: 100kg/hectare for timely sowing, 125kg for late. Spacing: 20-22cm row spacing. Needs 4-6 irrigations throughout growing period!",
+                "Gehun ki kheti: Popular varieties - HD2967, PBW343, DBW17, WH1105. Fertilizer: 120kg N (half at sowing, half at first irrigation), 60kg P2O5, 40kg K2O per hectare. First irrigation at CRI stage (20-25 days)!",
+                "Wheat irrigation schedule: 1st - Crown Root Initiation (20-25 days), 2nd - Tillering (40-45 days), 3rd - Jointing (60-65 days), 4th - Flowering (80-85 days), 5th - Milk stage (100-105 days), 6th - Dough stage (115-120 days)!",
+                "Best wheat varieties: HD3086 (heat tolerant), PBW725 (rust resistant), DBW222 (high yield), WH1124 (chapati quality), Lok-1 (rainfed areas). Choose based on your region's climate!",
+                "Wheat diseases & control: Rust (fungicide spray - Propiconazole), Karnal bunt (seed treatment - Tebuconazole), Loose smut (hot water seed treatment 4hrs at 45°C). Use resistant varieties!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "basmati_rice",
+            "patterns": [
+                "Basmati rice growing?", "How to grow basmati?", "Basmati cultivation?",
+                "Basmati varieties?", "Basmati rice farming?", "Premium rice growing?",
+                "Aromatic rice?", "Basmati yield?", "Basmati 370?", "Super basmati?",
+                "Basmati fertilizer?", "Basmati planting time?"
+            ],
+            "responses": [
+                "Basmati rice: Premium aromatic variety, 130-145 day duration. Transplanting in June-July, harvest October-November. Spacing: 20x15cm. Varieties: Pusa Basmati 1121 (longest grain), 1509 (early), Traditional 370 (authentic aroma)!",
+                "Basmati cultivation tips: Use aged seeds (1 year old) for better aroma and cooking quality. Apply less nitrogen (80-100kg/ha) to maintain grain quality. Drain field 2 weeks before harvest for better milling!",
+                "Basmati varieties: Pusa 1121 (125-130 days, 8.3mm cooked length), Pusa 1509 (120 days, early), CSR-30 (saline tolerant), Pusa Basmati 6 (bacterial blight resistant). Choose certified seeds only!",
+                "Basmati fertilizer: 100kg N, 50kg P2O5, 50kg K2O per hectare. Apply nitrogen in splits: 50% at transplanting, 25% at tillering, 25% at panicle initiation. Use FYM 10 tons/hectare before transplanting!",
+                "Basmati export quality tips: Proper drying (12-13% moisture), aging minimum 1 year, avoid mixing varieties, control weeds (affects purity), harvest at right maturity (80% grain golden yellow)!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "mango_growing",
+            "patterns": [
+                "How to grow mango?", "Mango farming?", "Aam ki kheti?", "Mango varieties?",
+                "Mango planting?", "Mango tree care?", "Mango grafting?", "Mango diseases?",
+                "Alphonso mango?", "Mango flowering?", "Mango fertilizer?", "Mango pruning?",
+                "Best mango variety?", "Mango orchard?"
+            ],
+            "responses": [
+                "Mango cultivation: Plant grafted saplings in July-August (monsoon). Spacing: 10x10m for high-density, 5x5m for ultra-high density. Varieties: Alphonso (Konkan), Dasheri (UP), Langra (Bihar), Kesar (Gujarat), Chaunsa (Punjab)!",
+                "Aam ki kheti: Fertilizer per tree - Year 1: 10kg FYM + 100g N, P, K each. Increase annually. Mature tree (10+ years): 50kg FYM + 1.5kg N, 0.75kg P2O5, 1.5kg K2O. Apply in two splits (June & October)!",
+                "Mango varieties: Alphonso (export quality, sweet), Dasheri (North India favorite), Kesar (saffron aroma), Totapuri (pickle variety), Banganpalli (South India), Langra (fiber-less), Amrapali (dwarf, high density)!",
+                "Mango diseases: Powdery mildew (spray Sulfex 0.2%), Anthracnose (Copper oxychloride 0.3%), Mango hopper (Imidacloprid spray at flowering). Spray before monsoon and after fruit set!",
+                "Mango flowering: Flowering November-February. Apply Paclobutrazol (soil drenching) in September-October to promote uniform flowering. Spray NAA 20ppm during peak flowering to reduce fruit drop!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "banana_growing",
+            "patterns": [
+                "How to grow banana?", "Banana farming?", "Kela ki kheti?", "Banana plantation?",
+                "Banana varieties?", "Tissue culture banana?", "Banana diseases?", "Banana fertilizer?",
+                "Banana irrigation?", "Banana spacing?", "Grand Naine banana?", "Robusta banana?",
+                "Banana harvesting?"
+            ],
+            "responses": [
+                "Banana cultivation: Plant tissue culture plants in Feb-March or June-July. Spacing: 1.8x1.8m (3086 plants/hectare). Varieties: Grand Naine (export), Robusta (common), Nendran (Kerala), Red banana, Poovan!",
+                "Kela ki kheti: Fertilizer per plant - 200g N, 60g P2O5, 300g K2O in 8-10 splits. Apply every month. Needs regular irrigation (4-5 days interval). Bunchy top virus: remove infected plants immediately!",
+                "Banana varieties: Grand Naine (Cavendish, export quality, 12-13 months), Robusta (common, hardy, 12-15 months), Poovan (Mysore, small sweet), Nendran (cooking, Kerala), Red banana (premium)!",
+                "Tissue culture banana benefits: Disease-free, uniform growth, higher yield (40-50 kg/plant vs 25-30 kg conventional), early bearing (11-12 months). Initial cost higher but better returns!",
+                "Banana diseases: Panama wilt (use resistant variety), Sigatoka (spray Carbendazim), Bunchy top virus (remove infected plants + control aphids), Pseudostem weevil (apply Carbofuran in soil)!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "tomato_growing_detailed",
+            "patterns": [
+                "Tomato farming?", "Tamatar ki kheti?", "Hybrid tomato growing?", "Tomato varieties?",
+                "Tomato diseases control?", "Tomato fertilizer schedule?", "Tomato irrigation?",
+                "Greenhouse tomato?", "Tomato yield?", "Best tomato seeds?", "Tomato transplanting?",
+                "Tomato pruning?", "Staking tomatoes?"
+            ],
+            "responses": [
+                "Tomato cultivation: Kharif (June-July), Rabi (October-November), Summer (January-February). Hybrid varieties: Arka Rakshak, Arka Samrat, US 618, Namdhari 777. Spacing: 60x45cm. Transplant 25-30 day seedlings!",
+                "Tamatar ki kheti: Fertilizer - 150kg N, 75kg P2O5, 75kg K2O per hectare. Apply FYM 25 tons at field preparation. Nitrogen in splits: 50% basal, 25% at 30 days, 25% at flowering. Need staking for hybrid varieties!",
+                "Tomato diseases: Early blight (Mancozeb 0.25%), Late blight (Cymoxanil+Mancozeb), Leaf curl virus (control whitefly with Imidacloprid), Bacterial wilt (use resistant variety + soil solarization)!",
+                "Hybrid tomato varieties: Arka Rakshak F1 (bacterial wilt resistant, 70-75 tons/ha), Arka Samrat (nematode resistant), Pusa Hybrid 4 (heat tolerant), Naveen 2000 (long shelf life), Abhilash (determinate)!",
+                "Tomato care: Mulching with paddy straw, drip irrigation (reduce water 30%), remove suckers (for indeterminate types), stake plants, spray calcium for preventing blossom end rot. Pick fruits at breaker stage for market!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "potato_growing",
+            "patterns": [
+                "Potato farming?", "Aloo ki kheti?", "Potato cultivation?", "Potato varieties?",
+                "Potato planting time?", "Potato diseases?", "Potato fertilizer?", "Potato irrigation?",
+                "Seed potato?", "Potato yield?", "Potato harvesting?", "Late blight potato?"
+            ],
+            "responses": [
+                "Potato cultivation: Rabi crop, October-November planting. Use certified seed potatoes (2-2.5 tons/hectare). Spacing: 60x20cm. Earthing up 30 days after planting. Varieties: Kufri Jyoti (90-100 days), Kufri Pukhraj (90 days), Kufri Bahar (110 days)!",
+                "Aloo ki kheti: Fertilizer - 180kg N, 80kg P2O5, 100kg K2O per hectare. Apply full P&K + 1/3 N at planting, remaining N in 2 splits (30 & 45 days). Need 5-6 irrigations during growing period!",
+                "Potato varieties: Kufri Jyoti (early, table purpose, 250-300 q/ha), Kufri Pukhraj (chips making), Kufri Chandramukhi (processing), Kufri Badshah (late blight resistant), Kufri Ashoka (heat tolerant)!",
+                "Potato late blight control: Most serious disease! Spray Mancozeb (0.25%) or Metalaxyl+Mancozeb at 10-day intervals during cool humid weather. Use resistant varieties like Kufri Giriraj. Remove infected plants!",
+                "Seed potato treatment: Treat with Mancozeb (2.5g/liter) before planting. Use small tubers (30-40g) or cut large ones with 2-3 eyes. Dry cut pieces 2-3 days before planting. Chitting (sprouting) improves emergence!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "onion_growing",
+            "patterns": [
+                "Onion farming?", "Pyaz ki kheti?", "Onion cultivation?", "Onion varieties?",
+                "Onion planting?", "Onion diseases?", "Onion storage?", "Kharif onion?",
+                "Rabi onion?", "Onion fertilizer?", "Onion irrigation?", "Onion yield?"
+            ],
+            "responses": [
+                "Onion cultivation: Kharif (June-July), Rabi (Nov-Dec), Late Kharif (Sept-Oct). Transplant 40-45 day seedlings. Spacing: 15x10cm. Varieties: Pusa Red (Kharif), N-53 (Rabi), Bhima Shakti (export). Duration: 120-150 days!",
+                "Pyaz ki kheti: Fertilizer - 100kg N, 50kg P2O5, 50kg K2O per hectare. Apply full P&K + 1/2 N at transplanting, remaining N in 2 splits (30 & 45 days). Needs light frequent irrigation (7-10 days)!",
+                "Onion varieties: Pusa Red (dark red, kharif), N-53 (yellow, rabi, good storage), Bhima Super (white, export), Agrifound Dark Red (rabi), Bhima Shakti (late kharif, purple), Bhima Kiran (white multiplier)!",
+                "Onion diseases: Purple blotch (Mancozeb spray), Stemphylium blight (Azoxystrobin), Thrips (Fipronil spray), Basal rot (use healthy sets, avoid water logging). Stop irrigation 15 days before harvest for better storage!",
+                "Onion storage: Cure bulbs in shade 10-15 days, store in ventilated room, maintain 25-30°C & 60-70% humidity. Properly cured onions last 3-4 months. N-53 and Agrifound varieties store best!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "chili_pepper_growing",
+            "patterns": [
+                "Chili farming?", "Mirch ki kheti?", "Red chili cultivation?", "Green chili growing?",
+                "Chili varieties?", "Chili diseases?", "Chili fertilizer?", "Chili yield?",
+                "Hybrid chili?", "Guntur chili?", "Byadgi chili?", "Kashmiri chili?"
+            ],
+            "responses": [
+                "Chili cultivation: Kharif (June-July) for dry chili, All year for green. Transplant 30-35 day seedlings. Spacing: 60x45cm. Varieties: Byadgi (Karnataka), Guntur Sannam (AP), Pusa Jwala (green), Wonder Hot (hybrid)!",
+                "Mirch ki kheti: Fertilizer - 150kg N, 75kg P2O5, 75kg K2O per hectare. Apply FYM 20-25 tons. Nitrogen in 4-5 splits. Needs regular irrigation but avoid water logging. Harvest green at 45 days, red at 80-90 days!",
+                "Chili varieties: Byadgi (paprika, deep red color), Guntur Sannam (high pungency, export), Teja (super hot, high yield), Pusa Jwala (green chili), Wonder Hot (hybrid, virus resistant), Kashmiri (mild, color)!",
+                "Chili diseases: Leaf curl virus (control whitefly + roguing), Anthracnose (fruit rot - Copper oxychloride), Powdery mildew (Sulfur spray), Die back (Bordeaux mixture). Use virus-resistant hybrids!",
+                "Chili drying: Dry red chilies in sun 7-10 days to 10% moisture. Proper drying prevents aflatoxin. Store in gunny bags in dry place. Dry chili yield: 15-20 quintals/hectare, Green: 100-150 quintals/hectare!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "cotton_growing",
+            "patterns": [
+                "Cotton farming?", "Kapas ki kheti?", "BT cotton?", "Cotton cultivation?",
+                "Cotton varieties?", "Cotton diseases?", "Pink bollworm?", "Cotton fertilizer?",
+                "Cotton irrigation?", "Cotton yield?", "Hybrid cotton?", "American cotton?"
+            ],
+            "responses": [
+                "Cotton cultivation: Kharif crop (May-June). Varieties: BT cotton hybrids (Bollgard II), Desi cotton varieties. Spacing: 90x60cm for hybrids, 45x30cm for desi. Needs 5-6 irrigations. Duration: 150-180 days!",
+                "Kapas ki kheti: Fertilizer - 120kg N, 60kg P2O5, 60kg K2O per hectare for hybrids. Apply nitrogen in 3 splits (basal, squaring, flowering). Use FYM 10 tons. Critical irrigation at flowering and boll development!",
+                "BT cotton: Genetically modified for bollworm resistance (Bollgard II - dual gene). Varieties: RCH-2, Ankur-651, MRC-7361. Higher yield (25-30 quintals/ha vs 15-20 desi). Still need IPM for sucking pests!",
+                "Cotton pests: Pink bollworm (pheromone traps + Bt spray), Whitefly (Thiamethoxam), Jassids (Imidacloprid), American bollworm (NPV + Bt on non-BT). Follow refuge strategy for BT cotton (20% non-BT)!",
+                "Cotton harvesting: Pick when 50-60% bolls open. Multiple pickings (3-4 times) for better quality. Kapas (seed cotton) yield: 20-25 quintals/hectare (hybrids), 35% ginning outturn. Store in dry place!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "sugarcane_growing",
+            "patterns": [
+                "Sugarcane farming?", "Ganna ki kheti?", "Sugarcane cultivation?", "Sugarcane varieties?",
+                "Sugarcane planting?", "Sugarcane diseases?", "Sugarcane fertilizer?", "Ratoon crop?",
+                "Sugarcane irrigation?", "Sugarcane yield?", "Early variety sugarcane?"
+            ],
+            "responses": [
+                "Sugarcane cultivation: Plant Feb-March (spring) or Sept-Oct (autumn). Use 3-bud setts (2-3 tons/hectare). Spacing: 90cm rows. Varieties: Co 0238 (early), CoJ 64 (mid), Co 118 (late). Duration: 10-12 months (plant), 12 months (ratoon)!",
+                "Ganna ki kheti: Fertilizer - Plant crop: 150kg N, 60kg P2O5, 60kg K2O per hectare. Ratoon: 180kg N. Apply nitrogen in 3 splits (planting, 60 days, 120 days). Need 10-12 irrigations. Earthing up at 90-120 days!",
+                "Sugarcane varieties: CoJ 64 (mid-late, high sugar), Co 0238 (early, 10 months), Co 118 (waterlogging tolerant), CoLk 94184 (salt tolerant), Co 86032 (disease resistant). Choose based on harvest time and soil!",
+                "Sugarcane diseases: Red rot (most serious - use resistant variety + Carbendazim), Smut (remove whips + spray Propiconazole), Wilt (soil treatment), Grassy shoot (control leafhopper). Use disease-free seed setts!",
+                "Ratoon management: After harvest, gap filling within 15 days. Apply fertilizer (higher nitrogen). Light irrigation immediately. Trash mulching beneficial. First ratoon gives 80-90% plant crop yield. Take 3-4 ratoons!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "mustard_growing",
+            "patterns": [
+                "Mustard farming?", "Sarson ki kheti?", "Mustard cultivation?", "Mustard varieties?",
+                "Yellow sarson?", "Brown mustard?", "Raya cultivation?", "Mustard oil?",
+                "Mustard diseases?", "Mustard fertilizer?", "Mustard sowing time?"
+            ],
+            "responses": [
+                "Mustard cultivation: Rabi crop (Oct-Nov sowing). Varieties: Pusa Bold (95-100 days), Varuna (125-130 days), RH 30 (brown, 130 days). Seed rate: 4-5 kg/hectare. Spacing: 30-45cm rows. Harvest when pods turn yellowish-brown!",
+                "Sarson ki kheti: Fertilizer - 100-120kg N, 40kg P2O5, 20kg K2O per hectare. Apply half nitrogen at sowing, half at 30-35 days. Needs 2-3 irrigations (pre-flowering & pod filling). Thinning at 20-25 days!",
+                "Mustard varieties: Pusa Bold (yellow, early, 18-20q/ha), Varuna (brown, late, high oil), Pusa Mustard 25 (aphid tolerant), RH 30 (brown sarson), Kranti (white rust resistant), Pusa Agrani (early 90 days)!",
+                "Mustard diseases: White rust (spray Metalaxyl), Alternaria blight (Mancozeb), Powdery mildew (Sulfur). Aphids major pest - spray Dimethoate or use resistant varieties. Spray at flowering initiation!",
+                "Mustard harvesting: Harvest when 75% pods turn yellowish-brown, seeds rattle inside pods. Cut plants early morning. Dry 3-4 days, thresh carefully. Yield: 15-20 quintals/hectare. Oil content: 37-42%!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "urea_fertilizer",
+            "patterns": [
+                "What is urea?", "Urea fertilizer use?", "Urea application?", "When to apply urea?",
+                "Urea for paddy?", "Urea for wheat?", "Urea dose?", "Neem coated urea?",
+                "Urea NPK value?", "How much urea per acre?", "Urea side effects?", "Urea khad?"
+            ],
+            "responses": [
+                "Urea (46% Nitrogen): Most common nitrogen fertilizer. Use for all crops during vegetative growth. Apply in splits, not all at once. Rice: 130kg/acre, Wheat: 110kg/acre, Vegetables: 40-50kg/acre. Never apply near seeds!",
+                "Urea application timing: For Wheat - 1/3 at sowing, 1/3 at first irrigation (21 days), 1/3 at second irrigation (40 days). For Rice - 1/2 at transplanting, 1/4 at tillering (21 days), 1/4 at panicle initiation (50 days)!",
+                "Neem coated urea: Urea coated with neem oil. Benefits: Slow nitrogen release (efficiency 85% vs 65% normal), reduces nitrogen loss, needs less quantity (10-15% less), better for environment. Government promoted!",
+                "Urea for vegetables: Tomato (50kg/acre in 3 splits), Potato (60kg/acre - basal + 30 days + 45 days), Onion (40kg/acre in 2 splits), Cabbage (50kg/acre in 3 splits). Apply 6 inches away from plant base!",
+                "Urea precautions: Don't apply on dry soil (water immediately after), avoid over-application (promotes pests), don't mix with SSP (nitrogen loss), apply in evening/morning (less loss), split application better than single dose!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "dap_fertilizer",
+            "patterns": [
+                "What is DAP?", "DAP fertilizer?", "When to use DAP?", "DAP application?",
+                "DAP for wheat?", "DAP NPK?", "DAP dose?", "How much DAP per acre?",
+                "DAP vs urea?", "Di-ammonium phosphate?", "DAP khad?", "DAP timing?"
+            ],
+            "responses": [
+                "DAP (18% N, 46% P2O5): Main phosphorus fertilizer. Apply as basal (at sowing/planting time), not in splits. Wheat: 60kg/acre, Rice: 50kg/acre, Potato: 80kg/acre. Mix in soil, don't broadcast on surface!",
+                "DAP application: Apply only at sowing/planting time! Phosphorus doesn't move in soil, so later application ineffective. For row crops: place 2-3 inches below and beside seed. For transplanted crops: mix in soil before transplanting!",
+                "DAP for different crops: Wheat (60kg/acre), Paddy (50kg/acre), Maize (50kg/acre), Cotton (40kg/acre), Vegetables (60-70kg/acre), Pulses (40kg/acre). Apply at field preparation or sowing time only!",
+                "DAP vs Urea: DAP has both N (18%) and P (46%), apply at sowing. Urea only N (46%), apply in splits during growth. Can't substitute each other! Both needed - DAP for roots/flowers, Urea for leaves/growth!",
+                "DAP precautions: Never apply as top dressing (waste), don't place touching seeds (burns), avoid excess (locks micronutrients), mix well in soil. In alkaline soils, phosphorus availability reduces - use with organic matter!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "mop_potash",
+            "patterns": [
+                "What is MOP?", "Potash fertilizer?", "Muriate of potash?", "MOP use?",
+                "Potassium fertilizer?", "MOP application?", "When to apply potash?",
+                "MOP for fruits?", "MOP dose?", "Potash benefits?", "MOP NPK?", "Potash khad?"
+            ],
+            "responses": [
+                "MOP (Muriate of Potash - 60% K2O): Main potassium fertilizer. Important for fruit quality, disease resistance, drought tolerance. Apply: Paddy 35kg/acre, Wheat 25kg/acre, Potato 50kg/acre, Fruits 100-150kg/tree/year!",
+                "MOP application: Apply in 2 splits - half at sowing/planting, half at flowering/fruiting stage. For fruit trees: apply in monsoon (June-July) for next season flowering. Broadcast and mix in soil, needs moisture to dissolve!",
+                "Potash benefits: Improves fruit size, color & quality. Increases sugar content in sugarcane, sweetness in fruits. Strengthens stems (prevents lodging). Improves disease resistance. Critical for potato, banana, mango, citrus!",
+                "MOP for fruit trees: Mango (1-2kg/tree in June-July), Banana (200g/plant in 8 splits monthly), Citrus (1kg/tree/year in 3 splits), Pomegranate (500g/plant at flowering + fruit development). Apply 1 feet away from trunk!",
+                "MOP precautions: Don't apply near seed (salt damage), avoid in saline soils (increases salinity), can't substitute with DAP/Urea. Deficiency signs: brown leaf edges, weak stems, small fruits, poor color!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "npk_complex",
+            "patterns": [
+                "What is NPK?", "NPK fertilizer?", "10-26-26 fertilizer?", "20-20-0 fertilizer?",
+                "Complex fertilizer?", "NPK ratio?", "Best NPK?", "NPK for vegetables?",
+                "12-32-16 fertilizer?", "NPK application?", "Balanced fertilizer?"
+            ],
+            "responses": [
+                "NPK Complex fertilizers: Contains all three nutrients (N-P-K). Common grades: 10-26-26 (DAP equivalent), 20-20-0 (Ammonium phosphate), 12-32-16, 19-19-19. Easier application, balanced nutrition. Apply as basal dose at planting!",
+                "NPK ratios explained: First number = Nitrogen (leaf growth), Second = Phosphorus (roots, flowers), Third = Potassium (fruits, disease resistance). Example: 19-19-19 = equal parts, good for all crops. 10-26-26 = high P for flowering crops!",
+                "NPK for vegetables: Leafy (Spinach, lettuce): high N like 20-10-10. Fruiting (Tomato, pepper): balanced 19-19-19 or high K like 10-10-20. Root (Potato, onion): high P like 10-20-10. Adjust based on growth stage!",
+                "Common NPK grades: 10-26-26 (general purpose, basal), 20-20-0 (wheat, cereals), 12-32-16 (high phosphorus crops), 19-19-19 (all-purpose, vegetables), 14-35-14 (flowering crops). Choose based on crop need and soil test!",
+                "NPK application: Broadcast and incorporate before planting for field crops. Band placement 2-3 inches beside and below seed for row crops. For vegetables: apply at bed preparation + top dress with urea later!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "organic_fertilizers_detailed",
+            "patterns": [
+                "Organic fertilizer?", "Organic khad?", "Cow dung manure?", "Vermicompost?",
+                "FYM?", "Compost?", "Green manure?", "Organic farming fertilizer?",
+                "Jeevamrut?", "Panchgavya?", "Gobar khad?", "Organic NPK?"
+            ],
+            "responses": [
+                "Organic fertilizers: FYM (0.5% N, 0.2% P, 0.5% K) - 10-15 tons/hectare, Vermicompost (1.5% N, 1% P, 1% K) - 2-3 tons/hectare, Neem cake (5% N, pest control) - 200kg/hectare. Slow release, improves soil health!",
+                "FYM (Farm Yard Manure): Well-decomposed cow dung + urine + bedding material. Apply 15-20 tons/hectare. Benefits: improves soil structure, water holding, microbial activity. Apply 2-3 weeks before planting. Not enough alone for commercial farming!",
+                "Vermicompost: Premium organic fertilizer (earthworm castings). NPK 1.5-1-1 approximately. Use 2-3 tons/hectare or 10% of potting mix. Benefits: growth hormones, enzymes, beneficial bacteria. Perfect for organic vegetables, seedlings!",
+                "Jeevamrut (liquid organic): 10kg cow dung + 10L cow urine + 2kg jaggery + 2kg pulse flour + 1kg soil in 200L water. Ferment 7 days. Apply 200L/acre with irrigation. Improves soil biology, available nutrients!",
+                "Green manure crops: Dhaincha (Sesbania) - 50kg/hectare, sow before monsoon, incorporate at flowering (45 days). Sunhemp (25kg/hectare). Cowpea (30kg/hectare). Fix nitrogen, add organic matter. Best for rice before transplanting!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "micronutrients",
+            "patterns": [
+                "Micronutrient deficiency?", "Zinc deficiency?", "Iron deficiency?", "Boron?",
+                "Zinc sulfate?", "Chelated micronutrients?", "Leaf yellowing?", "Micronutrient spray?",
+                "Zinc for rice?", "Iron for plants?", "Micronutrient fertilizer?", "Nutrient deficiency?"
+            ],
+            "responses": [
+                "Micronutrients: Zinc, Iron, Manganese, Copper, Boron, Molybdenum. Small quantity but essential! Zinc most deficient in rice & wheat. Iron in alkaline soils. Apply via soil or foliar spray for quick correction!",
+                "Zinc deficiency: Rice (khaira disease) - stunted growth, brown spots on leaves. Wheat - white/yellow leaves. Solution: Soil application - ZnSO4 25kg/hectare. Foliar spray - 0.5% ZnSO4 + 0.25% lime (prevents leaf burn)!",
+                "Iron deficiency: Young leaves turn yellow (chlorosis), veins stay green. Common in alkaline soils (pH>7.5). Solution: Foliar spray Ferrous sulfate 0.5% or Chelated iron (FeEDTA) 0.2%. Repeat 2-3 times at 10-day intervals!",
+                "Boron deficiency: Hollow stem in cauliflower, heart rot in beet, fruit drop in tomato, poor grain filling in wheat. Solution: Soil application - Borax 10kg/hectare (once in 3 years). Foliar spray - 0.2% borax!",
+                "Micronutrient spray: Multi-micronutrient mixture (Zn, Fe, Mn, B, Mo) - 2.5kg in 500L water per hectare. Spray at critical growth stages (tillering, flowering, grain filling). Add wetting agent. Spray morning/evening!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "blast_disease_rice",
+            "patterns": [
+                "Rice blast?", "Blast disease?", "Leaf blast?", "Neck blast?", "Rice fungus?",
+                "Blast control?", "Tricyclazole?", "Rice blast spray?", "Jhulsa rog?", "Rice disease?"
+            ],
+            "responses": [
+                "Rice Blast (most serious): Fungal disease. Leaf blast - spindle-shaped spots with gray center, brown margin. Neck blast - graying of neck, grain doesn't fill. Favored by high nitrogen, cloudy weather, 25-28°C temperature!",
+                "Blast disease control: Preventive spray - Tricyclazole 75% WP @ 0.6g/L or Carbendazim 0.1% at tillering, booting, heading stages. Curative - Kasugamycin + copper oxychloride. Spray 3 times at 10-day intervals!",
+                "Blast management: Use resistant varieties (Pusa 1121, Pusa Basmati 1509), balanced fertilization (avoid excess nitrogen), spray Tricyclazole before monsoon, don't let water stagnate, remove infected plants!",
+                "Neck blast treatment: Most damaging stage! Appears during heading/flowering. Entire panicle becomes white (blank grains). Spray Azoxystrobin + Difenoconazole at 50% flowering. Second spray after 10 days!",
+                "Blast prevention: Seed treatment with Carbendazim (2g/kg seeds), avoid late nitrogen application, silicon application (improves resistance), maintain 2-3cm water depth (not more), use disease-free seeds!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "bacterial_blight_rice",
+            "patterns": [
+                "Bacterial blight rice?", "Kresek disease?", "Rice bacterial disease?",
+                "BLB disease?", "Bacterial leaf blight?", "Rice leaves drying?", "White leaves rice?",
+                "Bacterial blight control?", "Rice blight spray?"
+            ],
+            "responses": [
+                "Bacterial Blight (BLB): Serious bacterial disease of rice. Symptoms: Yellow to white lesions on leaf margins/tips, wavy pattern. Kresek phase - rapid wilting of young plants. Spreads through water, wind, infected seeds!",
+                "BLB control: Use resistant varieties (Pusa Basmati 1509, Improved Pusa Basmati 1, Pusa 1121), seed treatment with Streptocycline (25ppm for 24hrs), spray Copper oxychloride 0.3% + Streptocycline 100ppm!",
+                "Bacterial blight management: Don't apply excess nitrogen (promotes disease), drain water for 3-4 days after transplanting, avoid injury to plants, spray Plantomycin or Agrimycin (100ppm) at tillering & booting!",
+                "BLB prevention: Use disease-free certified seeds, avoid deep water (5-7cm enough), balanced fertilization (excess N increases susceptibility), crop rotation with non-host crops, remove infected stubbles after harvest!",
+                "Chemical control BLB: Streptocycline 9% + Tetracycline 1% SP (3g in 10L water), or Copper hydroxide 77% WP (3g/L). Spray 2-3 times at 10-day intervals starting from tillering. Mix with wetting agent for better coverage!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "stem_borer_rice",
+            "patterns": [
+                "Stem borer?", "Yellow stem borer?", "Dead heart?", "White head rice?",
+                "Stem borer control?", "Caterpillar in rice?", "Rice borer?", "Stem borer spray?",
+                "Cartap hydrochloride?", "Chlorantraniliprole?"
+            ],
+            "responses": [
+                "Stem Borer (Yellow/White): Most destructive rice pest! Symptoms: Dead heart (young stage - central shoot dries), White head (reproductive stage - panicle turns white, no grain). Caterpillar bores into stem!",
+                "Stem borer control: Cartap hydrochloride 4G (10kg/hectare at active tillering), Chlorantraniliprole 0.4G (4kg/acre), or spray Chlorpyriphos 20EC (2ml/L) at tillering. Repeat if needed after 15 days!",
+                "Stem borer management: Use light traps (moths attracted), remove alternate hosts (grasses), keep clean bunds, pheromone traps (Scirpophaga - 8/acre), release egg parasitoid Trichogramma (50,000/acre)!",
+                "Stem borer spray: Cartap hydrochloride 50SP (1g/L), or Fipronil 5SC (2ml/L), or Chlorantraniliprole 18.5SC (0.3ml/L). Spray at early vegetative stage (within 30 days). Target leaf whorl and water surface!",
+                "Prevention: Early transplanting (escape peak borer population), clip seedling tips before transplanting (removes eggs), avoid ratoon cropping, summer plowing (exposes larvae to sun), use resistant varieties (Swarna Sub1)!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "brown_plant_hopper",
+            "patterns": [
+                "Brown plant hopper?", "BPH?", "Hopper burn?", "Rice hopper?", "BPH control?",
+                "Rice turning brown?", "Hopperburn?", "Rice pest?", "BPH spray?", "Imidacloprid rice?"
+            ],
+            "responses": [
+                "Brown Plant Hopper (BPH): Serious rice pest! Sucks sap from stem base. Symptoms: Yellowing, wilting, hopper burn (patches turn brown as if burned). Also transmits viruses. Nymphs & adults brown colored, cluster at stem base!",
+                "BPH control: Imidacloprid 17.8 SL (0.5ml/L), or Buprofezin 25SC (1.5ml/L), or Pymetrozine 50WG (0.6g/L). Spray at lower portion of plant and water surface. Avoid prophylactic spraying (creates resistance)!",
+                "BPH management: Don't use excess nitrogen (attracts BPH), maintain thin water layer during vegetative stage (exposes to predators), conserve natural enemies (spiders, mirid bugs), use resistant varieties (Swarna Sub1)!",
+                "Economic Threshold Level (ETL) for BPH: 10-15 hoppers per hill at vegetative stage, 5-10 per hill at reproductive stage. Spray only when ETL reached, not routinely! Overuse of pesticides increases BPH problems!",
+                "BPH resistant varieties: Vikramarya, DRR Dhan 45, Improve Sambha Mahsuri, CR Dhan 800. Use resistant varieties in endemic areas. Rotate pesticides to prevent resistance. Thiamethoxam as seedling root dip!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "yellow_rust_wheat",
+            "patterns": [
+                "Yellow rust wheat?", "Stripe rust?", "Wheat rust disease?", "Pila gerua?",
+                "Yellow rust control?", "Wheat fungal disease?", "Rust spray wheat?",
+                "Propiconazole?", "Wheat rust fungicide?", "Stripe rust management?"
+            ],
+            "responses": [
+                "Yellow Rust (Stripe Rust): Most serious wheat disease! Yellow-orange pustules in stripes on leaves. Spreads rapidly in cool (10-15°C), humid weather. Reduce yield 40-50%! Early infection (Dec-Jan) most damaging!",
+                "Yellow rust control: Propiconazole 25EC (1ml/L), or Tebuconazole 25WG (1g/L), or Trifloxystrobin + Tebuconazole (0.5ml/L). Spray when 5-10% plants infected. Repeat after 15 days if needed. 2 sprays maximum!",
+                "Rust management: Use resistant varieties (PBW 725, HD 3086, DBW 187), timely sowing (Nov 1-15, late sowing escapes disease), balanced fertilization, avoid excess nitrogen, remove volunteer wheat plants!",
+                "Preventive spray: If rust history in area, spray Sulfex (Sulfur) 2g/L at tillering stage. Or Mancozeb 2.5g/L. For confirmed infection, use Triazole fungicides (Propiconazole, Tebuconazole). Spray in morning/evening!",
+                "Resistant varieties: HD 3086 (rust resistant, heat tolerant), PBW 725 (stripe rust resistant), DBW 187 (irrigated areas), WH 1124 (dual rust resistant). Use certified seeds, follow recommended practices!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "powdery_mildew_general",
+            "patterns": [
+                "Powdery mildew?", "White powder on leaves?", "Safed phaphoond?", "Mildew disease?",
+                "Powdery mildew control?", "Sulfur spray?", "Mildew on vegetables?", "Fungal powder?",
+                "Cucumber mildew?", "Mildew treatment?"
+            ],
+            "responses": [
+                "Powdery Mildew: White powdery coating on leaves, stems, flowers. Common on cucurbits (pumpkin, cucumber), peas, mango. Doesn't need water on leaves! Spreads through air. Reduces photosynthesis, weakens plants!",
+                "Powdery mildew control: Sulfur 80WP (2g/L), or Hexaconazole 5EC (2ml/L), or Azoxystrobin 23SC (1ml/L). Spray at first appearance. Repeat every 7-10 days. Spray both leaf surfaces. 3-4 sprays may be needed!",
+                "Cultural control: Proper spacing (air circulation), avoid overhead irrigation, remove infected parts, don't apply excess nitrogen, grow in sunny locations, resistant varieties when available!",
+                "Home remedy: Milk spray (1:10 milk:water) or Baking soda spray (1 tablespoon + 1 teaspoon oil per liter). Spray weekly. Works for mild infections on home gardens. Commercial farms need fungicides!",
+                "Prevention: Plant resistant varieties, avoid crowding, prune for air circulation, water at base not leaves, apply Sulfur or Potassium bicarbonate preventively in disease-prone areas!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "aphids_control",
+            "patterns": [
+                "Aphids?", "Chepti?", "Green flies?", "Aphid control?", "Sap sucking insects?",
+                "Aphid spray?", "Imidacloprid?", "Chepti control?", "Mustard aphid?", "Cotton aphid?"
+            ],
+            "responses": [
+                "Aphids (Chepti): Small soft-bodied insects (green, black, brown). Suck sap from tender parts. Secrete honeydew (attracts ants, black fungus). Transmit virus diseases. Multiply rapidly! Common on mustard, cotton, vegetables!",
+                "Aphid control: Imidacloprid 17.8SL (0.5ml/L), or Thiamethoxam 25WG (0.5g/L), or Dimethoate 30EC (2ml/L). Spray thoroughly on leaf underside. One spray usually sufficient. Avoid during flowering (affects bees)!",
+                "Natural control: Spray water forcefully (dislodges aphids), neem oil 3ml/L, soap solution (5g/L). Encourage natural enemies - ladybird beetles, lacewings, syrphid flies. They control aphids naturally!",
+                "Mustard aphid: Peak infestation Jan-Feb. Spray Dimethoate 2ml/L or Imidacloprid 0.5ml/L when 10% plants infested. One spray at flowering initiation. Don't spray during flowering (bee activity)!",
+                "Prevention: Yellow sticky traps, reflective mulch (aluminum foil confuses aphids), companion planting (garlic, onion), avoid excess nitrogen (promotes tender growth attractive to aphids), conserve natural enemies!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "whitefly_control",
+            "patterns": [
+                "Whitefly?", "White fly?", "Whitefly control?", "Leaf curl?", "Yellow vein mosaic?",
+                "Whitefly spray?", "Bemisia tabaci?", "Whitefly cotton?", "Whitefly vegetables?",
+                "Spiromesifen?", "Pyriproxyfen?"
+            ],
+            "responses": [
+                "Whitefly: Tiny white flying insects. Suck sap, weaken plants, secrete honeydew. Major problem: transmit viruses (Leaf curl in chili/tomato, Yellow vein mosaic in okra). Cotton whitefly causes severe damage!",
+                "Whitefly control: Spiromesifen 22.9SC (1ml/L), or Pyriproxyfen 10EC (1ml/L), or Diafenthiuron 50WP (1g/L). Spray leaf undersides thoroughly. Mix with wetting agent. Rotate insecticides (prevent resistance)!",
+                "Cotton whitefly: Serious pest! Spray Imidacloprid 0.5ml/L or Thiamethoxam 0.5g/L at first appearance. If virus symptoms appear, spray Acetamiprid 20SP (0.5g/L). Remove infected plants immediately!",
+                "Whitefly management: Yellow sticky traps (attract adults), reflective silver mulch, remove weeds (alternate hosts), avoid late planting, use virus-resistant varieties (Chili - Kashi Anmol, Arka Tejas)!",
+                "Neem-based control: Neem oil 3ml/L + Azadirachtin 1500ppm (2ml/L). Spray weekly. Works better as preventive. For severe infestation, use chemical insecticides. Mix with sticker for better adherence!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "fruit_borer_vegetables",
+            "patterns": [
+                "Fruit borer?", "Helicoverpa?", "Tomato borer?", "Okra borer?", "Fruit borer control?",
+                "Caterpillar in fruits?", "Fruit damage?", "Borer spray?", "Emamectin benzoate?"
+            ],
+            "responses": [
+                "Fruit borers (Helicoverpa armigera): Caterpillar bores into fruits/pods. Damages tomato, okra, chili, pigeon pea, chickpea. Young larvae greenish, older brownish. Single larva damages multiple fruits!",
+                "Fruit borer control: Emamectin benzoate 5SG (0.5g/L), or Spinosad 45SC (0.3ml/L), or Indoxacarb 14.5SC (1ml/L). Spray at flower initiation, repeat at 10-15 day intervals. 3-4 sprays needed!",
+                "Integrated Management: Pheromone traps (4-5/acre, replace lure monthly), NPV spray (250LE/ha with 2.5kg jaggery), neem seed kernel extract (5%), bird perches, grow marigold/coriander (trap crops)!",
+                "Tomato fruit borer: Monitor daily, handpick larvae & damaged fruits. Spray Chlorantraniliprole 18.5SC (0.3ml/L) or Flubendiamide 20WG (0.25g/L) at flowering. Rotate insecticides (prevent resistance)!",
+                "Organic control: Bt spray (Bacillus thuringiensis - 2g/L), NSKE (Neem Seed Kernel Extract - 5%), NPV (Nuclear Polyhedrosis Virus - 250LE/ha). Spray in evening. Release Trichogramma egg parasitoids (50,000/acre)!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "termite_control",
+            "patterns": [
+                "Termite?", "White ant?", "Deemak?", "Termite control?", "Termite in sugarcane?",
+                "Termite treatment?", "Termite damage?", "Chlorpyriphos?", "Soil termite?",
+                "Termite prevention?"
+            ],
+            "responses": [
+                "Termites (Deemak): Underground soil insects. Damage roots, seeds, stems, wooden structures. Major problem in sugarcane, wheat, maize, trees. Prefer organic matter. More active in summer, light soils!",
+                "Termite control: Chlorpyriphos 20EC (2.5L in 400L water per hectare, drench soil around plants), or Fipronil 5SC (2L/ha as soil application). Apply before sowing or with first irrigation!",
+                "Sugarcane termite: Treat setts with Chlorpyriphos (2.5ml/L) before planting. Soak 10 minutes. Or apply Chlorpyriphos 2.5L/ha mixed with irrigation water at planting. Earthing up helps reduce damage!",
+                "Termite prevention: Deep summer plowing (exposes colonies to sun), remove crop residue, avoid fresh organic matter at sowing (attracts termites), use well-decomposed FYM, soil application of Fipronil 0.3G (15kg/ha)!",
+                "Organic methods: Wood ash application in soil, neem cake (200kg/ha), castor cake. Destroy termite mounds near fields. Flooding fields where possible. Plant trap crops (sugarcane stubbles) and destroy!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "nematode_control",
+            "patterns": [
+                "Nematode?", "Root knot nematode?", "Sutra krimi?", "Nematode control?",
+                "Root galls?", "Nematode in banana?", "Carbofuran?", "Nematode treatment?",
+                "Soil nematode?", "Nematode damage?"
+            ],
+            "responses": [
+                "Root-knot Nematodes: Microscopic worms in soil. Attack roots, form galls/knots. Reduce nutrient uptake, stunt growth, yellow leaves. Major problem in tomato, okra, banana, papaya, vegetables!",
+                "Nematode control: Carbofuran 3G (1kg/acre at planting), or Phorate 10G (10kg/acre). Mix in soil around root zone. Bio-control: Paecilomyces lilacinus (5kg/acre with FYM). Neem cake 200kg/acre!",
+                "Cultural management: Crop rotation with non-host crops (maize, sorghum, grasses), summer plowing (expose to sun), flooding fields, grow marigold (African marigold variety - traps & kills nematodes)!",
+                "Banana nematode: Serious problem! Topple/fall over during fruiting. Use nematode-free tissue culture plants. Apply Carbofuran 3G (50g/plant in root zone) every 3 months. Mulching with neem/marigold leaves helps!",
+                "Resistant varieties: Tomato - Pusa Sheetal (root-knot resistant), Okra - Arka Anamika, Brinjal - IIHR-6. Use organic amendments (neem cake 200kg/ha). Green manuring with mustard/sunhemp reduces nematodes!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "drip_irrigation_detailed",
+            "patterns": [
+                "Drip irrigation?", "Drip system?", "Micro irrigation?", "Drip farming?",
+                "Drip installation?", "Drip benefits?", "Drip for vegetables?", "Water saving irrigation?",
+                "Drip cost?", "Drip subsidy?", "Dripper spacing?", "Lateral spacing?"
+            ],
+            "responses": [
+                "Drip Irrigation: Water directly to root zone through drippers. Water saving 40-70%! Increases yield 20-50%. Uniform water distribution. Allows fertigation. Best for: vegetables, fruits, sugarcane, cotton!",
+                "Drip components: Water source → Pump → Filter (screen/disc) → Fertilizer tank → Main line (PVC) → Sub-main → Lateral (drip lines) → Drippers (4LPH most common). Need pressure regulator for hilly areas!",
+                "Drip spacing: Vegetables (row crops): Lateral spacing 1.5-2ft, dripper spacing 30-40cm. Widely spaced crops (tomato, cotton): Lateral 5-6ft, dripper 50-60cm. Closely spaced (onion, garlic): Inline drip, drippers 20-30cm!",
+                "Drip installation cost: Approximately ₹45,000-60,000 per acre (including pump, filter, mainline, laterals, drippers). Subsidy available 55-90% depending on state and farmer category. Check with agriculture department!",
+                "Drip maintenance: Clean filters weekly, check drippers for clogging, flush system regularly (open lateral ends), apply acid treatment yearly (remove scaling), replace laterals every 4-5 years. Use filtered water!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "sprinkler_irrigation",
+            "patterns": [
+                "Sprinkler irrigation?", "Sprinkler system?", "Overhead irrigation?", "Sprinkler types?",
+                "Mini sprinkler?", "Rain gun?", "Sprinkler for wheat?", "Sprinkler cost?",
+                "Sprinkler vs drip?", "Sprinkler spacing?"
+            ],
+            "responses": [
+                "Sprinkler Irrigation: Mimics rainfall. Suitable for all crops, all soil types. Water saving 30-40%. Types: Mini sprinkler (radius 4-6m, vegetables/fruits), Medium (8-12m, field crops), Rain gun (30-50m radius, large fields)!",
+                "Sprinkler types: 1) Mini sprinkler (colored types - vegetables, banana), 2) Micro sprinkler (spacing 4x4m, orchards), 3) Medium sprinkler (wheat, mustard - 12x12m), 4) Rain gun (sugarcane - 18x18m or more)!",
+                "Sprinkler cost: Mini sprinkler - ₹30,000-40,000/acre, Medium sprinkler - ₹25,000-35,000/acre, Rain gun - ₹40,000-50,000/acre. Government subsidy 50-80% available. Cheaper than drip, suitable for cereals!",
+                "Sprinkler for wheat: Spacing 12m x 12m or 15m x 15m. Medium pressure sprinkler (2-3 kg/cm² pressure). Apply 50mm water per irrigation. Saves water 30-35%, increases yield, reduces labor. Good for large fields!",
+                "Sprinkler vs Drip: Drip - Row crops, vegetables, fruits, water saving 50-70%, expensive, fertigation easy. Sprinkler - All crops, cereals, pulses, water saving 30-40%, cheaper, suitable for wheat/mustard/chickpea!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "mulching_detailed",
+            "patterns": [
+                "Mulching?", "Plastic mulch?", "Straw mulch?", "Organic mulch?", "Mulch benefits?",
+                "Mulching in vegetables?", "Black plastic mulch?", "Mulch film?", "Mulching cost?",
+                "How to do mulching?", "Mulch for water saving?"
+            ],
+            "responses": [
+                "Mulching: Covering soil with organic (straw, leaves) or inorganic (plastic) material. Benefits: Moisture conservation 30-40%, weed control, soil temperature moderation, improved yield! Widely used in vegetables, fruits!",
+                "Plastic mulch: Black (most common - weed control, heat absorption), Silver (pest repellent, heat reflection), White (cool season), Transparent (soil solarization). Black mulch increases tomato yield 40-60%!",
+                "Organic mulch: Paddy straw (best, cheap - ₹2-3/kg), sugarcane trash, dry leaves, wood chips, grass clippings. Apply 5-7cm thick layer. Decomposes, adds organic matter. Need to replenish. Good for fruit trees!",
+                "Mulching in vegetables: Lay plastic mulch on raised beds before transplanting, make holes for planting. Drip irrigation under mulch. Black mulch for tomato, capsicum, brinjal. Silver for cucurbits (repels aphids/whitefly)!",
+                "Mulching cost: Plastic mulch (25 micron, 1.2m width) - ₹15,000-20,000/acre including laying. Paddy straw mulch - ₹8,000-12,000/acre. Increases net profit despite cost (higher yield, reduced irrigation/weeding)!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "soil_testing_detailed",
+            "patterns": [
+                "Soil testing?", "Soil test?", "How to test soil?", "Soil health card?",
+                "NPK testing?", "Soil pH test?", "Where to test soil?", "Soil testing lab?",
+                "Soil sample collection?", "Soil test cost?", "Mitti janch?"
+            ],
+            "responses": [
+                "Soil Testing: Essential for balanced fertilization! Tests: pH, organic carbon, available N-P-K, micronutrients. Collect samples before planting. Test every 2-3 years. Free at government labs! Get Soil Health Card!",
+                "Soil sample collection: Collect from 8-10 spots in field, 6-8 inch depth, mix well, take 500g sample. Avoid manure heaps, water channels, field boundaries. Air dry, pack in cloth bag. Label with name & location!",
+                "Soil testing labs: Government agriculture offices (Krishi Vigyan Kendra - KVK, District Agriculture Office), State agriculture universities. Testing FREE at government labs! Private labs charge ₹100-500. Results in 7-15 days!",
+                "Soil Health Card: Government scheme - FREE soil testing every 2 years. Card shows soil nutrients, recommendations for fertilizer use. Apply online at soilhealth.dac.gov.in or contact agriculture office!",
+                "Interpreting results: Low N (add urea/FYM), Low P (add DAP/SSP), Low K (add MOP), pH<5.5 (add lime 500kg/acre), pH>8 (add gypsum 500kg/acre). Follow recommendations on Soil Health Card for fertilizer doses!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "seed_treatment",
+            "patterns": [
+                "Seed treatment?", "Beej upchar?", "Seed coating?", "Fungicide seed treatment?",
+                "Trichoderma seed treatment?", "Seed priming?", "How to treat seeds?",
+                "Carbendazim seed treatment?", "Seed treatment benefits?", "Organic seed treatment?"
+            ],
+            "responses": [
+                "Seed Treatment: Treating seeds before sowing with fungicide/insecticide/bio-agents. Benefits: Protects from soil-borne diseases, improves germination, early vigor, better establishment! Cheap investment, high returns!",
+                "Fungicide seed treatment: Rice - Carbendazim or Tricyclazole 2g/kg seeds. Wheat - Vitavax Power (Carboxin + Thiram) 2.5g/kg. Cotton - Imidacloprid + Carbendazim (10ml + 2g per kg). Soak 24 hours or dust dry!",
+                "Biological seed treatment: Trichoderma viride (4g/kg seed with starch solution), Pseudomonas fluorescens (10g/kg), Azospirillum + PSB (each 25g/kg for pulses). Organic alternative to chemicals!",
+                "Seed priming: Soak seeds in water 8-12 hours, shade dry to original moisture. Benefits: Faster germination, uniform emergence, better seedling vigor. Useful for old seeds, direct-seeded rice/maize!",
+                "Seed treatment method: Dry dressing - mix seeds with powder chemical in poly bag. Wet treatment - dissolve chemical in minimum water, coat seeds, dry in shade. Always use recommended dose, don't over-treat!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "greenhouse_farming",
+            "patterns": [
+                "Greenhouse farming?", "Polyhouse?", "Protected cultivation?", "Greenhouse vegetables?",
+                "Polyhouse cost?", "Greenhouse subsidy?", "Greenhouse tomato?", "Naturally ventilated polyhouse?",
+                "Climate control greenhouse?", "Greenhouse profit?"
+            ],
+            "responses": [
+                "Greenhouse/Polyhouse: Controlled environment cultivation. Protects from weather extremes, pests. Grow high-value crops year-round. Types: Naturally ventilated (cheaper), Fan-pad cooled (expensive, controlled). Vegetables, flowers, nursery!",
+                "Polyhouse cost: Naturally ventilated - ₹700-900/m² (₹28-35 lakh/acre), Fan-pad cooled - ₹1400-1800/m² (₹56-72 lakh/acre). Government subsidy 50-90% under protected cultivation scheme. Check with Horticulture Department!",
+                "Greenhouse crops: Tomato (yield 150-200 tons/ha vs 50-60 open field), Capsicum (export quality, ₹1.5-2.5 lakh/1000m² profit), Cucumber, Rose, Gerbera, Seedling nursery. Need training before starting!",
+                "Greenhouse management: Temperature control (vents, fans, fogging), Humidity (60-70%), Drip irrigation + fertigation, Soilless cultivation (Cocopeat, perlite), IPM (sticky traps, bio-control). Regular monitoring crucial!",
+                "Greenhouse tomato: Indeterminate hybrids (Abhinav, US-618, Vaishali). Spacing 45x45cm, single stem training, 12-14 months crop, 3-4 harvests. Yield 15-20kg/plant. Need pruning, training, pollination (bumblebees or vibrator)!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "hydroponics_basic",
+            "patterns": [
+                "Hydroponics?", "Soilless farming?", "NFT system?", "Hydroponic vegetables?",
+                "Hydroponic nutrients?", "Hydroponics setup cost?", "Growing without soil?",
+                "Hydroponic lettuce?", "EC and pH?", "Nutrient solution?"
+            ],
+            "responses": [
+                "Hydroponics: Soilless cultivation, plants grown in nutrient solution. Faster growth, higher yield, less water (90% saving), no soil-borne diseases! Systems: NFT (Nutrient Film Technique), DWC (Deep Water Culture), Dutch bucket!",
+                "Hydroponic setup cost: Small scale (100m²) - ₹3-5 lakh, Commercial (1000m²) - ₹25-40 lakh (NFT system). Includes structure, grow channels, nutrient tanks, pumps, monitoring equipment. Lettuce, herbs most profitable!",
+                "Hydroponic crops: Lettuce (ready 30-35 days, 4-5kg/m²/month), Tomato (NFT/Dutch bucket, 60-80kg/m²/year), Cucumber, Capsicum, Herbs (basil, mint, coriander), Strawberry, Spinach!",
+                "Nutrient management: Use commercial hydroponic nutrient (A&B solutions - NPK + micronutrients). EC (Electrical Conductivity): Lettuce 1.2-1.8, Tomato 2.0-3.5. pH: 5.5-6.5. Monitor daily with EC/pH meters!",
+                "Hydroponics training: Contact ICAR institutes, State agriculture universities, Private companies (Hosachiguru, LetUs Grow). 5-7 day training costs ₹15,000-25,000. Essential before commercial setup!"
+            ],
+            "context": [""]
+        },
+        {
+            "tag": "vermicompost_detailed",
+            "patterns": [
+                "Vermicompost?", "Earthworm compost?", "Kenchua khad?", "Vermicompost making?",
+                "Vermicompost pit?", "Eisenia fetida?", "Vermicompost benefits?", "Worm composting?",
+                "Vermicompost production?", "Vermicompost business?"
+            ],
+            "responses": [
+                "Vermicompost: Premium organic fertilizer made by earthworms (Eisenia fetida - red worms). NPK approximately 1.5-2-1.5 + growth hormones. Improves soil health, water holding, beneficial microbes. Use 2-3 tons/hectare!",
+                "Vermicompost making: Cement tank/HDPE bed (10x3x2 ft). Layer: 6-inch cow dung (semi-decomposed) → 3-inch farm waste → release worms (2000/bed) → cover with gunny bag → spray water daily → ready 60-70 days!",
+                "Vermicompost worms: Eisenia fetida (red worms/tiger worms). Buy from KVK/agriculture office (₹400-600 per kg, ~1500 worms). Feed on cow dung, kitchen waste, farm residue. Multiply rapidly. Can't use regular earthworms!",
+                "Vermicompost business: Production cost ₹4-6/kg, selling price ₹12-18/kg. From 10x3ft bed: 150-200kg per batch (70 days). Set up 10-20 beds for commercial production. Market through agriculture offices, nurseries, online!",
+                "Vermicompost use: Mix 10-20% in potting soil. Field application 2-3 tons/hectare before planting. For vegetables: 1-2 tons/acre. Seedling mix: 30% vermicompost + 70% soil. Tea (liquid): 1kg in 10L water, filter, spray!"
+            ],
+            "context": [""]
+        }
+    ]
+}

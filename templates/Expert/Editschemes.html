@@ -1,0 +1,474 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form action="/exp_edit_scheme_post/{{ id }}" method="post" enctype="multipart/form-data" name="form1" id="form1">#}
+{#  <table width="814" height="285" border="1">#}
+{#    <tr>#}
+{#      <th colspan="2" scope="row">Edit Gov schemes</th>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th width="160" scope="row">Schemes</th>#}
+{#      <td width="638"><label for="textarea"></label>#}
+{#      <textarea name="textarea" id="textarea" cols="45" rows="5">{{ data.schme_info }}</textarea></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">File</th>#}
+{#      <td><label for="fileField"></label>#}
+{#          <a href="{{ data.file }}">view</a>#}
+{#      <input type="file" name="fileField" id="fileField" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th height="86" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Edit" /></th>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', Arial, sans-serif;
+        min-height: 100vh;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #E8F5E9;
+    }
+
+    #form1 {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 700px;
+        overflow: hidden;
+    }
+
+    table {
+        width: 100% !important;
+        height: auto !important;
+        border: none !important;
+        border-collapse: collapse;
+    }
+
+    tr, th, td {
+        border: none !important;
+    }
+
+    /* Header Row */
+    tr:first-child th {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%) !important;
+        padding: 40px 30px !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        font-size: 26px !important;
+        font-weight: 700 !important;
+    }
+
+    /* Form Rows */
+    tr:not(:first-child):not(:last-child) {
+        background: #ffffff;
+        border-bottom: 1px solid #E8F5E9 !important;
+    }
+
+    tr:not(:first-child):not(:last-child):hover {
+        background: #F1F8E9;
+    }
+
+    /* Labels */
+    th[scope="row"] {
+        background: transparent !important;
+        color: #1B5E20 !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        text-align: left !important;
+        padding: 25px 15px 25px 30px !important;
+        width: 140px !important;
+        vertical-align: top !important;
+    }
+
+    /* Input Cells */
+    td {
+        padding: 20px 30px 20px 10px !important;
+        vertical-align: middle !important;
+    }
+
+    td label {
+        display: none !important;
+    }
+
+    /* Textarea */
+    textarea {
+        width: 100% !important;
+        padding: 16px 18px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        color: #1B5E20 !important;
+        background: #FAFAFA !important;
+        border: 2px solid #C8E6C9 !important;
+        border-radius: 12px !important;
+        outline: none !important;
+        transition: all 0.3s ease !important;
+        resize: vertical !important;
+        min-height: 180px !important;
+        line-height: 1.6 !important;
+    }
+
+    textarea::placeholder {
+        color: #81C784 !important;
+        font-weight: 400 !important;
+    }
+
+    textarea:focus {
+        border-color: #4CAF50 !important;
+        background: #ffffff !important;
+        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15) !important;
+    }
+
+    /* File Input Wrapper */
+    .file-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .current-file {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        background: #F1F8E9;
+        border-radius: 10px;
+        border: 2px solid #C8E6C9;
+    }
+
+    .current-file-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+    }
+
+    .current-file-info {
+        flex: 1;
+    }
+
+    .current-file-label {
+        font-size: 12px;
+        color: #81C784;
+        margin-bottom: 3px;
+    }
+
+    /* View Link */
+    #form1 a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #2E7D32 !important;
+        text-decoration: none !important;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    #form1 a:hover {
+        color: #1B5E20 !important;
+        text-decoration: underline !important;
+    }
+
+    /* File Input */
+    input[type="file"] {
+        width: 100% !important;
+        padding: 14px 18px !important;
+        font-size: 14px !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        color: #1B5E20 !important;
+        background: #FAFAFA !important;
+        border: 2px dashed #C8E6C9 !important;
+        border-radius: 10px !important;
+        outline: none !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    input[type="file"]:hover {
+        border-color: #4CAF50 !important;
+        background: #F1F8E9 !important;
+    }
+
+    input[type="file"]:focus {
+        border-color: #4CAF50 !important;
+        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15) !important;
+    }
+
+    input[type="file"]::file-selector-button {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        font-family: 'Inter', Arial, sans-serif;
+        cursor: pointer;
+        margin-right: 15px;
+        transition: all 0.3s ease;
+    }
+
+    input[type="file"]::file-selector-button:hover {
+        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%);
+    }
+
+    /* Submit Button Row */
+    tr:last-child th {
+        background: #F5F5F5 !important;
+        padding: 30px !important;
+        text-align: center !important;
+        border-top: 2px solid #E8F5E9 !important;
+    }
+
+    /* Submit Button */
+    input[type="submit"],
+    input#button {
+        background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        padding: 16px 50px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        font-family: 'Inter', Arial, sans-serif !important;
+        border-radius: 12px !important;
+        cursor: pointer !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    input[type="submit"]:hover,
+    input#button:hover {
+        background: linear-gradient(135deg, #388E3C 0%, #1B5E20 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4) !important;
+    }
+
+    /* Character Counter */
+    .char-counter {
+        text-align: right;
+        font-size: 12px;
+        color: #81C784;
+        margin-top: 8px;
+        font-weight: 500;
+    }
+
+    .char-counter.warning { color: #FF9800; }
+    .char-counter.limit { color: #f44336; }
+
+    /* File Size Info */
+    .file-info {
+        font-size: 12px;
+        color: #81C784;
+        margin-top: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        body {
+            padding: 20px 15px;
+        }
+
+        #form1 {
+            border-radius: 15px;
+        }
+
+        tr:first-child th {
+            padding: 30px 20px !important;
+            font-size: 22px !important;
+        }
+
+        th[scope="row"] {
+            display: block !important;
+            width: 100% !important;
+            padding: 18px 20px 8px 20px !important;
+            text-align: left !important;
+        }
+
+        td {
+            display: block !important;
+            padding: 0 20px 18px 20px !important;
+        }
+
+        input[type="submit"],
+        input#button {
+            width: 100% !important;
+            padding: 16px 40px !important;
+        }
+
+        .current-file {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+</style>
+</head>
+
+<body>
+<form action="/exp_edit_scheme_post/{{ id }}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="814" height="285" border="1">
+    <tr>
+      <th colspan="2" scope="row">Edit Gov schemes</th>
+    </tr>
+    <tr>
+      <th width="160" scope="row">Schemes</th>
+      <td width="638"><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5">{{ data.schme_info }}</textarea></td>
+    </tr>
+    <tr>
+      <th scope="row">File</th>
+      <td><label for="fileField"></label>
+          <a href="{{ data.file }}">view</a>
+      <input type="file" name="fileField" id="fileField" /></td>
+    </tr>
+    <tr>
+      <th height="86" colspan="2" scope="row"><input type="submit" name="button" id="button" value="Edit" /></th>
+    </tr>
+  </table>
+</form>
+
+<script>
+(function() {
+    // Add icon to header
+    var header = document.querySelector('tr:first-child th');
+    if (header) {
+        header.innerHTML = '<i class="fas fa-landmark" style="margin-right: 12px;"></i>' + header.innerHTML;
+    }
+
+    // Add icons to labels
+    var labelIcons = {
+        'Schemes': 'fa-scroll',
+        'File': 'fa-file-pdf'
+    };
+
+    var labels = document.querySelectorAll('th[scope="row"]');
+    labels.forEach(function(label) {
+        var text = label.textContent.trim();
+        var icon = labelIcons[text];
+        if (icon) {
+            label.innerHTML = '<i class="fas ' + icon + '" style="margin-right: 10px; color: #43A047;"></i>' + text;
+        }
+    });
+
+    // Enhance textarea
+    var textarea = document.getElementById('textarea');
+    if (textarea) {
+        if (!textarea.value || textarea.value.indexOf('{{') !== -1) {
+            textarea.placeholder = 'Enter government scheme details here...';
+        }
+
+        // Create wrapper
+        var wrapper = document.createElement('div');
+        wrapper.className = 'textarea-wrapper';
+        textarea.parentNode.insertBefore(wrapper, textarea);
+        wrapper.appendChild(textarea);
+
+        // Add character counter
+        var counter = document.createElement('div');
+        counter.className = 'char-counter';
+        var initialLength = textarea.value.indexOf('{{') === -1 ? textarea.value.length : 0;
+        counter.innerHTML = '<i class="fas fa-text-width" style="margin-right: 5px;"></i>' + initialLength + ' / 2000 characters';
+        wrapper.appendChild(counter);
+
+        textarea.addEventListener('input', function() {
+            var length = textarea.value.length;
+            counter.innerHTML = '<i class="fas fa-text-width" style="margin-right: 5px;"></i>' + length + ' / 2000 characters';
+            counter.className = 'char-counter';
+            if (length > 1600) counter.classList.add('warning');
+            if (length > 2000) counter.classList.add('limit');
+        });
+    }
+
+    // Enhance file input and view link
+    var fileCell = document.querySelector('input[type="file"]').parentNode;
+    var viewLink = fileCell.querySelector('a');
+    var fileInput = document.getElementById('fileField');
+
+    if (viewLink && fileInput) {
+        // Create wrapper
+        var fileWrapper = document.createElement('div');
+        fileWrapper.className = 'file-wrapper';
+
+        // Create current file display
+        var currentFile = document.createElement('div');
+        currentFile.className = 'current-file';
+        currentFile.innerHTML = `
+            <div class="current-file-icon">
+                <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="current-file-info">
+                <div class="current-file-label">Current File</div>
+                <a href="${viewLink.href}" target="_blank">
+                    <i class="fas fa-eye" style="margin-right: 5px;"></i>View Current File
+                </a>
+            </div>
+        `;
+
+        // Remove original link
+        viewLink.remove();
+
+        // Build new structure
+        fileCell.insertBefore(fileWrapper, fileInput);
+        fileWrapper.appendChild(currentFile);
+        fileWrapper.appendChild(fileInput);
+
+        // Add file info
+        var fileInfo = document.createElement('div');
+        fileInfo.className = 'file-info';
+        fileInfo.innerHTML = '<i class="fas fa-info-circle" style="margin-right: 5px;"></i>Upload new file to replace (PDF, DOC, DOCX - Max 5MB)';
+        fileWrapper.appendChild(fileInfo);
+
+        // Show selected file name
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files.length > 0) {
+                var fileName = fileInput.files[0].name;
+                var fileSize = (fileInput.files[0].size / 1024 / 1024).toFixed(2);
+                fileInfo.innerHTML = '<i class="fas fa-check-circle" style="margin-right: 5px; color: #43A047;"></i>Selected: ' + fileName + ' (' + fileSize + ' MB)';
+                fileInfo.style.color = '#43A047';
+            }
+        });
+    }
+
+    // Update submit button text
+    var submitBtn = document.getElementById('button');
+    if (submitBtn) {
+        submitBtn.value = 'Update Scheme';
+    }
+
+})();
+</script>
+
+</body>
+</html>

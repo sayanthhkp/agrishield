@@ -1,0 +1,19 @@
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+.env
+
+# TensorFlow / Models
+*.pb
+*.tgz
+*.joblib
+logs/
+retrain_logs/
+
+# Flutter
+build/
+.dart_tool/
+
+# macOS
+.DS_Store
